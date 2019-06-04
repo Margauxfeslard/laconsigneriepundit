@@ -10,10 +10,87 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_04_140915) do
+ActiveRecord::Schema.define(version: 2019_06_04_141700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bieres", force: :cascade do |t|
+    t.string "nom"
+    t.string "logo_img"
+    t.text "description"
+    t.string "type"
+    t.string "couleur"
+    t.float "taux_alcool"
+    t.float "taux_houblon"
+    t.float "taux_malt"
+    t.float "prix_par_litre"
+    t.bigint "brasserie_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["brasserie_id"], name: "index_bieres_on_brasserie_id"
+  end
+
+  create_table "brasseries", force: :cascade do |t|
+    t.string "nom"
+    t.string "adresse"
+    t.string "logo_img"
+    t.text "description"
+    t.string "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "commandeitems", force: :cascade do |t|
+    t.integer "quantite"
+    t.float "prix"
+    t.bigint "commande_id"
+    t.string "item_type"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["commande_id"], name: "index_commandeitems_on_commande_id"
+    t.index ["item_type", "item_id"], name: "index_commandeitems_on_item_type_and_item_id"
+  end
+
+  create_table "commandes", force: :cascade do |t|
+    t.integer "etat"
+    t.date "date_souhaitee"
+    t.bigint "pointcollecte_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pointcollecte_id"], name: "index_commandes_on_pointcollecte_id"
+    t.index ["user_id"], name: "index_commandes_on_user_id"
+  end
+
+  create_table "growlers", force: :cascade do |t|
+    t.integer "capacite"
+    t.integer "prix"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pointcollectes", force: :cascade do |t|
+    t.string "nom"
+    t.string "ville"
+    t.integer "code_postal"
+    t.string "adresse"
+    t.text "horaire"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "contenu"
+    t.integer "note"
+    t.bigint "user_id"
+    t.bigint "biere_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["biere_id"], name: "index_reviews_on_biere_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +104,10 @@ ActiveRecord::Schema.define(version: 2019_06_04_140915) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bieres", "brasseries", column: "brasserie_id"
+  add_foreign_key "commandeitems", "commandes"
+  add_foreign_key "commandes", "pointcollectes"
+  add_foreign_key "commandes", "users"
+  add_foreign_key "reviews", "bieres"
+  add_foreign_key "reviews", "users"
 end
