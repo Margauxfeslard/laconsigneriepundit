@@ -2,7 +2,6 @@
   margin: auto;
   max-width: 1500px;
   width: 95%;
-  background-color: $white;
   padding: 15px;
   display: flex;
 }
@@ -46,9 +45,6 @@
 @media (min-width: 576px) {
   .container-gauche {
     grid-template-columns: 1fr 1fr;
-  }
-  .container-droit {
-    display: none;
   }
 }
 
