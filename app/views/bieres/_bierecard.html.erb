@@ -1,13 +1,13 @@
 <div class="card-biere">
     <%= link_to biere_path(biere) do %>
+    <%= image_tag biere.logo_img %>
     <div class="card-top">
         <h2><%= biere.brasserie.nom %></h2>
         <h3><%= biere.nom %></h3>
     </div>
-    <%= image_tag biere.logo_img %>
-    <% end %>
-    <h2><%= biere.style %></h2>
-    <h2><%= biere.taux_alcool %></h2>
-    <h2><%= biere.prix_par_litre %></h2>
+    <p><%= biere.style %></p>
+    <p><%= biere.taux_alcool %></p>
+    <p><%= biere.prix_par_litre %></p>
     <%= render 'biere_carac', biere: biere %>
+    <% end %>
 </div>
