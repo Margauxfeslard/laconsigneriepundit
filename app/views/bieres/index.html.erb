@@ -1,16 +1,12 @@
-<h1>All our bieres</h1>
-<ul>
-    <% @bieres.each do |biere| %>
-<li>
-    <%= biere.nom%>
-    <%= biere.description%>
-</li>
+<h1>Liste des bières</h1>
+<div class="container-split">
+    <div class="cards">
+        <% @bieres.each do |biere| %>
+        <%= render 'bierecard', biere: biere %>
+        <% end %>
+    </div>
 
-</ul>
-
-
-      <%= link_to "More info", biere_path(biere), class: "btn btn-primary" %>
-      </div>
-      </div>
-  <% end %>
+    <div class="layout-panier sticky-top">
+        <%= render 'shared/layout_panier'%>
+    </div>
 </div>
