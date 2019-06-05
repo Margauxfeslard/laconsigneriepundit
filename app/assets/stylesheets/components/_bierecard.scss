@@ -1,24 +1,68 @@
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  margin-left: 10px;
-  padding: 5px;
+.relative{
+  position: relative;
+  width: 300px;
+  height: 300px;
+  img{
+    width: 150px;
+    position: absolute;
+    top: 30%;
+    left: 0; /* à 50%/50% du parent référent */
+    transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+  }
 }
 
 .card-biere {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 300px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  height: 300px;
-  &:hover{
-    transition: 0.2;
-    transform: scale(1.03);
+  box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+  height: 100%;
+  border-radius: 10px;
+  text-align: right;
+  margin:0 0 0 0;
+  a {
+    text-decoration: none;
+    &:hover {
+      transition: 0.2;
+      text-decoration: none;
+    }
   }
 }
+
+.card-biere-content{
+  width: 80%;
+  margin-right: 5px;
+  margin-left: auto;
+}
+
+.badgerond{
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
+
+.card_biere_carac_cadre{
+  background: lightgray;
+  padding: 5px;
+  margin: 0;
+  box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+}
+.progress{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: white;
+  p{
+    font-size: 12px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: left;
+  }
+}
+
+
+
 
 .card-top {
 text-align: right;
