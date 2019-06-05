@@ -2,7 +2,6 @@
   margin: auto;
   max-width: 1500px;
   width: 95%;
-  background-color: $white;
   padding: 15px;
   display: flex;
 }
@@ -12,7 +11,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
-  background-color: $yellow;
   padding: 16px;
   margin-right: 16px;
 }
@@ -22,7 +20,6 @@
   width: 310px;
   top: 0;
   position: sticky;
-  background-color: $light-gray;
 }
 
 .carte-test {
@@ -31,7 +28,6 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: white;
 }
 
 /*Smallest device*/
