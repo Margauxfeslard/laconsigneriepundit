@@ -1,0 +1,145 @@
+.container-gauche-show {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  padding: 0;
+  margin-right: 16px;
+}
+
+.show {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  background-color: $white;
+  margin-top: 100px;
+  display: flex;
+  align-items: top;
+  position: relative;
+  justify-content: space-around;
+}
+
+.logo-place {
+  width: 200px;
+  height: 200px;
+  background-color: $white;
+  border-radius: 50%;
+  position: absolute;
+  top: -100px;
+}
+
+.logo-picture {
+  width: auto;
+  height: 200px;
+}
+
+.container-interne {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  padding-top: 20px;
+  width: 100%;
+  height: 160px;
+  background-color: $light-gray;
+}
+
+.carte-droite {
+  grid-column-start: 4;
+  grid-column-end: 6;
+  background-color: yellow;
+}
+
+.carte-gauche {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  padding: 16px 16px 0 16px;
+  background-color: red;
+  h2 {
+    font-size: 45px;
+    line-height: 45px;
+  }
+  h3 {
+    font-size: 25px;
+    line-height: 25px;
+  }
+  p {
+    font-size: 16px;
+    color: $green;
+  }
+}
+
+
+/*Smallest device*/
+@media (min-width: 100px) and (max-width: 575px) {
+  .container-gauche-show {
+    grid-template-columns: 1fr;
+  }
+  .show {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  }
+  .container-interne {
+  grid-template-columns: 100%;
+  }
+  .carte-gauche {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  }
+  .carte-droite {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  }
+  .container-droit {
+    display: none;
+  }
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  .container-gauche-show {
+    grid-template-columns: 1fr;
+  }
+  .show {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  }
+  .container-interne {
+  grid-template-columns: 100%;
+  }
+  .carte-gauche {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  }
+  .carte-droite {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  }
+  .container-droit {
+    display: block;
+  }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 1200px) {
+  .container-gauche-show {
+    grid-template-columns: 1fr 1fr;
+  }
+  .show {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  }
+    .container-interne {
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  }
+  .carte-gauche {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  }
+  .carte-droite {
+  grid-column-start: 5;
+  grid-column-end: 6;
+  }
+  .container-droit {
+    display: block;
+  }
+}
+

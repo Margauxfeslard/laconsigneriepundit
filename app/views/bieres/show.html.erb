@@ -1,31 +1,55 @@
 <div class="container-consignerie">
-  <div class="container-gauche">
-    <div class="carte-test">
-      <p>Gauche - gauche</p>
+
+  <div class="container-gauche-show">
+
+    <div class="show">
+
+      <div class="logo-place">
+        <%= image_tag @biere.logo_img, class:"logo-picture" %>
+      </div>
+
+      <div class="container-interne">
+        <div class="carte-gauche">
+          <h2><%= @biere.nom %></h2>
+          <h3><%= @biere.style %></h3>
+          <p>Les reviews des internautes</p>
+        </div>
+        <div class="carte-droite">
+          <p>Ajout au panier</p>
+        </div>
+        <div class="carte-gauche">
+          <h2>La bière</h2>
+          <p><%= @biere.description %></p>
+        </div>
+        <div class="carte-droite">
+          <h2>Caractéristiques</h2>
+        </div>
+      </div>
+
     </div>
-    <div class="carte-test">
-      <p>Gauche - droite</p>
-    </div>
-    <div class="carte-test">
-      <p>Gauche - gauche</p>
-    </div>
-    <div class="carte-test">
-      <p>Gauche - droite</p>
-    </div>
-    <div class="carte-test">
-      <p>Gauche - gauche</p>
-    </div>
-    <div class="carte-test">
-      <p>Gauche - droite</p>
-    </div>
-    <div class="carte-test">
-      <p>Gauche - gauche</p>
-    </div>
-    <div class="carte-test">
-      <p>Gauche - droite</p>
-    </div>
+
   </div>
+
   <div class="container-droit">
-    <p>Droite</p>
+    <p>Mon panier</p>
   </div>
+
 </div>
+
+<!--
+create_table "bieres", force: :cascade do |t|
+    t.string "nom"
+    t.string "logo_img"
+    t.text "description"
+    t.string "style"
+    t.string "couleur"
+    t.float "taux_alcool"
+    t.float "taux_houblon"
+    t.float "taux_malt"
+    t.float "prix_par_litre"
+    t.bigint "brasserie_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "taux_amertume"
+    t.index ["brasserie_id"], name: "index_bieres_on_brasserie_id"
+  end -->
