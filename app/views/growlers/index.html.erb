@@ -1,0 +1,8 @@
+<% @growlers.each do |growler|%>
+  <p> Capacité : <%= growler.capacite%></p>
+  <p>Prix : <%= growler.prix%></p>
+    <% growler.commandeitem_ids.each do |commandeitem|%>
+     <p>Commandeitem : <%= commandeitem. %></p>
+    <% end %>
+<% end %>
+
