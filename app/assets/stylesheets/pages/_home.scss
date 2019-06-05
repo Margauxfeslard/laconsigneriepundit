@@ -1,1 +1,25 @@
-// Specific CSS for your home-page
+.container{
+  padding:0px;
+}
+.image-homepage{
+  width: 570px;
+  height:570px;
+}
+
+.text-concept {
+  background-color: white;
+  padding: 40px;
+}
+
+.concept{
+  display: flex;
+}
+
+.description{
+  background-color:#C2C2C2;
+  padding-top: 30px;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-bottom: 30px;
+  text-align: center;
+}

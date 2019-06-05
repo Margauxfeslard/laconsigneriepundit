@@ -1,6 +1,6 @@
 .navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+  background: transparent;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +8,23 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 70px;
+}
+
+
+.nav-link{
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+#navbarDropdown{
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    padding: 8px;
 }
