@@ -1,5 +1,9 @@
 <div class="banner">
-  <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
+  <h1>Welcome back <%= current_user.email %> !</h1>
+    <p>La bière du mois, un coup de coeur de saison :</p>
     <a class="btn-yellow" href="#">Voir les bières</a>
+
+    <%= link_to '#', class: "navbar-brand" do %>
+    <%= image_tag 'bieredumois.png', class: "imagedumois" %>
+    <% end %>
 </div>
