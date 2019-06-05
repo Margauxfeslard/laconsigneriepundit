@@ -1,0 +1,61 @@
+.container-consignerie {
+  margin: auto;
+  max-width: 1500px;
+  width: 95%;
+  padding: 15px;
+  display: flex;
+}
+
+.container-gauche {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  padding: 16px;
+  margin-right: 16px;
+}
+
+.container-droit {
+  height: 480px;
+  width: 310px;
+  top: 0;
+  position: sticky;
+}
+
+.carte-test {
+  width: 400px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/*Smallest device*/
+@media (min-width: 100px) and (max-width: 575px) {
+  .container-gauche {
+    grid-template-columns: 1fr;
+  }
+  .container-droit {
+    display: none;
+  }
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  .container-gauche {
+    grid-template-columns: 1fr;
+  }
+  .container-droit {
+    display: block;
+  }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 1200px) {
+  .container-gauche {
+    grid-template-columns: 1fr 1fr;
+  }
+  .container-droit {
+    display: block;
+  }
+}

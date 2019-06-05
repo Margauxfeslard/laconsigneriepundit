@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_04_141700) do
+ActiveRecord::Schema.define(version: 2019_06_05_092224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_06_04_141700) do
     t.string "nom"
     t.string "logo_img"
     t.text "description"
-    t.string "type"
+    t.string "style"
     t.string "couleur"
     t.float "taux_alcool"
     t.float "taux_houblon"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2019_06_04_141700) do
     t.bigint "brasserie_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "taux_amertume"
     t.index ["brasserie_id"], name: "index_bieres_on_brasserie_id"
   end
 
