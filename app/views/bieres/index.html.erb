@@ -1,0 +1,16 @@
+<h1>All our bieres</h1>
+<ul>
+    <% @bieres.each do |biere| %>
+<li>
+    <%= biere.nom%>
+    <%= biere.description%>
+</li>
+
+</ul>
+
+
+      <%= link_to "More info", biere_path(biere), class: "btn btn-primary" %>
+      </div>
+      </div>
+  <% end %>
+</div>
