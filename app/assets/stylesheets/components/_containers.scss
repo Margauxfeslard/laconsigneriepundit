@@ -11,24 +11,23 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
-  background-color: $yellow;
   padding: 16px;
   margin-right: 16px;
 }
 
 .container-droit {
   height: 480px;
-  width: 350px;
+  width: 310px;
   top: 0;
-  background-color: $light-gray;
+  position: sticky;
 }
 
-.card {
+.carte-test {
   width: 400px;
   height: 300px;
   display: flex;
-  align-items:center;
-  justify-content:space-around;
+  align-items: center;
+  justify-content: space-around;
 }
 
 /*Smallest device*/
@@ -44,7 +43,10 @@
 /*Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) {
   .container-gauche {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+  .container-droit {
+    display: block;
   }
 }
 
