@@ -1,7 +1,7 @@
 .relative{
   position: relative;
   width: 300px;
-  height: 300px;
+  height: 350px;
   img{
     width: 150px;
     position: absolute;
@@ -46,7 +46,7 @@
 .card_biere_carac_cadre{
   background: lightgray;
   padding: 5px;
-  margin: 0;
+  margin: 0 0 5px 0;
   box-shadow: 0 10px 10px rgba(0,0,0,0.2);
 }
 .progress{
