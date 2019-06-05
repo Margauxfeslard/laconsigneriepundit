@@ -9,16 +9,28 @@
 .card-biere {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 10px rgba(0,0,0,0.2);
   width: 300px;
-  margin-bottom: 10px;
-  border-radius: 5px;
+  height: 100%;
+  padding: 10px;
+  text-align: right;
+  border-radius: 10px;
+}
+
+.relative{
+  position: relative;
+  padding: 0px;
+  width: 300px;
   height: 300px;
-  &:hover{
-    transition: 0.2;
-    transform: scale(1.03);
+  img{
+    width: 150px;
+    position: absolute;
+    top: 30%;
+    left: 0; /* à 50%/50% du parent référent */
+    transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
   }
 }
+
 
 .card-top {
 text-align: right;
