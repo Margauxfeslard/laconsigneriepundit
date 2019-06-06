@@ -38,7 +38,7 @@
   grid-template-columns: 20% 20% 20% 20% 20%;
   padding-top: 20px;
   width: 100%;
-  height: 160px;
+  height: auto;
   background-color: $light-gray;
 }
 
@@ -46,6 +46,11 @@
   grid-column-start: 4;
   grid-column-end: 6;
   background-color: yellow;
+  padding: 16px 16px 0 16px;
+}
+
+.carte-droite h3 {
+  font-size: 22px;
 }
 
 .carte-gauche {
@@ -67,6 +72,28 @@
   }
 }
 
+.caracteristiques {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.liste {
+  display: inline;
+}
+li {
+  list-style-type: none;
+}
+
+.caracteristiques .car-schm {
+  font-size: 12px;
+  letter-spacing: 8px;
+}
+
+.progress {
+  width: 175px;
+  height: 12px;
+}
 
 /*Smallest device*/
 @media (min-width: 100px) and (max-width: 575px) {
@@ -106,10 +133,12 @@
   grid-template-columns: 100%;
   }
   .carte-gauche {
+  margin-top: 10px;
   grid-column-start: 1;
   grid-column-end: 1;
   }
   .carte-droite {
+  margin-top: 10px;
   grid-column-start: 1;
   grid-column-end: 1;
   }
@@ -135,7 +164,7 @@
   grid-column-end: 4;
   }
   .carte-droite {
-  grid-column-start: 5;
+  grid-column-start: 4;
   grid-column-end: 6;
   }
   .container-droit {

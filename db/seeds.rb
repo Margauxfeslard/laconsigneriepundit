@@ -28,7 +28,7 @@ Biere.create!(
   brasserie: granivore,
   description: "La première Berliner Weisse de la brasserie ! Ultra rafraîchissante, la One Trip a été acidulée naturellement au lactobacille pendant 24h et fermentée avec de la poire cultivée en biodynamie et du cassis biologique, nous avons designé une bière pour permettre à tous de mettre un pied en douceur dans le monde des bières acides. One Trip, One Noise !",
   style: "berliner weiss",
-  couleur: 0.085,
+  couleur: "blanche",
   taux_alcool: 0.85,
   taux_amertume: 0.6,
   taux_houblon: 0.08,
