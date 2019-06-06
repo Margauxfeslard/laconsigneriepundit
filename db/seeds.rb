@@ -72,7 +72,7 @@ user2 = User.create!(
   email: "margaux@gmail.com",
   password: "password"
 )
-user2 = User.create!(
+user3 = User.create!(
   email: "marie@gmail.com",
   password: "password"
 )
