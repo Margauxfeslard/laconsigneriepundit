@@ -10,7 +10,7 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
     <%= favicon_link_tag asset_path('back.png'), :rel => 'icon', :type =>  'image/png' %>
   </head>
-  <body>
+  <body id = "body" data-user=<%= current_user.id  %>>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>

@@ -12,16 +12,19 @@
           <div class="stock-with-input">
             <div class="stock">
               <h3>Ton stock :
+                            <% raise %>
                 <% current_user.commandes.all.each do |commande| %>
                   <% if commande.etat == 0 %>
-                    <% commande.commandeitems.each do |commandeitems| %>
-                      <% stock = [] %>
-                        <% if commandeitems.item.capacite == 2%>
-                          <% stock << commandeitems.item%>
-                          <%= stock.count%>
-                        <% else %>
-                          <%= 0 %>
-                        <% end %>
+                    <% commande.commandeitems.each do |ci| %>
+                        <%  if ci.item_type == "Growler" %>
+                        <% stock = [] %>
+                          <% if ci.item.capacite == 2%>
+                            <% stock << ci.item%>
+                            <%= stock.count%>
+                          <% else %>
+                          <% end %>
+                            <%= 0 %>
+                          <% end %>
                     <% end %>
                   <% end %>
                 <% end %>
