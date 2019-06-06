@@ -1,0 +1,36 @@
+.stock-growler{
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo-consignerie img{
+  width: 200px;
+  position:relative;
+}
+
+.stock-growler-1{
+  display: flex;
+  margin : 20px;
+  position: relative;
+}
+
+.stock h3{
+  background-color: #C2C2C2;
+  padding: 5px;
+  margin:0;
+}
+
+.litre p{
+  background-color : #F3B844;
+  color: white;
+  margin:0;
+  position:absolute;
+  top : 1px;
+  left: 50px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: bold;
+}

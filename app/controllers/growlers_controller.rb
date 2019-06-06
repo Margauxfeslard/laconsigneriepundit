@@ -20,7 +20,6 @@ class GrowlersController < ApplicationController
     end
   end
 
-
   def destroy
     @growler = Growler.find(params[:id])
     @growler.destroy
