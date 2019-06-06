@@ -88,6 +88,8 @@
 
 #brs-d {
   text-align: center;
+  padding: auto;
+  margin-top: 10px;
 }
 
 .caracteristiques {
@@ -96,7 +98,6 @@
   align-items: center;
 }
 
-
 .caracteristiques .car-schm {
   font-size: 12px;
   letter-spacing: 8px;
@@ -104,8 +105,9 @@
 
 .progress {
   width: 175px;
-  height: 15px;
+  height: 17px;
   font-family: 'Karla', sans-serif;
+  background-color: $light-gray;
 }
 
 .brasserie-picture {
@@ -163,9 +165,6 @@
   .carte-droite {
   grid-column-start: 1;
   grid-column-end: 1;
-  }
-  #brs-d {
-    margin-top: 0;
   }
   .container-droit {
     display: block;

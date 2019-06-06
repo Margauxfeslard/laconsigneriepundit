@@ -30,10 +30,10 @@ Biere.create!(
   description: "La première Berliner Weisse de la brasserie ! Ultra rafraîchissante, la One Trip a été acidulée naturellement au lactobacille pendant 24h et fermentée avec de la poire cultivée en biodynamie et du cassis biologique, nous avons designé une bière pour permettre à tous de mettre un pied en douceur dans le monde des bières acides. One Trip, One Noise !",
   style: "berliner weiss",
   couleur: "blanche",
-  taux_alcool: 0.85,
+  taux_alcool: 13,
   taux_amertume: 0.6,
-  taux_houblon: 0.08,
-  taux_malt: 0.05,
+  taux_houblon: 3,
+  taux_malt: 3,
   prix_par_litre: 8,
   logo_img: "https://erp.singe-savant.com//files/Papa_badge_small.png"
   )

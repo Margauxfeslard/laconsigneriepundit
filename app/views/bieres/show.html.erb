@@ -23,29 +23,8 @@
         </div>
         <div class="carte-droite">
           <h2>Caractéristiques</h2>
-            <div class="caracteristiques">
-              <div class="car-txt"><h3>Couleur</h3></div>
-              <div class="car-schm"><%= render 'shared/couleurs_biere', biere: @biere %></div>
-            </div>
-            <div class="caracteristiques">
-              <div class="car-txt"><h3>Alcool</h3></div>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">6%</div>
-                  </div>
-            </div>
-            <div class="caracteristiques">
-              <div class="car-txt"><h3>Amertume</h3></div>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-            </div>
-            <div class="caracteristiques">
-              <div class="car-txt"><h3>Apparence</h3></div>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Claire</div>
-                  </div>
-            </div>
-          </div>
+            <%= render 'shared/caracteristiques_biere', biere: @biere %>
+        </div>
             <div class="carte-gauche" id="brs-g">
               <h2>La brasserie</h2>
               <p><%= @biere.brasserie.description %></p>

@@ -1,0 +1,59 @@
+<div class="caracteristiques">
+  <div class="car-txt"><h3>Couleur</h3></div>
+  <div class="car-schm"><%= render 'shared/couleurs_biere', biere: @biere %></div>
+</div>
+<div class="caracteristiques">
+  <div class="car-txt"><h3>Alcool</h3></div>
+      <div class="progress">
+        <% if @biere.taux_alcool <=5 %>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 12.5%" aria-valuenow="25" aria-valuemin="4" aria-valuemax="12"><%=@biere.taux_alcool.round%>%</div>
+        <% elsif @biere.taux_alcool <=6 %>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="4" aria-valuemax="12"><%=@biere.taux_alcool.round%>%</div>
+        <% elsif @biere.taux_alcool <=7 %>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 37.5%" aria-valuenow="25" aria-valuemin="4" aria-valuemax="12"><%=@biere.taux_alcool.round%>%</div>
+        <% elsif @biere.taux_alcool <=8 %>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="4" aria-valuemax="12"><%=@biere.taux_alcool.round%>%</div>
+        <% elsif @biere.taux_alcool <=9 %>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 62.5%" aria-valuenow="25" aria-valuemin="4" aria-valuemax="12"><%=@biere.taux_alcool.round%>%</div>
+        <% elsif @biere.taux_alcool <=10 %>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 87.5%" aria-valuenow="25" aria-valuemin="4" aria-valuemax="12"><%=@biere.taux_alcool.round%>%</div>
+        <% elsif @biere.taux_alcool >10 %>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="4" aria-valuemax="12"><%=@biere.taux_alcool.round%>%</div>
+        <% else %>
+        <% end %>
+      </div>
+</div>
+<div class="caracteristiques">
+  <div class="car-txt"><h3>Amertume</h3></div>
+      <div class="progress">
+        <% if @biere.taux_malt == 0 %>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="5">0/5</div>
+        <% elsif @biere.taux_malt == 1 %>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 20%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="5">1/5</div>
+        <% elsif @biere.taux_malt == 2 %>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 40%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="5">2/5</div>
+        <% elsif @biere.taux_malt == 3 %>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 60%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="5">3/5</div>
+        <% elsif @biere.taux_malt == 4 %>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 80%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="5">4/5</div>
+        <% elsif @biere.taux_malt == 5 %>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="5">5/5</div>
+        <% end %>
+      </div>
+</div>
+<div class="caracteristiques">
+  <div class="car-txt"><h3>Apparence</h3></div>
+      <div class="progress">
+        <% if @biere.taux_houblon == 1 %>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 20%" aria-valuenow="25" aria-valuemin="1" aria-valuemax="5">Très claire</div>
+        <% elsif @biere.taux_houblon == 2 %>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 40%" aria-valuenow="25" aria-valuemin="1" aria-valuemax="5">Claire</div>
+        <% elsif @biere.taux_houblon == 3 %>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 60%" aria-valuenow="25" aria-valuemin="1" aria-valuemax="5">Opalescente</div>
+        <% elsif @biere.taux_houblon == 4 %>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 80%" aria-valuenow="25" aria-valuemin="1" aria-valuemax="5">Trouble</div>
+        <% elsif @biere.taux_houblon == 5 %>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="1" aria-valuemax="5">Très trouble</div>
+        <% end %>
+      </div>
+</div>
