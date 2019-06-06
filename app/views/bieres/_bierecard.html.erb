@@ -1,10 +1,11 @@
 <div class="relative">
-    <div class="card-biere">
+    <div class="card-biere"  data-biereID='<%= biere.id  %>' data-biereNom='<%= biere.nom  %>' data-bierePrix='<%= biere.prix_par_litre  %>'=>
         <%= link_to biere_path(biere) do %>
         <%= image_tag biere.logo_img %>
         <div class="card-biere-content">
             <h2><%= biere.brasserie.nom %></h2>
             <h3><%= biere.nom %></h3>
+            <% end %>
             <p><%= biere.style %></p>
             <div class="card_biere_carac_cadre">
                 <%= render 'biere_carac', biere: biere %>
@@ -14,7 +15,7 @@
                     <p><%= biere.prix_par_litre %></p>
                 </div>
             </div>
+            <%= render 'shared/add_remove_panier', biere: biere %>
         </div>
-        <% end %>
     </div>
 </div>
