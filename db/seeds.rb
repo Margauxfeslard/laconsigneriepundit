@@ -100,9 +100,9 @@ end
 puts "creating commande"
 10.times do |n|
   Commande.create!(
-  user: User.all.sample,
+  user: user2,
   pointcollecte: Pointcollecte.all.sample,
-  etat: 0
+  etat: 1
   )
 end
 
