@@ -10,9 +10,13 @@ const majtopanier = (biereid, bierenom, biereprix, quantite) => {
 
   if (lignebiere) {
     lignebiere.querySelector(".bierequantite").innerText = `${quantite}`;
+    lignebiere.querySelector(".input").value = `${quantite}`
     lignebiere.querySelector(".biereprix").innerText = `${prix}€`;
   } else {
-    panierligne.insertAdjacentHTML("beforeend", `<li id="${biereid}" class="list-group-item d-flex justify-content-between align-items-center"><span class="bierenom">${bierenom}</span><span class="badge badge-primary badge-pill bierequantite">${quantite}</span><span class="biereprix">${prix}€</span></li>`)
+    panierligne.insertAdjacentHTML("beforeend", 
+      `<li id="${biereid}" class="list-group-item d-flex justify-content-between align-items-center"><span class="bierenom">${bierenom}</span><span class="badge badge-primary badge-pill bierequantite">${quantite}</span><span class="biereprix">${prix}€</span>
+      <input class="input" type="hidden" name="items[${biereid}]" value="${quantite}">
+      </li>`);
   };
 }
 
