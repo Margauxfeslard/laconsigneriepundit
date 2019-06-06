@@ -1,5 +1,12 @@
-const growlerEchange = document.querySelectorAll(".form-control .form-control-sm");
-const calculGrowler = document.querySelector(".recap-echange h2");
+const growlerEchange = document.querySelectorAll(".echange");
+const calculGrowler = document.querySelector(".recap-echange h4");
+console.log(calculGrowler);
 
-calculGrowler.insertAdjacentHTML("beforebegin",
-  `<h2>Tu souhaites échanger <%= ${growler[0].value} + ${growler[1].value*2} %> L</h2>`);
+growlerEchange.forEach((input) => {
+  input.addEventListener("blur", (event) => {
+    const echangeInput = input.value;
+    const onelitervalue = growlerEchange[0].value ? growlerEchange[0].value : 0;
+    const twolitersvalue = growlerEchange[1].value ? growlerEchange[1].value : 0;
+    calculGrowler.innerText = `Tu souhaites échanger ${onelitervalue} bouteille de 1L et  ${twolitersvalue} bouteilles de 2L`
+  });
+});
