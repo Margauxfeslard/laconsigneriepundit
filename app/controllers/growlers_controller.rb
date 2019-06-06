@@ -20,15 +20,6 @@ class GrowlersController < ApplicationController
     end
   end
 
-  def edit          # GET /articles/:id/edit
-    @growler = Growler.find(params[:id])
-  end
-
-  def update
-    @growler = Growler.find(params[:id])
-    @growler.update(growler_params)
-    redirect_to biere_path(@biere)
-  end
 
   def destroy
     @growler = Growler.find(params[:id])
