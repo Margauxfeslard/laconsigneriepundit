@@ -1,8 +1,17 @@
-<% @growlers.each do |growler|%>
-  <p> Capacité : <%= growler.capacite%></p>
-  <p>Prix : <%= growler.prix%></p>
-    <% growler.commandeitem_ids.each do |commandeitem|%>
-     <p>Commandeitem : <%= commandeitem %></p>
+<%= render 'shared/navbar' %>
+<div class="container">
+  <div class="stock-growler">
+    <div class="stock-growler-1">
+    <% current_user.commandes.all.each do |commande| %>
+        <% if commande.etat == 0 %>
+          <% commande.commandeitems.each do |commandeitems| %>
+            <%= commandeitems.item.prix%>
+            <%= commandeitems.item.capacite%>
+          <% end %>
+        <% end %>
     <% end %>
-<% end %>
-
+    </div>
+    <div class="stock-growler-2">
+    </div>
+  </div>
+</div>

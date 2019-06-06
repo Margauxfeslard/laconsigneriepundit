@@ -1,5 +1,7 @@
 <div class="banner">
-  <h1>Welcome back <%= current_user.email %> !</h1>
+    <% if current_user %>
+      <h1>Welcome back <%= current_user.email %> !</h1>
+    <% end %>
     <p>La bière du mois, un coup de coeur de saison :</p>
     <a class="btn-yellow" href="#">Voir les bières</a>
 
