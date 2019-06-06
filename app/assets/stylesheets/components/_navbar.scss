@@ -1,12 +1,31 @@
 .navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+  position:relative;
+  background: transparent;
+  box-shadow: 0px 6px 5px 0px rgba(20,20,20,1);
+  z-index: 2;
 }
-
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 100px;
 }
+
+.nav-link{
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+#navbarDropdown{
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    padding: 8px;
+}
+

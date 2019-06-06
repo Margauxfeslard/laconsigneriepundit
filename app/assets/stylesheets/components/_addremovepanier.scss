@@ -1,0 +1,19 @@
+.add_remove_panier{
+  width: 150px;
+  background-color: $yellow;
+  border-color: white;
+  .fas:before {
+    color: white;
+  }
+  
+  .btn-outline-secondary{
+    border-color: white;
+  }
+  
+  .form-control{
+    border-color: white;
+    text-align: center;
+    font-size: 16px;
+  }
+}
+

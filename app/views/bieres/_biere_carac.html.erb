@@ -1,3 +1,14 @@
-<p><%= biere.taux_houblon %></p>
-<p><%= biere.taux_malt %></p>
-<p><%= biere.taux_amertume %></p>
+    <div class = "biere_carac ">
+     <div class="progress">
+        <div class="progress-bar bg-success" role="progressbar" style="width: <%= biere.taux_houblon* 100 %>%"
+      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><p>Houblon</p></div>
+      </div>
+      <div class="progress">
+        <div class="progress-bar bg-success" role="progressbar" style="width: <%= biere.taux_malt* 100 %>%"
+      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><p>Malte</p></div>
+      </div>
+      <div class="progress">
+        <div class="progress-bar bg-success" role="progressbar" style="width: <%= biere.taux_amertume* 100 %>%"
+      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><p>Amertume</p></div>
+      </div>
+    </div>

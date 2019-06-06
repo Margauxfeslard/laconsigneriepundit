@@ -45,6 +45,9 @@ Brasserie.all.each do |brasserie|
       nom: brasserie.nom + "biere" + n.to_s,
       brasserie: brasserie,
       taux_alcool: 0.2 * n,
+      taux_amertume: 0.6,
+      taux_houblon: 0.08,
+      taux_malt: 0.05,
       prix_par_litre: 2 * n,
       logo_img: "https://erp.singe-savant.com//files/Papa_badge_small.png"
       )
@@ -70,7 +73,7 @@ user2 = User.create!(
   email: "margaux@gmail.com",
   password: "password"
 )
-user2 = User.create!(
+user3 = User.create!(
   email: "marie@gmail.com",
   password: "password"
 )
