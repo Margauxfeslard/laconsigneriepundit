@@ -20,7 +20,8 @@ end
 granivore = Brasserie.create!(
   nom: "Granivore",
   adresse: "Lille",
-  description: "Au delà d'une brasserie de production, le Singe propose un BrewLab composé d'une école de brassage où apprendre et s'améliorer. C'est aussi un lieu où échanger avec les autres passionné-e-s et un BrewShop où acheter vos matières premières ainsi que votre matériel de brassage. Sensations fortes garanties ! N'hésitez pas à nous contactez si vous êtes intéressé-e."
+  description: "Au delà d'une brasserie de production, le Singe propose un BrewLab composé d'une école de brassage où apprendre et s'améliorer. C'est aussi un lieu où échanger avec les autres passionné-e-s et un BrewShop où acheter vos matières premières ainsi que votre matériel de brassage. Sensations fortes garanties ! N'hésitez pas à nous contactez si vous êtes intéressé-e.",
+  photo: "http://www.singe-savant.com/static/images/brewery/magasin.jpg"
 )
 
 Biere.create!(
@@ -28,7 +29,7 @@ Biere.create!(
   brasserie: granivore,
   description: "La première Berliner Weisse de la brasserie ! Ultra rafraîchissante, la One Trip a été acidulée naturellement au lactobacille pendant 24h et fermentée avec de la poire cultivée en biodynamie et du cassis biologique, nous avons designé une bière pour permettre à tous de mettre un pied en douceur dans le monde des bières acides. One Trip, One Noise !",
   style: "berliner weiss",
-  couleur: 0.085,
+  couleur: "blanche",
   taux_alcool: 0.85,
   taux_amertume: 0.6,
   taux_houblon: 0.08,

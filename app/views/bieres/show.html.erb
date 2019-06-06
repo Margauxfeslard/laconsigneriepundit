@@ -1,31 +1,84 @@
 <div class="container-consignerie">
   <div class="container-gauche">
-    <div class="carte-test">
-      <p>Gauche - gauche</p>
+
+    <div class="show">
+
+      <div class="logo-place">
+        <%= image_tag @biere.logo_img, class:"logo-picture" %>
+      </div>
+
+      <div class="container-interne">
+        <div class="carte-gauche" id="nom">
+          <h2><%= @biere.nom %></h2>
+          <h3><%= @biere.style %></h3>
+          <p>Les reviews des internautes</p>
+        </div>
+        <div class="carte-droite" id="panier-show">
+          <h3><%= @biere.prix_par_litre %> € / litre</h3>
+
+        </div>
+        <div class="carte-gauche">
+          <h2>La bière</h2>
+          <p><%= @biere.description %></p>
+        </div>
+        <div class="carte-droite">
+          <h2>Caractéristiques</h2>
+            <div class="caracteristiques">
+              <div class="car-txt"><h3>Couleur</h3></div>
+              <div class="car-schm"><%= render 'shared/couleurs_biere', biere: @biere %></div>
+            </div>
+            <div class="caracteristiques">
+              <div class="car-txt"><h3>Alcool</h3></div>
+                  <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">6%</div>
+                  </div>
+            </div>
+            <div class="caracteristiques">
+              <div class="car-txt"><h3>Amertume</h3></div>
+                  <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+            </div>
+            <div class="caracteristiques">
+              <div class="car-txt"><h3>Apparence</h3></div>
+                  <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Claire</div>
+                  </div>
+            </div>
+          </div>
+            <div class="carte-gauche" id="brs-g">
+              <h2>La brasserie</h2>
+              <p><%= @biere.brasserie.description %></p>
+            </div>
+            <div class="carte-droite" id="brs-d">
+              <%= image_tag @biere.brasserie.photo, class:"brasserie-picture" %>
+            </div>
+      </div>
+
     </div>
-    <div class="carte-test">
-      <p>Gauche - droite</p>
-    </div>
-    <div class="carte-test">
-      <p>Gauche - gauche</p>
-    </div>
-    <div class="carte-test">
-      <p>Gauche - droite</p>
-    </div>
-    <div class="carte-test">
-      <p>Gauche - gauche</p>
-    </div>
-    <div class="carte-test">
-      <p>Gauche - droite</p>
-    </div>
-    <div class="carte-test">
-      <p>Gauche - gauche</p>
-    </div>
-    <div class="carte-test">
-      <p>Gauche - droite</p>
-    </div>
+
   </div>
+
   <div class="container-droit">
-    <p>Droite</p>
+    <p>Mon panier</p>
   </div>
+
 </div>
+
+<!--
+create_table "bieres", force: :cascade do |t|
+    t.string "nom"
+    t.string "logo_img"
+    t.text "description"
+    t.string "style"
+    t.string "couleur"
+    t.float "taux_alcool"
+    t.float "taux_houblon"
+    t.float "taux_malt"
+    t.float "prix_par_litre"
+    t.bigint "brasserie_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "taux_amertume"
+    t.index ["brasserie_id"], name: "index_bieres_on_brasserie_id"
+  end -->
