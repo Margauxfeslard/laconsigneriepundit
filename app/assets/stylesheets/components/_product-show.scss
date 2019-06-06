@@ -1,12 +1,3 @@
-.container-gauche-show {
-  flex-grow: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 16px;
-  padding: 0;
-  margin-right: 16px;
-}
-
 .show {
   grid-column-start: 1;
   grid-column-end: 3;
@@ -39,28 +30,40 @@
   padding-top: 20px;
   width: 100%;
   height: auto;
-  background-color: $light-gray;
+  background-color: white;
 }
 
 .carte-droite {
+  margin-top: 10px;
   grid-column-start: 4;
   grid-column-end: 6;
-  background-color: yellow;
-  padding: 16px 16px 0 16px;
+  background-color: $very-light-gray;
+  padding: 16px;
+  h2 {
+    color: $green;
+  }
+  h3 {
+   font-size: 22px;
+  }
 }
 
-.carte-droite h3 {
-  font-size: 22px;
+#panier-show {
+  text-align: right;
+  padding-top: 40px;
+  background-color: white;
 }
 
 .carte-gauche {
+  margin-top: 10px;
+  margin-right: 10px;
   grid-column-start: 1;
   grid-column-end: 4;
   padding: 16px 16px 0 16px;
-  background-color: red;
+  background-color: $very-light-gray;
   h2 {
     font-size: 45px;
     line-height: 45px;
+    color: $green;
   }
   h3 {
     font-size: 25px;
@@ -68,8 +71,23 @@
   }
   p {
     font-size: 16px;
-    color: $green;
+    color: black;
   }
+}
+
+#nom {
+   background-color: white;
+  p {
+  color: $green;
+  }
+}
+
+#brs-g {
+  margin-right: 0px;
+}
+
+#brs-d {
+  text-align: center;
 }
 
 .caracteristiques {
@@ -78,12 +96,6 @@
   align-items: center;
 }
 
-.liste {
-  display: inline;
-}
-li {
-  list-style-type: none;
-}
 
 .caracteristiques .car-schm {
   font-size: 12px;
@@ -92,7 +104,12 @@ li {
 
 .progress {
   width: 175px;
-  height: 12px;
+  height: 15px;
+  font-family: 'Karla', sans-serif;
+}
+
+.brasserie-picture {
+  height: 180px;
 }
 
 /*Smallest device*/
@@ -115,6 +132,13 @@ li {
   grid-column-start: 1;
   grid-column-end: 1;
   }
+  #nom {
+  margin-top: 60px;
+  text-align: center;
+  }
+  #brs-d {
+    margin-top: 0;
+  }
   .container-droit {
     display: none;
   }
@@ -133,14 +157,15 @@ li {
   grid-template-columns: 100%;
   }
   .carte-gauche {
-  margin-top: 10px;
   grid-column-start: 1;
   grid-column-end: 1;
   }
   .carte-droite {
-  margin-top: 10px;
   grid-column-start: 1;
   grid-column-end: 1;
+  }
+  #brs-d {
+    margin-top: 0;
   }
   .container-droit {
     display: block;

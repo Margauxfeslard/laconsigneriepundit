@@ -20,7 +20,8 @@ end
 granivore = Brasserie.create!(
   nom: "Granivore",
   adresse: "Lille",
-  description: "Au delà d'une brasserie de production, le Singe propose un BrewLab composé d'une école de brassage où apprendre et s'améliorer. C'est aussi un lieu où échanger avec les autres passionné-e-s et un BrewShop où acheter vos matières premières ainsi que votre matériel de brassage. Sensations fortes garanties ! N'hésitez pas à nous contactez si vous êtes intéressé-e."
+  description: "Au delà d'une brasserie de production, le Singe propose un BrewLab composé d'une école de brassage où apprendre et s'améliorer. C'est aussi un lieu où échanger avec les autres passionné-e-s et un BrewShop où acheter vos matières premières ainsi que votre matériel de brassage. Sensations fortes garanties ! N'hésitez pas à nous contactez si vous êtes intéressé-e.",
+  photo: "http://www.singe-savant.com/static/images/brewery/magasin.jpg"
 )
 
 Biere.create!(

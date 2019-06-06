@@ -1,5 +1,5 @@
 <div class="container-consignerie">
-  <div class="container-gauche-show">
+  <div class="container-gauche">
 
     <div class="show">
 
@@ -8,13 +8,14 @@
       </div>
 
       <div class="container-interne">
-        <div class="carte-gauche">
+        <div class="carte-gauche" id="nom">
           <h2><%= @biere.nom %></h2>
           <h3><%= @biere.style %></h3>
           <p>Les reviews des internautes</p>
         </div>
-        <div class="carte-droite">
-          <p>Ajout au panier</p>
+        <div class="carte-droite" id="panier-show">
+          <h3><%= @biere.prix_par_litre %> € / litre</h3>
+
         </div>
         <div class="carte-gauche">
           <h2>La bière</h2>
@@ -44,7 +45,14 @@
                     <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Claire</div>
                   </div>
             </div>
-        </div>
+          </div>
+            <div class="carte-gauche" id="brs-g">
+              <h2>La brasserie</h2>
+              <p><%= @biere.brasserie.description %></p>
+            </div>
+            <div class="carte-droite" id="brs-d">
+              <%= image_tag @biere.brasserie.photo, class:"brasserie-picture" %>
+            </div>
       </div>
 
     </div>

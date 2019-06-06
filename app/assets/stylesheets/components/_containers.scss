@@ -4,21 +4,21 @@
   width: 95%;
   padding: 15px;
   display: flex;
+  justify-content: space-around;
 }
 
 .container-gauche {
-  flex-grow: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
   padding: 16px;
   margin-right: 16px;
-  background-color: $yellow;
+  width: 75%;
 }
 
 .container-droit {
   height: 480px;
-  width: 310px;
+  width: 25%;
   top: 0;
   position: sticky;
   background-color: $light-gray;
