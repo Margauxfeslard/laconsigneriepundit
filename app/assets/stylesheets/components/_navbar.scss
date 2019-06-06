@@ -20,6 +20,10 @@
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
+.nav-link:hover{
+  color: #265E5A;
+}
+
 #navbarDropdown{
     font-family: 'Saira Condensed', sans-serif;
     font-size: 30px;
@@ -27,5 +31,13 @@
     color: white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     padding: 8px;
+    text-decoration: none;
 }
 
+#navbarDropdown:hover{
+  color: #265E5A;
+}
+
+.nav-item .dropdown li{
+  margin: 5px;
+}
