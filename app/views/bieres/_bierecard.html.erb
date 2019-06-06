@@ -8,10 +8,10 @@
             <% end %>
             <p><%= biere.style %></p>
             <div class="card_biere_carac_cadre">
-                <%= render 'biere_carac', biere: biere %>
+              <%= render 'shared/caracteristiques_biere', biere: biere %>
                 <div class="d-flex justify-content-around">
                     <div class="badgerond"><p><%= biere.taux_alcool %></p></div>
-                    
+
                     <p><%= biere.prix_par_litre %></p>
                 </div>
             </div>
