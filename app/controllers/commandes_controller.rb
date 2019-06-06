@@ -1,4 +1,4 @@
-class CommandeitemsController < ApplicationController
+class CommandesController < ApplicationController
   def index         # GET /restaurants
     @commandes = Commande.all
   end
@@ -7,22 +7,32 @@ class CommandeitemsController < ApplicationController
     @commande = Commande.find(params[:id])
   end
 
-  def new
-    @commande = Commande.new
-    @commandeitem = Commandeitem.new
-  end
+  # def new
+  #   @commande = Commande.new
+  # end
 
-  def create        # POST /commandes
-    @commande = Commande.new(commande_params)
+  def create # POST /commandes
+    @commande = Commande.new(user: current_user, etat: 0)
     @commande.user = current_user
+    @commande.etat = "en cours"
     if @commande.save
+      # créer les commande items
+      bieres = Biere.all
+      bieres.each do |biere|
+        quantite = params[:items][biere.id.to_s].to_i
+        if quantite > 0
+          prix = quantite * biere.prix_par_litre
+          ci = Commandeitem.create(quantite: quantite, item: biere, commande: @commande, prix: prix)
+        end
+      end
+
       redirect_to commande_path(@commande)
     else
       render :new
     end
   end
 
-  def edit          # GET /articles/:id/edit
+  def edit # GET /articles/:id/edit
     @commande = Commande.find(params[:id])
   end
 
@@ -38,23 +48,9 @@ class CommandeitemsController < ApplicationController
     redirect_to commandes_path
   end
 
-
   private
 
-  def commandeitem_params
-    params.require(:commande).permit(
-      :etat,
-      :date_souhaitee,
-      )
+  def commande_params
+    params.require(:commande).permit(:etat, :date_souhaitee)
   end
-
-  def commandeitem_params
-    params.require(:commandeitem).permit(
-      :quantite,
-      :prix,
-      :item,
-      )
-  end
-
-
 end
