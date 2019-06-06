@@ -1,17 +1,64 @@
 <%= render 'shared/navbar' %>
 <div class="container">
   <div class="stock-growler">
-    <div class="stock-growler-1">
-    <% current_user.commandes.all.each do |commande| %>
-        <% if commande.etat == 0 %>
-          <% commande.commandeitems.each do |commandeitems| %>
-            <%= commandeitems.item.prix%>
-            <%= commandeitems.item.capacite%>
-          <% end %>
-        <% end %>
-    <% end %>
-    </div>
-    <div class="stock-growler-2">
+    <h1>Tes growlers</h1>
+      <div class="stock-growler-1">
+        <div class="logo-consignerie">
+          <%= image_tag 'logo1.png' %>
+        </div>
+        <div class="litre">
+          <p>2L</p>
+        </div>
+          <div class="stock-with-input">
+            <div class="stock">
+              <h3>Ton stock :
+                <% current_user.commandes.all.each do |commande| %>
+                  <% if commande.etat == 0 %>
+                    <% commande.commandeitems.each do |commandeitems| %>
+                      <% stock = [] %>
+                        <% if commandeitems.item.capacite == 2%>
+                          <% stock << commandeitems.item%>
+                          <%= stock.count%>
+                        <% else %>
+                          <%= 0 %>
+                        <% end %>
+                    <% end %>
+                  <% end %>
+                <% end %>
+              </h3>
+            </div>
+            <h3 class="demannde-echange">Combien souhaites-tu en échanger ?</h3>
+            <input class="form-control form-control-sm" type="text" placeholder="">
+          </div>
+        </div>
+      <div class="stock-growler-1">
+        <div class="logo-consignerie">
+          <%= image_tag 'logo1.png' %>
+        </div>
+        <div class="litre">
+          <p>1L</p>
+        </div>
+          <div class="stock-with-input">
+            <div class="stock">
+              <h3>Ton stock :
+                <% current_user.commandes.all.each do |commande| %>
+                  <% if commande.etat == 0 %>
+                    <% commande.commandeitems.each do |commandeitems| %>
+                      <% stock = [] %>
+                        <% if commandeitems.item.capacite == 1%>
+                          <% stock << commandeitems.item%>
+                          <%= stock.count%>
+                        <% else %>
+                          <%= 0 %>
+                        <% end %>
+                    <% end %>
+                  <% end %>
+                <% end %>
+              </h3>
+            </div>
+              <h3 class="demannde-echange">Combien souhaites-tu en échanger ?</h3>
+              <input class="form-control form-control-sm" type="text" placeholder="">
+          </div>
+        </div>
     </div>
   </div>
-</div>
