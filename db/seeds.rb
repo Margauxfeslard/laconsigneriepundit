@@ -106,17 +106,31 @@ end
 puts "creating commande"
 10.times do |n|
   Commande.create!(
-  user: user2,
+  user: user1,
   pointcollecte: Pointcollecte.all.sample,
   etat: 1
   )
 end
+
+  commandegrowler = Commande.create!(
+  user: user1,
+  pointcollecte: Pointcollecte.all.sample,
+  etat: 1
+  )
+
 
 puts "creating commandeitem bigrowlereres"
 lignegrowler = Commandeitem.create!(
 commande: Commande.all.sample,
 item: Growler.all.sample,
 quantite: 1
+)
+
+puts "creating commandeitem bigrowlereres"
+lignegrowler = Commandeitem.create!(
+commande: commandegrowler,
+item: Growler.all.sample,
+quantite: 2
 )
 
 puts "creating commandeitem bieres"
