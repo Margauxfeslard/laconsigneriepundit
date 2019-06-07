@@ -1,10 +1,11 @@
 <%= render 'shared/navbar' %>
+  <h4>Découvrez les <%= @bieres.length %> bières du mois !</h4>
 
-<h1>Liste des bières</h1>
 <div class="container-consignerie">
-    <div class="container-gauche">
+
+    <div class="container-gauche-index">
         <% @bieres.each do |biere| %>
-        <%= render 'bierecard', biere: biere %>
+        <%= render 'carte-biere', biere: biere %>
         <% end %>
     </div>
 

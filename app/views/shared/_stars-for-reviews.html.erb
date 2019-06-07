@@ -1,0 +1,14 @@
+<% if review.rating < 1 %>
+    <i class="far fa-star" style="color: #F3B844"></i><i class="far fa-star" style="color: #F3B844"></i><i class="far fa-star" style="color: #F3B844"></i><i class="far fa-star" style="color: #F3B844"></i><i class="far fa-star" style="color: #F3B844"></i>
+<% elsif review.rating >= 1 %>
+  <i class="fas fa-star" style="color: #F3B844"></i><i class="far fa-star" style="color: #F3B844"></i><i class="far fa-star" style="color: #F3B844"></i><i class="far fa-star" style="color: #F3B844"></i><i class="far fa-star" style="color: #F3B844"></i>
+<% elsif review.rating >= 2 %>
+  <i class="fas fa-star" style="color: #F3B844"></i><i class="fas fa-star" style="color: #F3B844"></i><i class="far fa-star" style="color: #F3B844"></i><i class="far fa-star" style="color: #F3B844"></i><i class="far fa-star" style="color: #F3B844"></i>
+<% elsif review.rating >= 3 %>
+  <i class="fas fa-star" style="color: #F3B844"></i><i class="fas fa-star" style="color: #F3B844"></i><i class="fas fa-star" style="color: #F3B844"></i><i class="far fa-star" style="color: #F3B844"></i><i class="far fa-star" style="color: #F3B844"></i>
+<% elsif review.rating >= 4 %>
+  <i class="fas fa-star" style="color: #F3B844"></i><i class="fas fa-star" style="color: #F3B844"></i><i class="fas fa-star" style="color: #F3B844"></i><i class="fas fa-star" style="color: #F3B844"></i><i class="far fa-star" style="color: #F3B844"></i>
+<% elsif review.rating >= 5 %>
+  <i class="fas fa-star" style="color: #F3B844"></i><i class="fas fa-star" style="color: #F3B844"></i><i class="fas fa-star" style="color: #F3B844"></i><i class="fas fa-star" style="color: #F3B844"></i><i class="fas fa-star" style="color: #F3B844"></i>
+<% else %>
+<% end %>

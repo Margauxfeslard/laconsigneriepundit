@@ -1,0 +1,21 @@
+<%= link_to biere_path(biere) do %>
+<div class="carte-biere">
+
+  <div class="logo-place-index">
+    <%= image_tag biere.logo_img, class:"logo-picture-index"%>
+  </div>
+
+  <div class="interieur-carte-biere">
+    <div class="carte-biere-titres">
+      <ul class= "inline">
+        <li><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></li>
+        <li style="color: black">144</li>
+      </ul>
+      <h2><%= biere.brasserie.nom %></h2>
+      <h3><%= biere.nom %></h3>
+      <%= render 'caracteristiques_biere_index', biere:biere %>
+    </div>
+  </div>
+
+</div>
+<% end %>
