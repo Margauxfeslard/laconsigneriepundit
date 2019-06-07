@@ -25,8 +25,7 @@ class CommandesController < ApplicationController
           ci = Commandeitem.create(quantite: quantite, item: biere, commande: @commande, prix: prix)
         end
       end
-
-      redirect_to user_commande_path(@commande.user, @commande)
+      redirect_to growlers_path()
     else
       render :new
     end
