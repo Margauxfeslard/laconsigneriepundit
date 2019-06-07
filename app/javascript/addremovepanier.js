@@ -90,7 +90,7 @@ if (addtobasket) {
       if (document.querySelector(".card-show")) {
         biereid = document.querySelector(".card-show").dataset.biereid
       } else {
-        const dataset = button.parentElement.parentElement.parentElement.parentElement.parentElement.dataset
+        const dataset = button.parentElement.parentElement.parentElement.dataset
         biereid = dataset.biereid;
       }
       addOne(biereid, event);
@@ -104,7 +104,7 @@ if (removefrombasket) {
       if (document.querySelector(".card-show")) {
         biereid = document.querySelector(".card-show").dataset.biereid
       } else {
-        const dataset = button.parentElement.parentElement.parentElement.parentElement.parentElement.dataset
+        const dataset = button.parentElement.parentElement.parentElement.dataset
         biereid = dataset.biereid;
       }
       removeOne(biereid, event);

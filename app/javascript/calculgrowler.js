@@ -35,8 +35,9 @@ const majText = () => {
     return item.capacite == "2L"
   }).quantite;
 
-  calculGrowler.innerText = `Tu souhaites échanger ${onelitervalue} bouteille de 1L et  ${twolitersvalue} bouteilles de 2L`
-
+  if (growlerEchange1) {
+    calculGrowler.innerText = `Tu souhaites échanger ${onelitervalue} bouteille de 1L et  ${twolitersvalue} bouteilles de 2L`
+  }
 }
 
 const displayGrowlers = (growlers) => {
@@ -47,7 +48,7 @@ const displayGrowlers = (growlers) => {
       const prix = growler.quantite * growler.prix;
 
       if (lignegrowler) {
-        lignegrowler.querySelector(".growlerquantite").innerHTML = `<p>${growler.quantite} L</p>`;
+        lignegrowler.querySelector(".growlerquantite").innerHTML = `<p>${growler.quantite}</p>`;
         lignegrowler.querySelector(".growlerprix").innerHTML = `<p>${prix} €</p>`;
 
       } else {
