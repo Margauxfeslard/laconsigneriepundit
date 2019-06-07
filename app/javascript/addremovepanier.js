@@ -1,70 +1,117 @@
-const biere = document.querySelectorAll(".card-biere");
+const bieres = document.querySelectorAll(".card-biere");
+const user_id = parseInt(document.getElementById("layout").dataset.user);
+const panierligne = document.querySelector(".panierligne");
 const addtobasket = document.querySelectorAll(".addtobasket");
 const removefrombasket = document.querySelectorAll(".removefrombasket");
-const panierligne = document.querySelector(".panierligne");
 
+let panier = []
 
-const majtopanier = (biereid, bierenom, biereprix, quantite) => {
-  const lignebiere = document.getElementById(`${biereid}`);
-  const prix = quantite * biereprix;
-
-  if (lignebiere) {
-    lignebiere.querySelector(".bierequantite").innerText = `${quantite}`;
-    lignebiere.querySelector(".input").value = `${quantite}`
-    lignebiere.querySelector(".biereprix").innerText = `${prix}€`;
-  } else {
-    panierligne.insertAdjacentHTML("beforeend", 
-      `<li id="${biereid}" class="list-group-item d-flex justify-content-between align-items-center"><span class="bierenom">${bierenom}</span><span class="badge badge-primary badge-pill bierequantite">${quantite}</span><span class="biereprix">${prix}€</span>
-      <input class="input" type="hidden" name="items[${biereid}]" value="${quantite}">
-      </li>`);
+bieres.forEach((biere) => {
+  const ligne = {
+    user: `${user_id}`,
+    quantite: 0,
+    biereid: `${biere.dataset.biereid}`,
+    bierenom: `${biere.dataset.bierenom}`,
+    biereprix: `${biere.dataset.biereprix}`,
   };
+  panier.push(ligne)
+});
+
+if (localStorage.getItem("panier")) {
+  panier = JSON.parse(localStorage.getItem("panier"))
+} else {
+  localStorage.setItem("panier", JSON.stringify(panier))
 }
 
-const removefrompanier = (biereid) => {
-  const lignebiere = document.getElementById(`${biereid}`);
-  if (lignebiere) {
-    lignebiere.parentNode.removeChild(lignebiere);
-  }
-  };
+const displayPanier = (panier) => {
+  panier.forEach((ligne) => {
+    const lignebiere = document.getElementById(`${ligne.biereid}`);
+    if (ligne.quantite > 0) {
+      const prix = ligne.quantite * ligne.biereprix;
 
+      if (lignebiere) {
+        lignebiere.querySelector(".bierequantite").innerText = `${ligne.quantite}`;
+        lignebiere.querySelector(".input").value = `${ligne.quantite}`
+        lignebiere.querySelector(".biereprix").innerText = `${prix}€`;
+      } else {
+        panierligne.insertAdjacentHTML("beforeend",
+          `<li id="${ligne.biereid}" class="list-group-item d-flex justify-content-between align-items-center"><span class="bierenom">${ligne.bierenom}</span><span class="badge badge-primary badge-pill bierequantite">${ligne.quantite}</span><span class="biereprix">${prix}€</span>
+          <input class="input" type="hidden" name="items[${ligne.biereid}]" value="${ligne.quantite}">
+          </li>`);
+      };
+    } else {
+      if (lignebiere) {
+        lignebiere.parentNode.removeChild(lignebiere);
+      }
+    }
+  }
+  )
+  localStorage.setItem("panier", "")
+  localStorage.setItem("panier", JSON.stringify(panier))
+}
+
+displayPanier(JSON.parse(localStorage.getItem("panier")))
+
+const addOne = (biereid, event) => {
+  panier.find((item) => {
+    return item.biereid == biereid
+  }).quantite += 1
+  displayPanier(panier)
+  displayInput(event, biereid)
+}
+
+const removeOne = (biereid, event) => {
+  console.log(biereid);
+  panier.find((item) => {
+    return item.biereid == biereid
+  }).quantite -= 1
+  if (panier.find((item) => {
+    return item.biereid == biereid
+  }).quantite <= 0) {
+    panier.find((item) => {
+      return item.biereid == biereid
+    }).quantite = 0
+  }
+  displayPanier(panier)
+  displayInput(event, biereid)
+
+}
+
+const displayInput = (event, biereid) => {
+  quantite = panier.find((item) => {
+    return item.biereid == biereid
+  }).quantite
+  const inputbasket = event.path[3].querySelector(".inputbasket")
+  inputbasket.value = quantite
+}
 
 
 if (addtobasket) {
   addtobasket.forEach((button) => {
-     button.addEventListener("click", (event) => {
-           value = parseInt(button.parentNode.parentNode.querySelector(".inputbasket").value)
-      const dataset = button.parentElement.parentElement.parentElement.parentElement.parentElement.dataset
-      const inputbasket = button.parentNode.parentNode.querySelector(".inputbasket");
-      value += 1;
-      inputbasket.value = value
-      const biereid =dataset.biereid
-      const bierenom =dataset.bierenom
-      const biereprix =dataset.biereprix
-      majtopanier(biereid, bierenom, biereprix, value)
-    })
-  })
-  removefrombasket.forEach((button) => {
     button.addEventListener("click", (event) => {
-      const dataset = button.parentElement.parentElement.parentElement.parentElement.parentElement.dataset
-      const biereid =dataset.biereid
-      const lignebiere = document.getElementById(`${biereid}`)
-      value = lignebiere.querySelector(".bierequantite").innerText;
-      const inputbasket = button.parentElement.parentElement.getElementsByClassName('form-control')[0];
-      value -= 1;
-      if (value <= 0) {
-        value = 0;
-        const biereid = button.parentElement.parentElement.parentElement.parentElement.parentElement.dataset.biereid
-        removefrompanier(biereid)
-        inputbasket.value = value
-      }
-      else {
-        inputbasket.value = value
+      let biereid = ""
+      if (document.querySelector(".card-show")) {
+        biereid = document.querySelector(".card-show").dataset.biereid
+      } else {
         const dataset = button.parentElement.parentElement.parentElement.parentElement.parentElement.dataset
-        const biereid = dataset.biereid
-        const bierenom = dataset.bierenom
-        const biereprix = dataset.biereprix
-        majtopanier(biereid, bierenom, biereprix, value)
+        biereid = dataset.biereid;
       }
+      addOne(biereid, event);
     })
   })
 }
+
+if (removefrombasket) {
+  removefrombasket.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      if (document.querySelector(".card-show")) {
+        biereid = document.querySelector(".card-show").dataset.biereid
+      } else {
+        const dataset = button.parentElement.parentElement.parentElement.parentElement.parentElement.dataset
+        biereid = dataset.biereid;
+      }
+      removeOne(biereid, event);
+    })
+  })
+}
+

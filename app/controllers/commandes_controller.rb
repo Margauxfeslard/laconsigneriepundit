@@ -36,6 +36,12 @@ class CommandesController < ApplicationController
     @commande = Commande.find(params[:id])
   end
 
+  def additem
+    raise
+    params[:commande_id]
+    params[:item_id]
+  end
+
   def update
     @commande = Commande.find(params[:id])
     @commande.update(commande_params)
