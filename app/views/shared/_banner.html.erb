@@ -1,11 +1,13 @@
 <div class="banner">
     <% if current_user %>
       <h1>Welcome back <%= current_user.prenom %> !</h1>
-    <% end %>
-    <p>La bière du mois, un coup de coeur de saison :</p>
-    <a class="btn-yellow" href="#">Voir les bières</a>
-
-    <%= link_to bieres_path, class: "banner-biere" do %>
-    <%= image_tag 'bieredumois.png', class: "imagedumois" %>
+      <p>La bière du mois, un coup de coeur de saison :</p>
+        <%= image_tag 'bieredumois.png', class: "imagedumois" %>
+      <%= link_to "Voir les bières", bieres_path, class: "btn-yellow"%>
+    <% else %>
+      <h1>Welcome</h1>
+      <p>La bière du mois, un coup de coeur de saison :</p>
+        <%= image_tag 'bieredumois.png', class: "imagedumois" %>
+      <%= link_to "Voir les bières", bieres_path, class: "btn-yellow"%>
     <% end %>
 </div>
