@@ -1,5 +1,10 @@
-Show commande
-<% @commande.commandeitems.each do |ci|%>
-<%= ci.item.nom  %>
-<%= ci.quantite  %>
-<% end %>
+ <div class="panier-contenu">
+      Show commande
+      <% @commande.commandeitems.each do |ci|%>
+      <%= ci.item.nom  %>
+      <%= ci.quantite  %>
+      <% end %>
+    </div>
+
+<%= render 'shared/layout_panier' %>
+<%= render 'shared/footer' %>
