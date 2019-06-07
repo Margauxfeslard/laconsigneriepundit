@@ -26,7 +26,7 @@ class CommandesController < ApplicationController
         end
       end
 
-      redirect_to commande_path(@commande)
+      redirect_to user_commande_path(@commande.user, @commande)
     else
       render :new
     end

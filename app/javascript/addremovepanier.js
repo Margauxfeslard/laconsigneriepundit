@@ -5,7 +5,6 @@ const addtobasket = document.querySelectorAll(".addtobasket");
 const removefrombasket = document.querySelectorAll(".removefrombasket");
 
 let panier = []
-
 bieres.forEach((biere) => {
   const ligne = {
     user: `${user_id}`,
@@ -17,10 +16,10 @@ bieres.forEach((biere) => {
   panier.push(ligne)
 });
 
-if (localStorage.getItem("panier")) {
-  panier = JSON.parse(localStorage.getItem("panier"))
+if (sessionStorage.getItem("panier")) {
+  panier = JSON.parse(sessionStorage.getItem("panier"))
 } else {
-  localStorage.setItem("panier", JSON.stringify(panier))
+  sessionStorage.setItem("panier", JSON.stringify(panier))
 }
 
 const displayPanier = (panier) => {
@@ -46,22 +45,21 @@ const displayPanier = (panier) => {
     }
   }
   )
-  localStorage.setItem("panier", "")
-  localStorage.setItem("panier", JSON.stringify(panier))
+  sessionStorage.setItem("panier", "")
+  sessionStorage.setItem("panier", JSON.stringify(panier))
 }
 
-displayPanier(JSON.parse(localStorage.getItem("panier")))
+displayPanier(JSON.parse(sessionStorage.getItem("panier")))
 
 const addOne = (biereid, event) => {
   panier.find((item) => {
     return item.biereid == biereid
-  }).quantite += 1
+  }).quantite += 1;
   displayPanier(panier)
   displayInput(event, biereid)
 }
 
 const removeOne = (biereid, event) => {
-  console.log(biereid);
   panier.find((item) => {
     return item.biereid == biereid
   }).quantite -= 1
