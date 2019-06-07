@@ -46,6 +46,14 @@
    font-size: 22px;
   }
 }
+.container-droit-panier{
+  margin-top: 115px;
+  height: 480px;
+  width: 25%;
+  top: 0;
+  position: sticky;
+  background-color: white;
+}
 
 #panier-show {
   text-align: right;
@@ -87,29 +95,15 @@
 }
 
 #brs-d {
-  text-align: center;
-}
-
-.caracteristiques {
+  margin-top: 10px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-}
-
-
-.caracteristiques .car-schm {
-  font-size: 12px;
-  letter-spacing: 8px;
-}
-
-.progress {
-  width: 175px;
-  height: 15px;
-  font-family: 'Karla', sans-serif;
+  justify-content: space-around;
 }
 
 .brasserie-picture {
   height: 180px;
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
 }
 
 /*Smallest device*/
@@ -181,7 +175,7 @@
   grid-column-start: 1;
   grid-column-end: 3;
   }
-    .container-interne {
+  .container-interne {
   grid-template-columns: 20% 20% 20% 20% 20%;
   }
   .carte-gauche {
@@ -191,6 +185,9 @@
   .carte-droite {
   grid-column-start: 4;
   grid-column-end: 6;
+  }
+  #brs-d {
+    margin-top: 10px;
   }
   .container-droit {
     display: block;

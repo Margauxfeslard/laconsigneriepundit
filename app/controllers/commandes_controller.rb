@@ -13,6 +13,8 @@ class CommandesController < ApplicationController
 
   def create # POST /commandes
     @commande = Commande.new(user: current_user, etat: 0)
+    @commande.user = current_user
+    @commande.etat = "pending"
     if @commande.save
       # créer les commande items
       bieres = Biere.all

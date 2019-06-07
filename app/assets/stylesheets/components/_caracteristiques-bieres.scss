@@ -1,0 +1,25 @@
+.caracteristiques {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.caracteristiques .car-schm {
+  font-size: 12px;
+  letter-spacing: 8px;
+}
+
+.progress {
+  width: 175px;
+  height: 17px;
+  font-family: 'Karla', sans-serif;
+  background-color: $light-gray;
+  margin-bottom: 17px;
+}
+
+
+.pastilles {
+  letter-spacing: 10px;
+  margin-right: -.5em;
+  margin-bottom: 12px;
+}

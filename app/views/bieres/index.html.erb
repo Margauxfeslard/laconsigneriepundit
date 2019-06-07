@@ -1,12 +1,15 @@
+<%= render 'shared/navbar' %>
+
 <h1>Liste des bières</h1>
 <div class="container-consignerie">
-    <div class="container-gauche">
-        <% @bieres.each do |biere| %>
-        <%= render 'bierecard', biere: biere %>
-        <% end %>
-    </div>
-
-    <div class="container-droit">
-        <%= render 'shared/layout_panier'%>
-    </div>
+  <div class="container-gauche">
+    <% @bieres.each do |biere| %>
+    <%= render 'bierecard', biere: biere %>
+    <% end %>
+  </div>
+  <div class="container-droit">
+  <%= render 'shared/layout_panier' %>
+  </div>
 </div>
+
+<%= render 'shared/footer' %>
