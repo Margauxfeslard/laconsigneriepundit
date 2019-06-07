@@ -1,9 +1,9 @@
 <%= render 'shared/navbar' %>
 
-<div class="container-consignerie">
+<div class="container-consignerie card-show" data-biereID='<%= @biere.id  %>' data-biereNom='<%= @biere.nom  %>' data-bierePrix='<%= @biere.prix_par_litre  %>'>
   <div class="container-gauche">
 
-    <div class="show">
+    <div class="show-biere">
 
       <div class="logo-place">
         <%= image_tag @biere.logo_img, class:"logo-picture" %>
@@ -17,6 +17,8 @@
         </div>
         <div class="carte-droite" id="panier-show">
           <h3><%= @biere.prix_par_litre %> € / litre</h3>
+
+          <%= render 'shared/add_remove_panier', biere: @biere %>
         </div>
 
         <div class="carte-gauche">
@@ -41,10 +43,9 @@
     </div>
   </div>
 
-  <div class="container-droit">
-    <p>Mon panier</p>
+  <div class="container-droit-panier">
+    <%= render 'shared/layout_panier' %>
   </div>
 
 </div>
-
 <%= render 'shared/footer' %>

@@ -1,4 +1,4 @@
-.show {
+.show-biere {
   grid-column-start: 1;
   grid-column-end: 3;
   background-color: $white;
@@ -45,6 +45,14 @@
   h3 {
    font-size: 22px;
   }
+}
+.container-droit-panier{
+  margin-top: 115px;
+  height: 480px;
+  width: 25%;
+  top: 0;
+  position: sticky;
+  background-color: white;
 }
 
 #panier-show {
@@ -102,7 +110,7 @@
   .container-gauche-show {
     grid-template-columns: 1fr;
   }
-  .show {
+  .show-biere {
   grid-column-start: 1;
   grid-column-end: 1;
   }
@@ -134,7 +142,7 @@
   .container-gauche-show {
     grid-template-columns: 1fr;
   }
-  .show {
+  .show-biere {
   grid-column-start: 1;
   grid-column-end: 1;
   }
@@ -162,7 +170,7 @@
   .container-gauche-show {
     grid-template-columns: 1fr 1fr;
   }
-  .show {
+  .show-biere {
   grid-column-start: 1;
   grid-column-end: 3;
   }

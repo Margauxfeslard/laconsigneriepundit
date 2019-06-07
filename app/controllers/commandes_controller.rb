@@ -14,7 +14,7 @@ class CommandesController < ApplicationController
   def create # POST /commandes
     @commande = Commande.new(user: current_user, etat: 0)
     @commande.user = current_user
-    @commande.etat = "en cours"
+    @commande.etat = "pending"
     if @commande.save
       # créer les commande items
       bieres = Biere.all
@@ -26,7 +26,7 @@ class CommandesController < ApplicationController
         end
       end
 
-      redirect_to commande_path(@commande)
+      redirect_to user_commande_path(@commande.user, @commande)
     else
       render :new
     end
@@ -34,6 +34,12 @@ class CommandesController < ApplicationController
 
   def edit # GET /articles/:id/edit
     @commande = Commande.find(params[:id])
+  end
+
+  def additem
+    raise
+    params[:commande_id]
+    params[:item_id]
   end
 
   def update

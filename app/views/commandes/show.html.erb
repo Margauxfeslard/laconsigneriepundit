@@ -1,5 +1,16 @@
-Show commande
-<% @commande.commandeitems.each do |ci|%>
-<%= ci.item.nom  %>
-<%= ci.quantite  %>
-<% end %>
+<div class="container-consignerie">
+  <div class="container-gauche">
+    Show commande
+    <% @commande.commandeitems.each do |ci|%>
+    <%= ci.item.nom  %>
+    <%= ci.quantite  %>
+    <% end %>
+ 
+  </div>
+
+  <div class="container-droit-panier">
+    <%= render 'shared/layout_panier' %>
+  </div>
+
+</div>
+<%= render 'shared/footer' %>
