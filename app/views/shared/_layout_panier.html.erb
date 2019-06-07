@@ -1,14 +1,15 @@
 <div class="panier-titre">
-  <h2 id = "layout" data-user=<%= current_user.id%>>> Mon panier</h2>
+  <h2 id = "layout" data-user=<%= current_user.id%>> Mon panier</h2>
 </div>
 <div class="panier-content">
   <form action='users/<%= current_user.id%>/commandes' method="post">
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <ul class="list-group panierligne">
-        <li id=2 class="list-group-item"><span class="bierenom"><p>Margaux</p></span><span class="bierequantite"><p>4 L</p></span><span class="biereprix"><p>14 €</p></span>
-         <input class="input" type="hidden" name="items[${ligne.biereid}]" value="${ligne.quantite}">
-         </li>
       </ul>
+
+      <ul class="list-group paniergrowler">
+      </ul>
+
         <input type="submit" class="btn-yellow" value="Valider mon panier">
   </form>
 </div>
