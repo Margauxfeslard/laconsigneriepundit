@@ -1,0 +1,35 @@
+.container-caracteristiques-index {
+  background-color: $light-gray;
+  margin-left: 65px;
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+}
+
+.car-txt-amertume {
+  font-family: 'Special Elite', cursive;
+  font-size: 19px !important;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.biere-car-picto {
+  display: flex;
+  justify-content: space-around;
+  ul {
+  padding: 0;
+  text-align: center;
+  list-style-type: none;
+  }
+}
+
+.car-txt-picto {
+  font-family: 'Special Elite', cursive;
+  font-size: 15px !important;
+  color: black;
+  line-height: 30px;
+}
+
+.div-picto-txt {
+  height: 70px;
+}

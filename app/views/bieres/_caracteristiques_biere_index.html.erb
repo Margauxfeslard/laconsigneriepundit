@@ -1,0 +1,56 @@
+<div class="container-caracteristiques-index">
+
+<div class="caracteristiques">
+  <div class="car-txt-amertume">Amertume</div>
+      <div class="progress">
+        <% if biere.amertume == 0 %>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="5">0/5</div>
+        <% elsif biere.amertume == 1 %>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 20%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="5">1/5</div>
+        <% elsif biere.amertume == 2 %>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 40%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="5">2/5</div>
+        <% elsif biere.amertume == 3 %>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 60%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="5">3/5</div>
+        <% elsif biere.amertume == 4 %>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 80%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="5">4/5</div>
+        <% elsif biere.amertume == 5 %>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="5">5/5</div>
+        <% end %>
+      </div>
+</div>
+
+  <div class="biere-car-picto">
+    <div class="div-picto-txt">
+      <ul>
+        <% if biere.couleur == "blanche" %>
+          <li><i class="fas fa-circle" style="color: rgba(253,233,174,1); font-size: 35px"></i></li>
+        <% elsif biere.couleur == "blonde" %>
+          <li><i class="fas fa-circle" style="color: rgba(250,200,95, 1); font-size: 35px"></i></li>
+        <% elsif biere.couleur == "rousse" %>
+          <li><i class="fas fa-circle" style="color: rgba(230,160,39,1); font-size: 35px"></i></li>
+        <% elsif biere.couleur == "ambrée" %>
+          <li><i class="fas fa-circle" style="color: rgba(163,71,15,1); font-size: 35px"></i></li>
+        <% elsif biere.couleur == "brune" %>
+          <li><i class="fas fa-circle" style="color: rgba(112,27,5,1); font-size: 35px"></i></li>
+        <% elsif biere.couleur == "noire" %>
+          <li><i class="fas fa-circle" style="color: rgba(65,14,10,1); font-size: 35px"></i></li>
+        <% else %>
+        <% end %>
+        <li class="car-txt-picto"><%= biere.couleur.capitalize %></li>
+      </ul>
+    </div>
+    <div class="div-picto-txt">
+      <ul>
+        <li><i class="fas fa-beer" style="color: rgb(38,94,90); font-size: 35px"></i></li>
+        <li class="car-txt-picto"><%= biere.taux_alcool.round %>%</li>
+      </ul>
+    </div>
+    <div class="div-picto-txt">
+      <ul>
+        <li><i class="fas fa-eye" style="color: rgb(38,94,90); font-size: 35px"></i></li>
+        <li class="car-txt-picto"><%= biere.apparence %></li>
+      </ul>
+    </div>
+  </div>
+
+</div>
