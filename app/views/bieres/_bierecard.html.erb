@@ -1,21 +1,26 @@
+<%= link_to biere_path(biere) do %>
     <div class="card-biere"  data-biereID='<%= biere.id  %>' data-biereNom='<%= biere.nom  %>' data-bierePrix='<%= biere.prix_par_litre  %>'=>
-        <%= link_to biere_path(biere) do %>
-        <%= image_tag biere.logo_img %>
-        <div class="card-biere-content">
-            <h2><%= biere.brasserie.nom %></h2>
-            <h3><%= biere.nom %></h3>
-            <% end %>
-            <p><%= biere.style %></p>
-            <div class="card_biere_carac_cadre">
-              <%= render 'shared/caracteristiques_biere', biere: biere %>
-                <div class="d-flex justify-content-around">
-                    <div class="badgerond"><p><%= biere.taux_alcool %></p></div>
+      <div class="logo-place-index">
+        <%= image_tag biere.logo_img, class:"logo-picture-index"%>
+      </div>
 
-                    <p><%= biere.prix_par_litre %></p>
-                </div>
-            </div>
-            <%= render 'shared/add_remove_panier', biere: biere %>
+      <div class="interieur-carte-biere">
+        <div class="carte-biere-titres">
+          <ul class= "inline">
+            <li><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></li>
+            <li style="color: black">144</li>
+          </ul>
+          <h2><%= biere.brasserie.nom %></h2>
+          <h3><%= biere.nom %></h3>
+          <%= render 'caracteristiques_biere_index', biere:biere %>
         </div>
-    </div>
-</div>
 
+      <div class="bas-card">
+        <div><p><%= biere.prix_par_litre %> € / litre</p></div>
+        <div><%= render 'shared/add_remove_panier', biere: biere %></div>
+      </div>
+      </div>
+
+    </div>
+
+<% end %>
