@@ -1,4 +1,4 @@
-<h2> ceci est le panier</h2>
+<h2  id = "layout" data-user=<%= current_user.id%>> ceci est le panier</h2>
 
 <form action='/commandes' method="post">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
