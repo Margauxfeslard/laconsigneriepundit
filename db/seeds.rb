@@ -65,16 +65,24 @@ Growler.create!(
 puts "creating users"
 user1 = User.create!(
   email: "charles@gmail.com",
-  password: "password"
+  password: "password",
+  nom: "Noppe",
+  prenom: "Charles"
 )
 user2 = User.create!(
   email: "margaux@gmail.com",
-  password: "password"
+  password: "password",
+  nom: "Feslard",
+  prenom: "Margaux"
 )
+
 user3 = User.create!(
   email: "marie@gmail.com",
-  password: "password"
+  password: "password",
+  nom: "Cauliez",
+  prenom: "Marie"
 )
+
 
 
 puts "creating reviews"
