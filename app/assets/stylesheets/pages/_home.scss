@@ -22,20 +22,11 @@
   padding-right: 80px;
   padding-bottom: 15px;
   text-align: center;
+  z-index:1;
 }
 
 .front-content{
-  position: relative;
+  position:relative;
+  top: 78.9vh;
 }
-
-.landing-background {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), asset-url("banner2.jpg");
-  height: 100vh;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  position: fixed;
-  top: 0;
-}
-
 

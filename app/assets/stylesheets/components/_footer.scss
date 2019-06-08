@@ -6,10 +6,10 @@
   height: 70px;
   padding: 0px 50px;
   color: black;
-  position:relative;
-  z-index: 2;
   margin-top: 50px;
+
 }
+
 .footer-links {
   display: flex;
   align-items: center;
@@ -24,3 +24,5 @@
 .footer-links a:hover {
   opacity: 1;
 }
+
+html{ height:100%; }
