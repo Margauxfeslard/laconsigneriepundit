@@ -20,6 +20,12 @@
              <%= link_to "Déconnexion",destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
         </li>
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mon panier</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <%= render 'shared/layout_panier' %>
+            </div>
+        </li>
         <% else %>
         <li class="nav-item">
            <%= link_to "Les bières", bieres_path, class: "nav-link" %>
