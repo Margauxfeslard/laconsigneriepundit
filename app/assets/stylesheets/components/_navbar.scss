@@ -9,7 +9,9 @@
   .navbar-nav .active > .nav-link{
     color:white;
   }
-
+  #navbarNavDropdown{
+  margin-right: 30px;
+  }
 }
 
 .navbar-light{
@@ -21,6 +23,9 @@
   }
   .navbar-nav .active > .nav-link{
     color:white;
+  }
+  #navbarNavDropdown{
+  margin-right: 30px;
   }
 }
 
@@ -55,5 +60,13 @@
     text-transform: uppercase;
     color: #265E5A;
     }
+    border: none;
 }
+.dropdown-menu .panier .show{
+  width: 230px;
+}
+.navbar-expand-lg .navbar-nav .dropdown-menu{
+  width: 230px;
+}
+
 
