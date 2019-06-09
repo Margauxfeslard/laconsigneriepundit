@@ -3,25 +3,30 @@
         <%= cl_image_tag biere.logo_img, class:"logo-picture-index"%>
       </div>
 
-      <div class="interieur-carte-biere">
+  <div class="logo-place-index">
+    <%= cl_image_tag biere.logo_img, class:"logo-picture-index"%>
+  </div>
+
+  <div class="interieur-carte-biere">
         <%= link_to biere_path(biere) do %>
         <div class="carte-biere-titres">
-          <ul class= "inline">
-            <li><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></li>
-            <li style="color: black">144</li>
-          </ul>
-          <h2><%= biere.brasserie.nom %></h2>
-          <h3><%= biere.nom %></h3>
-          <%= render 'caracteristiques_biere_index', biere:biere %>
+          <h2><%= biere.nom %></h2>
+          <h3>Brasserie <%= biere.brasserie.nom %></h3>
+          <div class="etoiles-notes">
+            <ul class= "inline">
+              <li><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></li>
+              <li id="txt">144 notes</li>
+            </ul>
+          </div>
           <% end %>
+
+        <div class="bas-card">
+          <div class="super"><p><%= biere.prix_par_litre %> € / litre</p></div>
+          <div class="cool"><%= render 'shared/add_remove_panier', biere: biere %></div>
         </div>
 
-      <div class="bas-card">
-        <div><p><%= biere.prix_par_litre %> € / litre</p></div>
-        <div><%= render 'shared/add_remove_panier', biere: biere %></div>
-      </div>
-      </div>
-
-    </div>
+        </div>
+  </div>
+</div>
 
 

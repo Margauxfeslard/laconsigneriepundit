@@ -1,18 +1,29 @@
 <%= render 'shared/navbar' %>
-  <h4>Découvrez les <%= @bieres.length %> bières du mois !</h4>
+  <div class="banniere-presentation">
+      <div class="banniere-presentation-title">
+        <h4>Les <%= @bieres.length %> bières du mois !</h4>
+      </div>
 
-<div class="container-consignerie">
+      <div class="trait">
+      </div>
+
+      <div class="banniere-presentation-txt">
+        <p>Chaque mois découvrez notre gamme de bières aux styles très différents ! Régionales, françaises ou internationales, faites votre choix et remplissez vos growlers. Il ne vous reste plus qu'à déboucher, verser, trinquer, partager et déguster ! Tchin ! </p>
+      </div>
+  </div>
+
+  <div class="container-consignerie">
 
     <div class="container-gauche-index">
-        <% @bieres.each do |biere| %>
+      <% @bieres.each do |biere| %>
         <%= render 'bierecard', biere: biere %>
-        <% end %>
+      <% end %>
     </div>
 
-   <!--  <div class="container-droit">
-        <%#= render 'shared/layout_panier'%>
-    </div> -->
+    <div class="container-droit">
+      <%= render 'shared/layout_panier'%>
+    </div>
 
-</div>
+  </div>
 
 <%= render 'shared/footer' %>

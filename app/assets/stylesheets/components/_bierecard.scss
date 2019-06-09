@@ -1,103 +1,84 @@
-.relative{
-  position: relative;
-  width: 300px;
-  height: 350px;
-  img{
-    width: 150px;
-    position: absolute;
-    top: 30%;
-    left: 0; /* à 50%/50% du parent référent */
-    transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
-  }
-}
-
 .card-biere {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 10px 10px rgba(0,0,0,0.2);
-  height: 100%;
-  border-radius: 10px;
-  text-align: right;
-  margin:0 0 0 0;
+background-color: white;
+  width: 90%;
+  height: 310px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  margin-top: 38px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   a {
     text-decoration: none;
-    &:hover {
-      transition: 0.2;
-      text-decoration: none;
-    }
   }
 }
 
-.card-biere-content{
-  width: 80%;
-  margin-right: 5px;
-  margin-left: auto;
+.logo-picture-index {
+  width: auto;
+  height: 145px;
 }
 
-.badgerond{
-  border-style: solid;
-  border-width: 1px;
+.logo-place-index {
+  background-color: $white;
+  width: 145px;
+  height: 145px;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  position: absolute;
+  top: -52.5px;
+}
+
+.interieur-carte-biere {
+  width: 90%;
+  position: absolute;
+  top: 93px;
+  padding: 15px;
+}
+
+.carte-biere-titres {
   text-align: center;
-}
-
-.card_biere_carac_cadre{
-  background: lightgray;
-  padding: 5px;
-  margin: 0 0 5px 0;
-  box-shadow: 0 10px 10px rgba(0,0,0,0.2);
-  height: 150px;
-}
-.progress{
-  margin-top: 5px;
-  margin-bottom: 5px;
-  background-color: white;
-  p{
-    font-size: 12px;
-    margin-top: 0px;
+  h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: $green;
+    font-size: 31px;
+    font-weight: bold;
+    margin-bottom: 9px;
+    }
+  h3 {
+    font-size: 19px;
+    font-family: 'Karla', sans-serif;
     margin-bottom: 0px;
-    text-align: left;
   }
 }
 
-
-
-
-.card-top {
-text-align: right;
-padding: 3px;
-h2{
-  line-height: 0.8;
-}
-h3{
-  line-height: 0.8;
-}
-}
-
-
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
+.etoiles-notes {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+  .inline {
+    padding: 0px;
+  li {
+    display: inline;
+    color: $yellow;
+    font-size: 10px;
+  }
+  #txt {
+    color: black;
+    font-size: 12px;
   }
 }
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+.bas-card {
+  border-top: 1px solid $light-gray;
+  padding-top: 15px;
+  padding-bottom: 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-
+.container-droit {
+  margin-top: 38px;
 }
+
