@@ -1,4 +1,3 @@
-
 puts "deleting"
 Commandeitem.destroy_all
 Commande.destroy_all
@@ -10,13 +9,6 @@ User.destroy_all
 Pointcollecte.destroy_all
 
 puts "creating brasserie"
-# granivore = Brasserie.create!(
-#   nom: "Granivore",
-#   adresse: "Lille",
-#   description: "Au delà d'une brasserie de production, le Singe propose un BrewLab composé d'une école de brassage où apprendre et s'améliorer. C'est aussi un lieu où échanger avec les autres passionné-e-s et un BrewShop où acheter vos matières premières ainsi que votre matériel de brassage. Sensations fortes garanties ! N'hésitez pas à nous contactez si vous êtes intéressée.",
-#   photo: "http://www.singe-savant.com/static/images/brewery/magasin.jpg"
-# )
-
 jenlain = Brasserie.create!(
   nom:"Jenlain",
   adresse:"Brasserie Duyck, 113 Route nationale, 59144 Jenlain",
@@ -244,33 +236,6 @@ traditionbiere = Biere.create!(
 traditionbiere.remote_logo_img_url = "https://res.cloudinary.com/dbvuwwxkt/image/upload/v1560088825/lil_drh4al.png"
 traditionbiere.save
 
-# Biere.create!(
-#   nom: "21st century",
-#   brasserie: granivore,
-#   description: "La première Berliner Weisse de la brasserie ! Ultra rafraîchissante, la One Trip a été acidulée naturellement au lactobacille pendant 24h et fermentée avec de la poire cultivée en biodynamie et du cassis biologique, nous avons designé une bière pour permettre à tous de mettre un pied en douceur dans le monde des bières acides. One Trip, One Noise !",
-#   style: "berliner weiss",
-#   couleur: "rousse",
-#   taux_alcool: rand(4..12),
-#   amertume: rand(1..5),
-#   apparence: "Très trouble",
-#   prix_par_litre: 8,
-#   )
-
-# Brasserie.all.each do |brasserie|
-#     3.times do |n|
-#       Biere.create!(
-#       nom: brasserie.nom + "biere" + n.to_s,
-#       brasserie: brasserie,
-#       couleur: "blonde",
-#       taux_alcool: rand(4..12),
-#       amertume: rand(1..5),
-#       apparence: "Claire",
-#       prix_par_litre: 2 * n
-#       logo_img: "https://erp.singe-savant.com//files/Papa_badge_small.png"
-#       )
-#     end
-# end
-
 puts "creating growler"
 Growler.create!(
   capacite: 2,
@@ -323,14 +288,14 @@ end
 puts "creating commande"
 10.times do |n|
   Commande.create!(
-  user: user1,
+  user: User.all.sample,
   pointcollecte: Pointcollecte.all.sample,
   etat: 1
   )
 end
 
 commandegrowler = Commande.create!(
-user: user1,
+user: User.all.sample,
 pointcollecte: Pointcollecte.all.sample,
 etat: 1
 )

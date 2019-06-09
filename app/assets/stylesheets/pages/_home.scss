@@ -5,8 +5,8 @@
 
 .text-concept {
   background-color: white;
-  padding: 40px;
-  h1{
+  padding: 30px;
+  h2{
     color: #265E5A;
   }
 }
@@ -23,10 +23,13 @@
   padding-bottom: 15px;
   text-align: center;
   z-index:1;
+  h2{
+    font-size: 50px;
+  }
 }
 
 .front-content{
   position:relative;
-  top: 78.9vh;
+  top: 70vh;
 }
 
