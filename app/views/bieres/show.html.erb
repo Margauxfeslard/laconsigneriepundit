@@ -6,7 +6,7 @@
     <div class="show-biere">
 
       <div class="logo-place">
-        <%= image_tag @biere.logo_img, class:"logo-picture" %>
+        <%= cl_image_tag @biere.logo_img, class:"logo-picture" %>
       </div>
 
       <div class="container-interne">
@@ -35,7 +35,7 @@
           <p><%= @biere.brasserie.description %></p>
         </div>
         <div class="carte-droite" id="brs-d">
-          <%= image_tag @biere.brasserie.photo, class:"brasserie-picture" %>
+          <%= cl_image_tag @biere.brasserie.photo, class:"brasserie-picture" %>
         </div>
 
       </div>
