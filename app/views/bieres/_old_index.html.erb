@@ -1,0 +1,18 @@
+<%= render 'shared/navbar' %>
+  <h4>Découvrez les <%= @bieres.length %> bières du mois !</h4>
+
+<div class="container-consignerie">
+
+    <div class="container-gauche-index">
+        <% @bieres.each do |biere| %>
+        <%= render 'bierecard', biere: biere %>
+        <% end %>
+    </div>
+
+   <!--  <div class="container-droit">
+        <%#= render 'shared/layout_panier'%>
+    </div> -->
+
+</div>
+
+<%= render 'shared/footer' %>
