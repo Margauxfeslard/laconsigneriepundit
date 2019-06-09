@@ -1,29 +1,26 @@
 .panier-titre{
   text-align: center;
-  background-color: #dadddf;
+  h2 {
+    color:#265E5A;
+  }
 }
 
 .panier-content form {
   text-align:center;
 }
+
+.panier-content{
+  p{
+    margin: 0;
+    font-size: 14px;
+  }
+}
 .list-group-item{
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .list-group .panierligne{
-
-}
-
-.bierenom span{
-  margin: 0;
-}
-
-.bierequantite span{
-  margin:0;
-}
-
-.biereprix span{
-  margin:0;
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  margin: 1px;
 }
