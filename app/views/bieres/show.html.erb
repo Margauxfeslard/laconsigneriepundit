@@ -16,9 +16,13 @@
           <p>Les reviews des internautes</p>
         </div>
         <div class="carte-droite" id="panier-show">
-          <h3><%=humanized_money_with_symbol(@biere.price) %> / litre</h3>
 
-          <%= render 'shared/add_remove_panier', biere: @biere %>
+          <h3><%=humanized_money_with_symbol(@biere.price) %> / litre</h3>
+          <div id="mise-panier">
+            <i class="fas fa-cart-arrow-down" style="color: rgb(121,121,121); margin-right: 20px; margin-top: 5px; font-size: 30px"></i>
+            <%= render 'shared/add_remove_panier', biere: @biere %>
+          </div>
+
         </div>
 
         <div class="carte-gauche">
@@ -43,9 +47,9 @@
     </div>
   </div>
 
- <!--  <div class="container-droit-panier">
+  <div class="container-droit-panier">
     <%= render 'shared/layout_panier' %>
-  </div> -->
+  </div>
 
 </div>
 <%= render 'shared/footer' %>

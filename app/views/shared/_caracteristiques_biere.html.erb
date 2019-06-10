@@ -1,75 +1,77 @@
-<div class="caracteristiques">
-  <div class="car-txt"><h3>Couleur</h3></div>
-  <div class="pastilles">
-    <% if biere.couleur == "blanche" %>
-    <i class="fas fa-circle" style="color: rgba(253,233,174,1); -webkit-text-stroke: 2px black; font-size: 14px;"></i><i class="fas fa-circle" style="color: rgba(250,200,95, 1)"></i><i class="fas fa-circle" style="color: rgba(230,160,39,1)"></i><i class="fas fa-circle" style="color: rgba(163,71,15,1)"></i><i class="fas fa-circle" style="color: rgba(112,27,5,1)"></i><i class="fas fa-circle" style="color: rgba(65,14,10,1)"></i>
-  <% elsif biere.couleur == "blonde" %>
-    <i class="fas fa-circle" style="color: rgba(253,233,174,1)"></i><i class="fas fa-circle" style="-webkit-text-stroke: 2px black; font-size: 14px; color: rgba(250,200,95, 1)"></i><i class="fas fa-circle" style="color: rgba(230,160,39,1)"></i><i class="fas fa-circle" style="color: rgba(163,71,15,1)"></i><i class="fas fa-circle" style="color: rgba(112,27,5,1)"></i><i class="fas fa-circle" style="color: rgba(65,14,10,1)"></i>
-  <% elsif biere.couleur == "rousse" %>
-    <i class="fas fa-circle" style="color: rgba(253,233,174,1)"></i><i class="fas fa-circle" style="color: rgba(250,200,95, 1)"></i><i class="fas fa-circle" style="-webkit-text-stroke: 2px black; font-size: 14px; color: rgba(230,160,39,1)"></i><i class="fas fa-circle" style="color: rgba(163,71,15,1)"></i><i class="fas fa-circle" style="color: rgba(112,27,5,1)"></i><i class="fas fa-circle" style="color: rgba(65,14,10,1)"></i>
-  <% elsif biere.couleur == "ambrée" %>
-    <i class="fas fa-circle" style="color: rgba(253,233,174,1)"></i><i class="fas fa-circle" style="color: rgba(250,200,95, 1)"></i><i class="fas fa-circle" style="color: rgba(230,160,39,1)"></i><i class="fas fa-circle" style="-webkit-text-stroke: 2px black; font-size: 14px; color: rgba(163,71,15,1)"></i><i class="fas fa-circle" style="color: rgba(112,27,5,1)"></i><i class="fas fa-circle" style="color: rgba(65,14,10,1)"></i>
-  <% elsif biere.couleur == "brune" %>
-    <i class="fas fa-circle" style="color: rgba(253,233,174,1)"></i><i class="fas fa-circle" style="color: rgba(250,200,95, 1)"></i><i class="fas fa-circle" style="-webkit-text-stroke: 2px black; font-size: 14px; color: rgba(230,160,39,1)"></i><i class="fas fa-circle" style="color: rgba(163,71,15,1)"></i><i class="fas fa-circle" style="-webkit-text-stroke: 2px black; font-size: 14px; color: rgba(112,27,5,1)"></i><i class="fas fa-circle" style="color: rgba(65,14,10,1)"></i>
-  <% elsif biere.couleur == "noire" %>
-    <i class="fas fa-circle" style="color: rgba(253,233,174,1)"></i><i class="fas fa-circle" style="color: rgba(250,200,95, 1)"></i><i class="fas fa-circle" style="color: rgba(230,160,39,1)"></i><i class="fas fa-circle" style="color: rgba(163,71,15,1)"></i><i class="fas fa-circle" style="color: rgba(112,27,5,1)"></i><i class="fas fa-circle" style="-webkit-text-stroke: 2px black; font-size: 14px; color: rgba(65,14,10,1)"></i>
-  <% else %>
-  <% end %>
+<div class="container-caracteristiques">
+  <div class="caracteristiques">
+    <div class="car-txt"><h3>Couleur</h3></div>
+    <div class="pastilles">
+      <% if biere.couleur == "blanche" %>
+      <i class="fas fa-circle" style="color: rgba(253,233,174,1); -webkit-text-stroke: 2px black; font-size: 14px;"></i><i class="fas fa-circle" style="color: rgba(250,200,95, 1)"></i><i class="fas fa-circle" style="color: rgba(230,160,39,1)"></i><i class="fas fa-circle" style="color: rgba(163,71,15,1)"></i><i class="fas fa-circle" style="color: rgba(112,27,5,1)"></i><i class="fas fa-circle" style="color: rgba(65,14,10,1)"></i>
+    <% elsif biere.couleur == "blonde" %>
+      <i class="fas fa-circle" style="color: rgba(253,233,174,1)"></i><i class="fas fa-circle" style="-webkit-text-stroke: 2px black; font-size: 14px; color: rgba(250,200,95, 1)"></i><i class="fas fa-circle" style="color: rgba(230,160,39,1)"></i><i class="fas fa-circle" style="color: rgba(163,71,15,1)"></i><i class="fas fa-circle" style="color: rgba(112,27,5,1)"></i><i class="fas fa-circle" style="color: rgba(65,14,10,1)"></i>
+    <% elsif biere.couleur == "rousse" %>
+      <i class="fas fa-circle" style="color: rgba(253,233,174,1)"></i><i class="fas fa-circle" style="color: rgba(250,200,95, 1)"></i><i class="fas fa-circle" style="-webkit-text-stroke: 2px black; font-size: 14px; color: rgba(230,160,39,1)"></i><i class="fas fa-circle" style="color: rgba(163,71,15,1)"></i><i class="fas fa-circle" style="color: rgba(112,27,5,1)"></i><i class="fas fa-circle" style="color: rgba(65,14,10,1)"></i>
+    <% elsif biere.couleur == "ambrée" %>
+      <i class="fas fa-circle" style="color: rgba(253,233,174,1)"></i><i class="fas fa-circle" style="color: rgba(250,200,95, 1)"></i><i class="fas fa-circle" style="color: rgba(230,160,39,1)"></i><i class="fas fa-circle" style="-webkit-text-stroke: 2px black; font-size: 14px; color: rgba(163,71,15,1)"></i><i class="fas fa-circle" style="color: rgba(112,27,5,1)"></i><i class="fas fa-circle" style="color: rgba(65,14,10,1)"></i>
+    <% elsif biere.couleur == "brune" %>
+      <i class="fas fa-circle" style="color: rgba(253,233,174,1)"></i><i class="fas fa-circle" style="color: rgba(250,200,95, 1)"></i><i class="fas fa-circle" style="-webkit-text-stroke: 2px black; font-size: 14px; color: rgba(230,160,39,1)"></i><i class="fas fa-circle" style="color: rgba(163,71,15,1)"></i><i class="fas fa-circle" style="-webkit-text-stroke: 2px black; font-size: 14px; color: rgba(112,27,5,1)"></i><i class="fas fa-circle" style="color: rgba(65,14,10,1)"></i>
+    <% elsif biere.couleur == "noire" %>
+      <i class="fas fa-circle" style="color: rgba(253,233,174,1)"></i><i class="fas fa-circle" style="color: rgba(250,200,95, 1)"></i><i class="fas fa-circle" style="color: rgba(230,160,39,1)"></i><i class="fas fa-circle" style="color: rgba(163,71,15,1)"></i><i class="fas fa-circle" style="color: rgba(112,27,5,1)"></i><i class="fas fa-circle" style="-webkit-text-stroke: 2px black; font-size: 14px; color: rgba(65,14,10,1)"></i>
+    <% else %>
+    <% end %>
+    </div>
   </div>
-</div>
 
-<div class="caracteristiques">
-  <div class="car-txt"><h3>Alcool</h3></div>
-      <div class="progress">
-        <% if biere.taux_alcool <=5 %>
-          <div class="progress-bar bg-success" role="progressbar" style="width: 12.5%" aria-valuenow="25" aria-valuemin="4" aria-valuemax="12"><%=biere.taux_alcool.round%>%</div>
-        <% elsif biere.taux_alcool <=6 %>
-          <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="4" aria-valuemax="12"><%=biere.taux_alcool.round%>%</div>
-        <% elsif biere.taux_alcool <=7 %>
-          <div class="progress-bar bg-success" role="progressbar" style="width: 37.5%" aria-valuenow="25" aria-valuemin="4" aria-valuemax="12"><%=biere.taux_alcool.round%>%</div>
-        <% elsif biere.taux_alcool <=8 %>
-          <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="4" aria-valuemax="12"><%=biere.taux_alcool.round%>%</div>
-        <% elsif biere.taux_alcool <=9 %>
-          <div class="progress-bar bg-success" role="progressbar" style="width: 62.5%" aria-valuenow="25" aria-valuemin="4" aria-valuemax="12"><%=biere.taux_alcool.round%>%</div>
-        <% elsif biere.taux_alcool <=10 %>
-          <div class="progress-bar bg-success" role="progressbar" style="width: 87.5%" aria-valuenow="25" aria-valuemin="4" aria-valuemax="12"><%=biere.taux_alcool.round%>%</div>
-        <% elsif biere.taux_alcool >10 %>
-          <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="4" aria-valuemax="12"><%=biere.taux_alcool.round%>%</div>
-        <% else %>
-        <% end %>
-      </div>
-</div>
-<div class="caracteristiques">
-  <div class="car-txt"><h3>Amertume</h3></div>
-      <div class="progress">
-        <% if biere.amertume == 0 %>
-          <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="5">0/5</div>
-        <% elsif biere.amertume == 1 %>
-          <div class="progress-bar bg-success" role="progressbar" style="width: 20%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="5">1/5</div>
-        <% elsif biere.amertume == 2 %>
-          <div class="progress-bar bg-success" role="progressbar" style="width: 40%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="5">2/5</div>
-        <% elsif biere.amertume == 3 %>
-          <div class="progress-bar bg-success" role="progressbar" style="width: 60%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="5">3/5</div>
-        <% elsif biere.amertume == 4 %>
-          <div class="progress-bar bg-success" role="progressbar" style="width: 80%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="5">4/5</div>
-        <% elsif biere.amertume == 5 %>
-          <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="5">5/5</div>
-        <% end %>
-      </div>
-</div>
-<div class="caracteristiques">
-  <div class="car-txt"><h3>Apparence</h3></div>
-      <div class="progress">
-        <% if biere.apparence == "Très claire" %>
-          <div class="progress-bar bg-success" role="progressbar" style="width: 20%" aria-valuenow="25" aria-valuemin="1" aria-valuemax="5">Très claire</div>
-        <% elsif biere.apparence == "Claire" %>
-          <div class="progress-bar bg-success" role="progressbar" style="width: 40%" aria-valuenow="25" aria-valuemin="1" aria-valuemax="5">Claire</div>
-        <% elsif biere.apparence == "Opalescente" %>
-          <div class="progress-bar bg-success" role="progressbar" style="width: 60%" aria-valuenow="25" aria-valuemin="1" aria-valuemax="5">Opalescente</div>
-        <% elsif biere.apparence == "Trouble" %>
-          <div class="progress-bar bg-success" role="progressbar" style="width: 80%" aria-valuenow="25" aria-valuemin="1" aria-valuemax="5">Trouble</div>
-        <% elsif biere.apparence == "Très trouble" %>
-          <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="1" aria-valuemax="5">Très trouble</div>
-        <% end %>
-      </div>
+  <div class="caracteristiques">
+    <div class="car-txt"><h3>Alcool</h3></div>
+        <div class="progress">
+          <% if biere.taux_alcool <=5 %>
+            <div class="progress-bar bg-success" role="progressbar" style="width: 12.5%" aria-valuenow="25" aria-valuemin="4" aria-valuemax="12"><%=biere.taux_alcool.round%>%</div>
+          <% elsif biere.taux_alcool <=6 %>
+            <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="4" aria-valuemax="12"><%=biere.taux_alcool.round%>%</div>
+          <% elsif biere.taux_alcool <=7 %>
+            <div class="progress-bar bg-success" role="progressbar" style="width: 37.5%" aria-valuenow="25" aria-valuemin="4" aria-valuemax="12"><%=biere.taux_alcool.round%>%</div>
+          <% elsif biere.taux_alcool <=8 %>
+            <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="4" aria-valuemax="12"><%=biere.taux_alcool.round%>%</div>
+          <% elsif biere.taux_alcool <=9 %>
+            <div class="progress-bar bg-success" role="progressbar" style="width: 62.5%" aria-valuenow="25" aria-valuemin="4" aria-valuemax="12"><%=biere.taux_alcool.round%>%</div>
+          <% elsif biere.taux_alcool <=10 %>
+            <div class="progress-bar bg-success" role="progressbar" style="width: 87.5%" aria-valuenow="25" aria-valuemin="4" aria-valuemax="12"><%=biere.taux_alcool.round%>%</div>
+          <% elsif biere.taux_alcool >10 %>
+            <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="4" aria-valuemax="12"><%=biere.taux_alcool.round%>%</div>
+          <% else %>
+          <% end %>
+        </div>
+  </div>
+  <div class="caracteristiques">
+    <div class="car-txt"><h3>Amertume</h3></div>
+        <div class="progress">
+          <% if biere.amertume == 0 %>
+            <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="5">0/5</div>
+          <% elsif biere.amertume == 1 %>
+            <div class="progress-bar bg-success" role="progressbar" style="width: 20%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="5">1/5</div>
+          <% elsif biere.amertume == 2 %>
+            <div class="progress-bar bg-success" role="progressbar" style="width: 40%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="5">2/5</div>
+          <% elsif biere.amertume == 3 %>
+            <div class="progress-bar bg-success" role="progressbar" style="width: 60%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="5">3/5</div>
+          <% elsif biere.amertume == 4 %>
+            <div class="progress-bar bg-success" role="progressbar" style="width: 80%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="5">4/5</div>
+          <% elsif biere.amertume == 5 %>
+            <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="5">5/5</div>
+          <% end %>
+        </div>
+  </div>
+  <div class="caracteristiques">
+    <div class="car-txt"><h3>Apparence</h3></div>
+        <div class="progress">
+          <% if biere.apparence == "Très claire" %>
+            <div class="progress-bar bg-success" role="progressbar" style="width: 20%" aria-valuenow="25" aria-valuemin="1" aria-valuemax="5">Très claire</div>
+          <% elsif biere.apparence == "Claire" %>
+            <div class="progress-bar bg-success" role="progressbar" style="width: 40%" aria-valuenow="25" aria-valuemin="1" aria-valuemax="5">Claire</div>
+          <% elsif biere.apparence == "Opalescente" %>
+            <div class="progress-bar bg-success" role="progressbar" style="width: 60%" aria-valuenow="25" aria-valuemin="1" aria-valuemax="5">Opalescente</div>
+          <% elsif biere.apparence == "Trouble" %>
+            <div class="progress-bar bg-success" role="progressbar" style="width: 80%" aria-valuenow="25" aria-valuemin="1" aria-valuemax="5">Trouble</div>
+          <% elsif biere.apparence == "Très trouble" %>
+            <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="1" aria-valuemax="5">Très trouble</div>
+          <% end %>
+        </div>
+  </div>
 </div>

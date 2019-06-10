@@ -65,9 +65,9 @@ thiriez.save
 page24 = Brasserie.create!(
   nom: "Page 24",
   adresse:"26 Route d'Arras, 62160 Aix-Noulette",
-  description:"La brasserie Saint Germain a été créée en 2003 par Vincent, Stéphane et Hervé, tous trois passionnés de bières et souhaitant réaliser leurs propres recettes. Elle est installée à Aix Noulette, petit village de l'Artois au riche passé brassicole. La philosophie de la brasserie fût dès le début de l'aventure basée sur l'utilisation prioritaire de matières premières régionales afin de perpétuer la tradition brassicole et agricole de la région Nord Pas de Calais. Ainsi, les bières de garde de la Gamme Page 24 sont brassées exclusivement à partir de houblons  provenant de la coopérative régionale Coophounord.",
+  description:"La brasserie Saint Germain a été créée en 2003 par Vincent, Stéphane et Hervé, tous trois passionnés de bières et souhaitant réaliser leurs propres recettes. La philosophie de la brasserie fût dès le début de l'aventure basée sur l'utilisation prioritaire de matières premières régionales afin de perpétuer la tradition brassicole et agricole de la région Nord Pas de Calais. Ainsi, les bières de garde de la Gamme Page 24 sont brassées exclusivement à partir de houblons  provenant de la coopérative régionale Coophounord.",
   )
-page24.remote_photo_url = "https://res.cloudinary.com/dg5ekyjef/image/upload/v1560155183/page_24_logo_2_ewjcr1.png"
+page24.remote_photo_url = "https://res.cloudinary.com/dg5ekyjef/image/upload/v1560165651/Brasserie_Saint_Germain_Fermentation_Principale_1_t9xls4.jpg"
 page24.save
 
 aupif = Brasserie.create!(
@@ -101,10 +101,10 @@ labise = Biere.create!(
   brasserie: jenlain,
   description:"La bise blonde est une authentique création brassicole fondée sur l'assemblage d'une bière à fermentation basse pour la légèreté et la fraicheur et d'une bière à fermentation haute pour le corsé, la rondeur et l'amertume. Grâce à cette approche décalée, la Bise surprendra par sa personnalité pétillante et sa fraîcheur haute en saveurs." ,
   style:"Blonde",
-  couleur: "Jaune or",
+  couleur: "blonde",
   taux_alcool: 5.4,
-  amertume:4,
-  apparence:"Jaune or",
+  amertume: 4,
+  apparence:"Claire",
   price_cents: 1000,
   )
 labise.remote_logo_img_url = "https://res.cloudinary.com/dg5ekyjef/image/upload/v1560155519/La_bise_logo_dscve0.png"
@@ -115,10 +115,10 @@ hopshot = Biere.create!(
   brasserie: singesavant,
   description: "Hop Shot est une bière trans-atlantique : brassée avec un déluge de houblons à la fois américains et locaux, elle délivre au nez un surprenant bouquet d’arômes fruités et floraux d’agrumes. Associé à un corps désaltérant et une douce amertume, la Hop Shot incarne le style West Coast de l’IPA (India Pale Ale) et invite à découvrir un subtil mélange de saveurs citronnées, pamplemousses et résineuses.",
   style:"West Coast IPA",
-  couleur:"Ambrée" ,
-  taux_alcool: 5.1 ,
+  couleur:"ambrée",
+  taux_alcool: 5.1,
   amertume: 3,
-  apparence: "Robe cuivrée",
+  apparence: "Trouble",
   price_cents: 1200,
   )
 hopshot.remote_logo_img_url = "https://res.cloudinary.com/dbvuwwxkt/image/upload/v1560088826/Hopshot_img_s8zeo8.png"
@@ -129,10 +129,10 @@ koukestout = Biere.create!(
   brasserie:bellenaert,
   description:"Brassin éphémère n°14" ,
   style:"American Stout",
-  couleur: "Noir" ,
+  couleur: "noire" ,
   taux_alcool: 5.5,
   amertume: 2,
-  apparence: "Impérial stout",
+  apparence: "Trouble",
   price_cents: 1400,
   )
 koukestout.remote_logo_img_url = "https://res.cloudinary.com/dg5ekyjef/image/upload/v1560155110/kouke_gqkn1w.jpg"
@@ -143,10 +143,10 @@ poulemouillee = Biere.create!(
   brasserie: tandem,
   description: "Une jolie IPA qui titre à '6,5%' d'alcool et qui vous garantit une explosion en bouche avec un équilibre parfait entre amertume et aromatique !",
   style: "IPA",
-  couleur: "Dorée" ,
+  couleur: "blonde" ,
   taux_alcool: 6.5,
   amertume: 3,
-  apparence:"Blonde",
+  apparence:"Claire",
   price_cents: 1500,
   )
 poulemouillee.remote_logo_img_url = "https://res.cloudinary.com/dbvuwwxkt/image/upload/v1560088825/poulemouillee_eqxp4n.png"
@@ -157,10 +157,10 @@ transition = Biere.create!(
   brasserie: hub,
   description: "A définir",
   style: "A définir",
-  couleur: "A définir",
+  couleur: "blonde",
   taux_alcool: 6,
   amertume: 3,
-  apparence: "A définir",
+  apparence: "Très claire",
   price_cents: 1200,
   )
 transition.remote_logo_img_url = "https://res.cloudinary.com/dbvuwwxkt/image/upload/v1560088825/transitionhub_v86vbr.png"
@@ -171,10 +171,10 @@ esquelbecq = Biere.create!(
   brasserie:thiriez,
   description: "La Blonde d'Esquelbecq est une bière blonde à la mousse crémeuse, accompagné d'une notes de levure et d'un soupçon de zeste d'orange, à l'amertume développée." ,
   style: "Blonde - Ale",
-  couleur: "Orange dorée",
+  couleur: "rousse",
   taux_alcool: 6.5,
   amertume: 2.5,
-  apparence:"Orange dorée",
+  apparence:"Trouble",
   price_cents: 1000,
   )
 esquelbecq.remote_logo_img_url = "https://res.cloudinary.com/dg5ekyjef/image/upload/v1560155997/logo_blonde_uebf5n.png"
@@ -183,15 +183,15 @@ esquelbecq.save
 hildegarde = Biere.create!(
   nom: "Hildegarde Blonde",
   brasserie: page24,
-  description:"La Page 24 Réserve Hildegarde Blonde est une bière de garde artisanale brassée par la jeune Brasserie Saint Germain, dans le Pas-de-Calais. Produite depuis 2005, elle a très rapidement connue un succès d'ampleur et à peine un an après sa sortie, elle a été médaillée d'Or au Concours Général Agricole 2006 du Salon de l'Agriculture de Paris. Cela se reproduira d'ailleurs en 2007 et 2008 (bronzes), en 2009 (Or), et en 2011 (Argent) dans la catégorie blonde de haute fermentation !",
+  description:"La Page 24 Réserve Hildegarde Blonde est une bière de garde artisanale. Produite depuis 2005, elle a très rapidement connu un succès d'ampleur : à peine un an après sa sortie, elle a été médaillée d'Or au Concours Général Agricole 2006 du Salon de l'Agriculture de Paris. Cela se reproduira en 2007 et 2008 (bronzes), en 2009 (Or), et en 2011 (Argent) dans la catégorie blonde de haute fermentation !",
   style: "Bière de garde artisanale",
-  couleur: "Jolie robe blonde légèrement troublée",
+  couleur: "blonde",
   taux_alcool: 6.9,
   amertume: 2,
-  apparence: "Jolie robe blonde légèrement troublée",
+  apparence: "Opalescente",
   price_cents: 1100,
   )
-hildegarde.remote_logo_img_url = "https://res.cloudinary.com/dg5ekyjef/image/upload/v1560155821/logo24_dleuez.png"
+hildegarde.remote_logo_img_url = "https://res.cloudinary.com/dg5ekyjef/image/upload/v1560167563/logo24_cqgcsu.png"
 hildegarde.save
 
 brutos = Biere.create!(
@@ -199,10 +199,10 @@ brutos = Biere.create!(
   brasserie: aupif,
   description:"Bière Brune ronde, très douce en bouche malgré son taux d'alcool." ,
   style:"Belgian Dark Strong Ale",
-  couleur:"Brune",
+  couleur:"brune",
   taux_alcool: 9,
   amertume:3,
-  apparence:"Brune",
+  apparence:"Trouble",
   price_cents: 900,
   )
 brutos.remote_logo_img_url = "https://res.cloudinary.com/dg5ekyjef/image/upload/v1560153760/brutos_logo_dsm5js.png"
@@ -213,10 +213,10 @@ hoppyyuzu = Biere.create!(
   brasserie: celestin,
   description:"Elle est enrichie avec du yuzu, agrume originaire du Tibet, cultivé au Japon. Les fruits de mer et HOPPY YUZU sont en parfait accord, les fromages de chèvres et de brebis accompagnés de HOPPY YUZU régaleront votre palais." ,
   style:"India Pale Ale (IPA)",
-  couleur: "Jaune dorée" ,
+  couleur: "blonde" ,
   taux_alcool: 5.8,
   amertume: 4,
-  apparence: "Jaune dorée" ,
+  apparence: "Claire" ,
   price_cents: 800,
   )
 hoppyyuzu.remote_logo_img_url = "https://res.cloudinary.com/dg5ekyjef/image/upload/v1560154561/hoppy_yuzu_e5ng2z.jpg"
@@ -225,12 +225,12 @@ hoppyyuzu.save
 traditionbiere = Biere.create!(
   nom:"Tradition",
   brasserie: lil,
-  description:"A définir" ,
+  description:"blonde" ,
   style:"A définir",
   couleur:"A définir" ,
   taux_alcool: 5.7,
   amertume:3,
-  apparence: "A définir",
+  apparence: "Très claire",
   price_cents: 1000,
   )
 traditionbiere.remote_logo_img_url = "https://res.cloudinary.com/dg5ekyjef/image/upload/v1560154882/lil_vwa1v8.jpg"

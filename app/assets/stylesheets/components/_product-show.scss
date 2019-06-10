@@ -11,9 +11,9 @@
 
 .logo-place {
   width: 200px;
-  height: 200px;
-  background-color: $white;
-  border-radius: 50%;
+  height: 100px;
+  border-radius: 200px 200px 0 0;
+  background: white;
   position: absolute;
   top: -100px;
 }
@@ -22,6 +22,12 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
+}
+
+#mise-panier {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
 }
 
 .container-interne {
@@ -70,13 +76,13 @@
   padding: 16px 16px 0 16px;
   background-color: $very-light-gray;
   h2 {
-    font-size: 45px;
+    font-size: 40px;
     line-height: 45px;
     color: $green;
   }
   h3 {
-    font-size: 25px;
     line-height: 25px;
+    font-size: 20px;
   }
   p {
     font-size: 16px;
@@ -103,8 +109,8 @@
 }
 
 .brasserie-picture {
+  margin-top: 25px;
   height: 180px;
-  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
 }
 /*Smallest device*/
 @media (min-width: 100px) and (max-width: 575px) {
