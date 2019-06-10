@@ -26,8 +26,8 @@
 
 #mise-panier {
   display: flex;
-  justify-content: space-between;
-  width: 230px;
+  justify-content: flex-end;
+  margin-top: 15px;
 }
 
 .container-interne {
@@ -109,8 +109,8 @@
 }
 
 .brasserie-picture {
+  margin-top: 25px;
   height: 180px;
-  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
 }
 /*Smallest device*/
 @media (min-width: 100px) and (max-width: 575px) {
