@@ -3,4 +3,5 @@ class Biere < ApplicationRecord
   has_many :reviews
   has_many :commandeitems, as: :item
   mount_uploader :logo_img, PhotoUploader
+  monetize :price_cents
 end

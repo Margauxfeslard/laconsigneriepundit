@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_06_150544) do
+ActiveRecord::Schema.define(version: 2019_06_10_084410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,12 +22,12 @@ ActiveRecord::Schema.define(version: 2019_06_06_150544) do
     t.string "style"
     t.string "couleur"
     t.float "taux_alcool"
-    t.float "prix_par_litre"
     t.bigint "brasserie_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "amertume"
     t.string "apparence"
+    t.integer "price_cents", default: 0, null: false
     t.index ["brasserie_id"], name: "index_bieres_on_brasserie_id"
   end
 
@@ -43,12 +43,12 @@ ActiveRecord::Schema.define(version: 2019_06_06_150544) do
 
   create_table "commandeitems", force: :cascade do |t|
     t.integer "quantite"
-    t.float "prix"
     t.bigint "commande_id"
     t.string "item_type"
     t.bigint "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price_cents", default: 0, null: false
     t.index ["commande_id"], name: "index_commandeitems_on_commande_id"
     t.index ["item_type", "item_id"], name: "index_commandeitems_on_item_type_and_item_id"
   end
@@ -60,15 +60,18 @@ ActiveRecord::Schema.define(version: 2019_06_06_150544) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "item_sku"
+    t.integer "amount_cents", default: 0, null: false
+    t.json "payment"
     t.index ["pointcollecte_id"], name: "index_commandes_on_pointcollecte_id"
     t.index ["user_id"], name: "index_commandes_on_user_id"
   end
 
   create_table "growlers", force: :cascade do |t|
     t.integer "capacite"
-    t.integer "prix"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price_cents", default: 0, null: false
   end
 
   create_table "pointcollectes", force: :cascade do |t|

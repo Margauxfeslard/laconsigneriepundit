@@ -4,7 +4,7 @@ class CommandesController < ApplicationController
   end
 
   def show          # GET /commandes/:id
-    @commande = Commande.find(params[:id])
+    @commande = current_user.commandes.payed.find(params[:id])
   end
 
   # def new
@@ -17,9 +17,16 @@ class CommandesController < ApplicationController
     @commande.etat = "pending"
     
     if @commande.save
-      create_ci_bieres # créer les commande items
-
-      redirect_to growlers_path
+      # créer les commande items
+      bieres = Biere.all
+      bieres.each do |biere|
+        quantite = params[:items][biere.id.to_s].to_i
+        if quantite > 0
+          prix = quantite * biere.price_cents
+          ci = Commandeitem.create(quantite: quantite, item: biere, commande: @commande, price: prix)
+        end
+      end
+      redirect_to growlers_path()
     else
       render :new
     end
@@ -50,28 +57,6 @@ class CommandesController < ApplicationController
 
   def commande_params
     params.require(:commande).permit(:etat, :date_souhaitee)
-  end
-
-  def create_ci_bieres
-    bieres = Biere.all
-    bieres.each do |biere|
-      quantite = params[:items][biere.id.to_s].to_i
-      if quantite > 0
-        prix = quantite * biere.prix_par_litre
-        ci = Commandeitem.create(quantite: quantite, item: biere, commande: @commande, prix: prix)
-      end
-    end
-  end
-
-  def create_ci_growlers
-    growlers = growler.all
-    growlers.each do |growler|
-      quantite = params[:items][itemsgrowler.id.to_s].to_i
-      if quantite > 0
-        prix = quantite * growler.prix_par_litre
-        ci = Commandeitem.create(quantite: quantite, item: growler, commande: @commande, prix: prix)
-      end
-    end
   end
 
 end
