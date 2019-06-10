@@ -1,16 +1,19 @@
 const growlerEchange1 = document.querySelector(".echange1");
+const growlerdataset = document.getElementById("dataset");
 const growlerEchange2 = document.querySelector(".echange2");
 const calculGrowler = document.querySelector(".recap-echange h4");
 const paniergrowler = document.querySelector(".paniergrowler");
 
 let growlers = []
 const smallGrowler = {
+  growlerid : document.getElementById("dataset").dataset.growlers_small,
   quantite: 0,
   capacite: `1L`,
   prix: `0`,
 };
 
 const bigGrowler = {
+  growlerid : document.getElementById("dataset").dataset.growlers_big,
   quantite: 0,
   capacite: `2L`,
   prix: `0`,
@@ -52,11 +55,12 @@ const displayGrowlers = (growlers) => {
         lignegrowler.querySelector(".growlerprix").innerHTML = `<p>${prix} €</p>`;
 
       } else {
+        console.log(growlers);
         paniergrowler.insertAdjacentHTML("beforeend",
           `<li id=${growler.capacite} class="list-group-item"><span class="growlercapacite"><p>${growler.capacite}</p></span><span class="growlerquantite"><p>${growler.quantite}</p></span><span class="growlerprix"><p>${prix} €</p></span>
-          <input class="input" type="hidden" name="items[${growler.capacite}]" value="${growler.capacite}">
+          <input class="input" type="hidden" name="itemsgrowler[${growler.growlerid}]" value="${growler.quantite}">
           </li>`);
-
+  
       }
     } else {
       if (lignegrowler) {

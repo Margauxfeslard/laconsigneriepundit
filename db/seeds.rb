@@ -67,7 +67,7 @@ page24 = Brasserie.create!(
   adresse:"26 Route d'Arras, 62160 Aix-Noulette",
   description:"La brasserie Saint Germain a été créée en 2003 par Vincent, Stéphane et Hervé, tous trois passionnés de bières et souhaitant réaliser leurs propres recettes. Elle est installée à Aix Noulette, petit village de l'Artois au riche passé brassicole. La philosophie de la brasserie fût dès le début de l'aventure basée sur l'utilisation prioritaire de matières premières régionales afin de perpétuer la tradition brassicole et agricole de la région Nord Pas de Calais. Ainsi, les bières de garde de la Gamme Page 24 sont brassées exclusivement à partir de houblons  provenant de la coopérative régionale Coophounord.",
   )
-page24.remote_photo_url = "https://res.cloudinary.com/dbvuwwxkt/image/upload/v1560088811/page24_uszj08.jpg"
+page24.remote_photo_url = "https://res.cloudinary.com/dg5ekyjef/image/upload/v1560155183/page_24_logo_2_ewjcr1.png"
 page24.save
 
 aupif = Brasserie.create!(
@@ -107,7 +107,7 @@ labise = Biere.create!(
   apparence:"Jaune or",
   price_cents: 1000,
   )
-labise.remote_logo_img_url = "https://res.cloudinary.com/dbvuwwxkt/image/upload/v1560088826/labise_fm2fp2.jpg"
+labise.remote_logo_img_url = "https://res.cloudinary.com/dg5ekyjef/image/upload/v1560155519/La_bise_logo_dscve0.png"
 labise.save
 
 hopshot = Biere.create!(
@@ -135,7 +135,7 @@ koukestout = Biere.create!(
   apparence: "Impérial stout",
   price_cents: 1400,
   )
-koukestout.remote_logo_img_url = "https://res.cloudinary.com/dbvuwwxkt/image/upload/v1560088832/Koukestout_img_gndkgn.jpg"
+koukestout.remote_logo_img_url = "https://res.cloudinary.com/dg5ekyjef/image/upload/v1560155110/kouke_gqkn1w.jpg"
 koukestout.save
 
 poulemouillee = Biere.create!(
@@ -177,11 +177,11 @@ esquelbecq = Biere.create!(
   apparence:"Orange dorée",
   price_cents: 1000,
   )
-esquelbecq.remote_logo_img_url = "https://res.cloudinary.com/dbvuwwxkt/image/upload/v1560088823/blondeesquelbecq_m6r4rf.png"
+esquelbecq.remote_logo_img_url = "https://res.cloudinary.com/dg5ekyjef/image/upload/v1560155997/logo_blonde_uebf5n.png"
 esquelbecq.save
 
 hildegarde = Biere.create!(
-  nom: "Page 24 Réserve Hildegarde Blonde",
+  nom: "Hildegarde Blonde",
   brasserie: page24,
   description:"La Page 24 Réserve Hildegarde Blonde est une bière de garde artisanale brassée par la jeune Brasserie Saint Germain, dans le Pas-de-Calais. Produite depuis 2005, elle a très rapidement connue un succès d'ampleur et à peine un an après sa sortie, elle a été médaillée d'Or au Concours Général Agricole 2006 du Salon de l'Agriculture de Paris. Cela se reproduira d'ailleurs en 2007 et 2008 (bronzes), en 2009 (Or), et en 2011 (Argent) dans la catégorie blonde de haute fermentation !",
   style: "Bière de garde artisanale",
@@ -191,7 +191,7 @@ hildegarde = Biere.create!(
   apparence: "Jolie robe blonde légèrement troublée",
   price_cents: 1100,
   )
-hildegarde.remote_logo_img_url = "https://res.cloudinary.com/dbvuwwxkt/image/upload/v1560088823/hildegardepage24_nkonp9.png"
+hildegarde.remote_logo_img_url = "https://res.cloudinary.com/dg5ekyjef/image/upload/v1560155821/logo24_dleuez.png"
 hildegarde.save
 
 brutos = Biere.create!(
@@ -205,7 +205,7 @@ brutos = Biere.create!(
   apparence:"Brune",
   price_cents: 900,
   )
-brutos.remote_logo_img_url = "https://res.cloudinary.com/dbvuwwxkt/image/upload/v1560088825/brutos_vegvo2.png"
+brutos.remote_logo_img_url = "https://res.cloudinary.com/dg5ekyjef/image/upload/v1560153760/brutos_logo_dsm5js.png"
 brutos.save
 
 hoppyyuzu = Biere.create!(
@@ -219,7 +219,7 @@ hoppyyuzu = Biere.create!(
   apparence: "Jaune dorée" ,
   price_cents: 800,
   )
-hoppyyuzu.remote_logo_img_url = "https://res.cloudinary.com/dbvuwwxkt/image/upload/v1560088823/hoppy_zhqlkj.png"
+hoppyyuzu.remote_logo_img_url = "https://res.cloudinary.com/dg5ekyjef/image/upload/v1560154561/hoppy_yuzu_e5ng2z.jpg"
 hoppyyuzu.save
 
 traditionbiere = Biere.create!(
@@ -233,7 +233,7 @@ traditionbiere = Biere.create!(
   apparence: "A définir",
   price_cents: 1000,
   )
-traditionbiere.remote_logo_img_url = "https://res.cloudinary.com/dbvuwwxkt/image/upload/v1560088825/lil_drh4al.png"
+traditionbiere.remote_logo_img_url = "https://res.cloudinary.com/dg5ekyjef/image/upload/v1560154882/lil_vwa1v8.jpg"
 traditionbiere.save
 
 puts "creating growler"

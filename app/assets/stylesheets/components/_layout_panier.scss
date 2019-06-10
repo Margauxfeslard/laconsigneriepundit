@@ -14,6 +14,10 @@
     margin: 0;
     font-size: 14px;
   }
+  .btn-yellow .hidden{
+    display: none !important;
+  }
+  
 }
 .list-group-item{
   display: flex;
@@ -24,3 +28,4 @@
   border-top: 1px solid rgba(0, 0, 0, 0.125);
   margin: 1px;
 }
+

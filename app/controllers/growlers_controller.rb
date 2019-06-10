@@ -2,13 +2,14 @@ class GrowlersController < ApplicationController
   def index         # GET /restaurants
     # @growlers = Growler.all
 
-    @growlers = current_user.commandes
+    @growlersall = current_user.commandes
                             .select { |commande| commande.etat == 'payed' }
                             .map { |c| c.commandeitems }
                             .flatten.select { |ci| ci.item_type == "Growler"}
-    array = @growlers.partition { |growler| growler.item.capacite == 1 }
+    array = @growlersall.partition { |growler| growler.item.capacite == 1 }
     @small_growlers = array[0].count
     @big_growlers = array[1].count
+    @growlers = Growler.all
   end
 
   def show          # GET /bieres/:id

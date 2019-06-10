@@ -15,6 +15,7 @@ class CommandesController < ApplicationController
     @commande = Commande.new(user: current_user, etat: 0)
     @commande.user = current_user
     @commande.etat = "pending"
+    
     if @commande.save
       # créer les commande items
       bieres = Biere.all
@@ -36,7 +37,6 @@ class CommandesController < ApplicationController
   end
 
   def additem
-    raise
     params[:commande_id]
     params[:item_id]
   end
@@ -58,4 +58,5 @@ class CommandesController < ApplicationController
   def commande_params
     params.require(:commande).permit(:etat, :date_souhaitee)
   end
+
 end
