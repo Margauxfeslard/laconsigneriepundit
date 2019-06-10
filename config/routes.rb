@@ -5,13 +5,15 @@ Rails.application.routes.draw do
     resources :bieres
 
 
+
     resources :users do
       resources :commandes do
         resources :payments, only: [:new, :create]
         member do
-          post '/growlers', to: 'commandes#add_growlers' 
+          post '/growlers', to: 'commandes#add_growlers'
           get '/growlers', to: 'commandes#growlers_show'
         end
+        resources :pointcollectes
       end
     end
 end

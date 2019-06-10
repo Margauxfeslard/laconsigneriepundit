@@ -15,7 +15,6 @@
           <% @commande.commandeitems.each do |ci|%>
             <% if ci.item_type == "Biere" %>
               <ul>
-
                 <li><%= cl_image_tag ci.item.logo_img, class:"logo-picture-index-recap"%></li>
                 <li><p><%= ci.item.price %> € </p></li>
                 <li><p><%= ci.quantite %> L </p></li>
@@ -52,6 +51,7 @@
   </div>
     <div class="container-droit-panier">
       <%= render 'shared/layout_panier' %>
+      <%= link_to 'Choisir mon point de collecte', user_commande_pointcollectes_path(current_user, @commande), class: "btn-yellow" %>
     </div>
 </div>
 <%= render 'shared/footer' %>
