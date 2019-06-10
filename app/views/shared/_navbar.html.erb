@@ -1,37 +1,40 @@
 <nav class="navbar navbar-expand-lg <%=current_page?(root_path) ? "navbar-dark" : "navbar-light" %>">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag 'logo1.png' %>
+  <%= image_tag 'logo1.png' %>
   <% end %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <% if user_signed_in? %>
-        <li class="nav-item active">
-           <%= link_to "Les bières", bieres_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_user.prenom %></a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-             <%= link_to "Mon profil", user_session_path, class: "dropdown-item" %>
-             <%= link_to "Mes commandes", user_commandes_path(current_user), class: "dropdown-item" %>
-             <%= link_to "Déconnexion",destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
-        </li>
-         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mon panier</a>
-            <div class="dropdown-menu panier" aria-labelledby="navbarDropdownMenuLink">
-              <!-- <%= render 'shared/layout_panier' %> -->
-            </div>
-        </li>
-        <% else %>
-        <li class="nav-item">
-           <%= link_to "Les bières", bieres_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Connexion", new_user_session_path, class: "nav-link btn-add-connexion" %>
-        </li>
+      <li class="nav-item active">
+        <%= link_to "Les bières", bieres_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false"><%= current_user.prenom %></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <%= link_to "Mon profil", user_session_path, class: "dropdown-item" %>
+          <%= link_to "Mes commandes", user_commandes_path(current_user), class: "dropdown-item" %>
+          <%= link_to "Déconnexion",destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">Mon panier</a>
+        <div class="dropdown-menu panier" aria-labelledby="navbarDropdownMenuLink">
+          <%#= render 'shared/layout_panier' %>
+        </div>
+      </li>layout
+      <% else %>
+      <li class="nav-item">
+        <%= link_to "Les bières", bieres_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Connexion", new_user_session_path, class: "nav-link btn-add-connexion" %>
+      </li>
       <% end %>
     </ul>
   </div>

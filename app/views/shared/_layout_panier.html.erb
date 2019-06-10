@@ -1,14 +1,22 @@
 <div class="panier-titre">
-  <h2 id = "layout" data-user=<%= current_user.id%>> Mon panier</h2>
+  <h2 id="layout" data-user=<%= current_user.id%>> Mon panier</h2>
 </div>
 <div class="panier-content">
-  <form action='users/<%= current_user.id%>/commandes' method="post">
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      <ul class="list-group panierligne">
-      </ul>
 
-      <ul class="list-group paniergrowler">
-      </ul>
-        <input type="submit" class="btn-yellow <%= current_page?(bieres_path) ? "hidden" : "visible" %>"" value="Valider mon panier">
-  </form>
+      <% if current_page?(bieres_path) %>
+      <form action='users/<%= current_user.id%>/commandes/' method="post">
+      <% else %>
+      <form action='/users/<%= current_user.id%>/commandes/<%= @commande.id%>/growlers/' method="post">
+      <% end %>
+
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <ul class="list-group panierligne">
+        </ul>
+
+        <ul class="list-group paniergrowler">
+        </ul>
+        <input type="submit" class="btn-yellow <%= current_page?(bieres_path) ? "hidden" : "visible" %>"" value=" Valider
+          mon panier">
+      </form>
+
 </div>

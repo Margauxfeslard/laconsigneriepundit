@@ -1,7 +1,7 @@
 class BieresController < ApplicationController
   def index         # GET /restaurants
     @bieres = Biere.all
-    @commande = Commande.create(user: current_user, etat: 0)
+    # @commande = Commande.create(user: current_user, etat: 0)
   end
 
   def show          # GET /bieres/:id
