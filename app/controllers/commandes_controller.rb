@@ -4,7 +4,7 @@ class CommandesController < ApplicationController
   end
 
   def show          # GET /commandes/:id
-    @commande = Commande.find(params[:id])
+    @commande = current_user.commandes.payed.find(params[:id])
   end
 
   # def new
@@ -21,8 +21,8 @@ class CommandesController < ApplicationController
       bieres.each do |biere|
         quantite = params[:items][biere.id.to_s].to_i
         if quantite > 0
-          prix = quantite * biere.prix_par_litre
-          ci = Commandeitem.create(quantite: quantite, item: biere, commande: @commande, prix: prix)
+          prix = quantite * biere.price_cents
+          ci = Commandeitem.create(quantite: quantite, item: biere, commande: @commande, price: prix)
         end
       end
       redirect_to growlers_path()

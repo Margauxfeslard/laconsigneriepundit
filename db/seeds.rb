@@ -105,7 +105,7 @@ labise = Biere.create!(
   taux_alcool: 5.4,
   amertume:4,
   apparence:"Jaune or",
-  prix_par_litre: 10,
+  price_cents: 1000,
   )
 labise.remote_logo_img_url = "https://res.cloudinary.com/dbvuwwxkt/image/upload/v1560088826/labise_fm2fp2.jpg"
 labise.save
@@ -119,7 +119,7 @@ hopshot = Biere.create!(
   taux_alcool: 5.1 ,
   amertume: 3,
   apparence: "Robe cuivrée",
-  prix_par_litre: 12,
+  price_cents: 1200,
   )
 hopshot.remote_logo_img_url = "https://res.cloudinary.com/dbvuwwxkt/image/upload/v1560088826/Hopshot_img_s8zeo8.png"
 hopshot.save
@@ -133,7 +133,7 @@ koukestout = Biere.create!(
   taux_alcool: 5.5,
   amertume: 2,
   apparence: "Impérial stout",
-  prix_par_litre: 14,
+  price_cents: 1400,
   )
 koukestout.remote_logo_img_url = "https://res.cloudinary.com/dbvuwwxkt/image/upload/v1560088832/Koukestout_img_gndkgn.jpg"
 koukestout.save
@@ -147,7 +147,7 @@ poulemouillee = Biere.create!(
   taux_alcool: 6.5,
   amertume: 3,
   apparence:"Blonde",
-  prix_par_litre: 15,
+  price_cents: 1500,
   )
 poulemouillee.remote_logo_img_url = "https://res.cloudinary.com/dbvuwwxkt/image/upload/v1560088825/poulemouillee_eqxp4n.png"
 poulemouillee.save
@@ -161,7 +161,7 @@ transition = Biere.create!(
   taux_alcool: 6,
   amertume: 3,
   apparence: "A définir",
-  prix_par_litre: 12,
+  price_cents: 1200,
   )
 transition.remote_logo_img_url = "https://res.cloudinary.com/dbvuwwxkt/image/upload/v1560088825/transitionhub_v86vbr.png"
 transition.save
@@ -175,7 +175,7 @@ esquelbecq = Biere.create!(
   taux_alcool: 6.5,
   amertume: 2.5,
   apparence:"Orange dorée",
-  prix_par_litre: 10,
+  price_cents: 1000,
   )
 esquelbecq.remote_logo_img_url = "https://res.cloudinary.com/dbvuwwxkt/image/upload/v1560088823/blondeesquelbecq_m6r4rf.png"
 esquelbecq.save
@@ -189,7 +189,7 @@ hildegarde = Biere.create!(
   taux_alcool: 6.9,
   amertume: 2,
   apparence: "Jolie robe blonde légèrement troublée",
-  prix_par_litre: 11,
+  price_cents: 1100,
   )
 hildegarde.remote_logo_img_url = "https://res.cloudinary.com/dbvuwwxkt/image/upload/v1560088823/hildegardepage24_nkonp9.png"
 hildegarde.save
@@ -203,7 +203,7 @@ brutos = Biere.create!(
   taux_alcool: 9,
   amertume:3,
   apparence:"Brune",
-  prix_par_litre: 9,
+  price_cents: 900,
   )
 brutos.remote_logo_img_url = "https://res.cloudinary.com/dbvuwwxkt/image/upload/v1560088825/brutos_vegvo2.png"
 brutos.save
@@ -217,7 +217,7 @@ hoppyyuzu = Biere.create!(
   taux_alcool: 5.8,
   amertume: 4,
   apparence: "Jaune dorée" ,
-  prix_par_litre: 8,
+  price_cents: 800,
   )
 hoppyyuzu.remote_logo_img_url = "https://res.cloudinary.com/dbvuwwxkt/image/upload/v1560088823/hoppy_zhqlkj.png"
 hoppyyuzu.save
@@ -231,7 +231,7 @@ traditionbiere = Biere.create!(
   taux_alcool: 5.7,
   amertume:3,
   apparence: "A définir",
-  prix_par_litre: 10,
+  price_cents: 1000,
   )
 traditionbiere.remote_logo_img_url = "https://res.cloudinary.com/dbvuwwxkt/image/upload/v1560088825/lil_drh4al.png"
 traditionbiere.save
@@ -239,11 +239,11 @@ traditionbiere.save
 puts "creating growler"
 Growler.create!(
   capacite: 2,
-  prix: 20
+  price_cents: 700
 )
 Growler.create!(
   capacite: 1,
-  prix: 10
+  price_cents: 400
 )
 
 puts "creating users"
