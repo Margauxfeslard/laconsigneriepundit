@@ -1,7 +1,5 @@
 class GrowlersController < ApplicationController
-  def index         # GET /restaurants
-    # @growlers = Growler.all
-
+  def index         # GET /growlers
     @growlersall = current_user.commandes
                             .select { |commande| commande.etat == 'payed' }
                             .map { |c| c.commandeitems }
@@ -14,6 +12,7 @@ class GrowlersController < ApplicationController
 
   def show          # GET /bieres/:id
     @growler = Growler.find(params[:id])
+    @growlers = Growler.all
   end
 
   def new
