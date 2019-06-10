@@ -15,7 +15,7 @@ class CommandesController < ApplicationController
     @commande = Commande.new(user: current_user, etat: 0)
     @commande.user = current_user
     @commande.etat = "pending"
-    
+
     if @commande.save
       # créer les commande items
       create_bieres_items()
@@ -43,7 +43,7 @@ class CommandesController < ApplicationController
     @commande = Commande.find(params[:id])
     create_growlers_items(@commande)
     redirect_to user_commande_path(current_user, @commande)
-    
+
     @commande.commandeitems.each do |ci|
       @commande.amount_cents += ci.price_cents
     end
@@ -84,7 +84,7 @@ class CommandesController < ApplicationController
         ci = Commandeitem.create(quantite: quantite, item: biere, commande: @commande, price: prix)
       end
     end
-  
+
     # /users/:user_id/commandes/:id/growlers
     redirect_to growlers_user_commande_path(current_user, @commande)
   end
