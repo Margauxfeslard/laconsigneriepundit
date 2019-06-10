@@ -4,7 +4,7 @@ class CommandesController < ApplicationController
   end
 
   def show          # GET /commandes/:id
-    @commande = Commande.find(params[:id])
+    @commande = current_user.commandes.payed.find(params[:id])
   end
 
   # def new
@@ -15,14 +15,15 @@ class CommandesController < ApplicationController
     @commande = Commande.new(user: current_user, etat: 0)
     @commande.user = current_user
     @commande.etat = "pending"
+    
     if @commande.save
       # créer les commande items
       bieres = Biere.all
       bieres.each do |biere|
         quantite = params[:items][biere.id.to_s].to_i
         if quantite > 0
-          prix = quantite * biere.prix_par_litre
-          ci = Commandeitem.create(quantite: quantite, item: biere, commande: @commande, prix: prix)
+          prix = quantite * biere.price_cents
+          ci = Commandeitem.create(quantite: quantite, item: biere, commande: @commande, price: prix)
         end
       end
       redirect_to growlers_path()
@@ -36,7 +37,6 @@ class CommandesController < ApplicationController
   end
 
   def additem
-    raise
     params[:commande_id]
     params[:item_id]
   end
@@ -58,4 +58,5 @@ class CommandesController < ApplicationController
   def commande_params
     params.require(:commande).permit(:etat, :date_souhaitee)
   end
+
 end

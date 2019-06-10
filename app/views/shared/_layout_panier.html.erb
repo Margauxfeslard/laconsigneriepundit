@@ -9,8 +9,6 @@
 
       <ul class="list-group paniergrowler">
       </ul>
-
-        <input type="submit" class="btn-yellow" value="Valider mon panier">
+        <input type="submit" class="btn-yellow <%= current_page?(bieres_path) ? "hidden" : "visible" %>"" value="Valider mon panier">
   </form>
 </div>
-

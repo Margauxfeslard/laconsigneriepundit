@@ -5,10 +5,9 @@ Rails.application.routes.draw do
     resources :bieres
     resources :growlers
 
-    resources :users do 
-      resources :commandes
+    resources :users do
+      resources :commandes do
+        resources :payments, only: [:new, :create]
+      end
     end
-
-
-
 end

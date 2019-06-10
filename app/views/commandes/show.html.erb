@@ -1,11 +1,18 @@
 <%= render 'shared/stepper', active: 2 %>
 <div class="container-consignerie">
   <div class="container-gauche">
-    Show commande
-    <% @commande.commandeitems.each do |ci|%>
+    <h1>Commande</h1>
+    <ul>
+      <li>Etat commande: <%= @commande.etat %></li>
+      <li>Item: <%= @commande.item_sku %></li>
+      <li>Amount: <%= humanized_money_with_symbol(@commande.amount) %></li>
+    <ul>
+
+    <!-- Show commande
+    <%# @commande.commandeitems.each do |ci|%>
     <%= ci.item.nom  %>
     <%= ci.quantite  %>
-    <% end %>
+    <%# end %> -->
 
   </div>
 
@@ -15,3 +22,5 @@
 
 </div>
 <%= render 'shared/footer' %>
+
+
