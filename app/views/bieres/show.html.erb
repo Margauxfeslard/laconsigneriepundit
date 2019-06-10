@@ -42,7 +42,15 @@
           <%= cl_image_tag @biere.brasserie.photo, class:"brasserie-picture" %>
         </div>
 
-      </div>
+        <div class="carte-middle">
+          <div class="haut-carte-middle">
+            <div><h2>Commentaires</h2></div>
+            <div class="btn-yellow"><%= link_to " Ajouter un commentaire", new_biere_review_path(@biere) %></div>
+          </div>
+            <% @reviews.each do |review| %>
+            <%= render 'reviews/comment-card', review: review%>
+            <% end %>
+        </div>
 
     </div>
   </div>

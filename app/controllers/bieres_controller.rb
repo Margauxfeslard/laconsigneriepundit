@@ -6,6 +6,7 @@ class BieresController < ApplicationController
 
   def show          # GET /bieres/:id
     @biere = Biere.find(params[:id])
+    @reviews = @biere.reviews
   end
 
   def new
@@ -51,7 +52,6 @@ class BieresController < ApplicationController
       :taux_houblon,
       :taux_malt,
       :prix_par_litre,
-
       )
   end
 

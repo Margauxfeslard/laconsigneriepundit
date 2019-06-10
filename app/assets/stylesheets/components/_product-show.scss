@@ -112,6 +112,25 @@
   margin-top: 25px;
   height: 180px;
 }
+
+.carte-middle{
+  margin-top: 10px;
+  margin-right: 10px;
+  grid-column-start: 1;
+  grid-column-end: 6;
+  padding: 16px 16px 0 16px;
+  background-color: $very-light-gray;
+   h2 {
+    font-size: 40px;
+    line-height: 45px;
+    color: $green;
+  }
+}
+
+.haut-carte-middle {
+  display: flex;
+}
+
 /*Smallest device*/
 @media (min-width: 100px) and (max-width: 575px) {
   .container-gauche-show {

@@ -1,0 +1,19 @@
+<divx>
+
+  <div>
+      <p>Ajouter un commentaire</p>
+  </div>
+
+  <div class="form-inputs">
+  <%= simple_form_for [@biere, @review] do |f| %>
+    <%= f.input :contenu, label: "Votre commentaire", class:"form-control", placeholder: "Dites aux autres utilisateurs ce que vous avez pensé de cette bière."%>
+    <%= f.input :note, label: "Votre note", class:"form-control", collection: (0..5) %>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Ajouter un commentaire", class: "log-in-btn" %>
+    </div>
+
+  <% end %>
+
+  </div>
+</div>
