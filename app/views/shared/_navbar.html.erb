@@ -16,15 +16,14 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
              <%= link_to "Mon profil", user_session_path, class: "dropdown-item" %>
              <%= link_to "Mes commandes", user_commandes_path(current_user), class: "dropdown-item" %>
-
              <%= link_to "Déconnexion",destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
         </li>
          <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mon panier</a>
-            <div class="dropdown-menu panier" aria-labelledby="navbarDropdownMenuLink">
+            <!-- <div class="dropdown-menu panier" aria-labelledby="navbarDropdownMenuLink">
               <%= render 'shared/layout_panier' %>
-            </div>
+            </div> -->
         </li>
         <% else %>
         <li class="nav-item">
