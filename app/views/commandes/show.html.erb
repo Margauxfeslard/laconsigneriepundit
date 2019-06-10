@@ -2,18 +2,31 @@
 <div class="container-consignerie">
   <div class="container-gauche">
     <h1>Commande</h1>
-        <% @commande.commandeitems.each do |ci|%>
-      <%= ci.item_type  %>
-      <%= ci.quantite  %>
-      <%= ci.price_cents  %>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <ul class="list-group panierligne">
+      <% @commande.commandeitems.each do |ci| %>
+      `<li id=${ligne.biereid} class="list-group-item">
+        <span class="bierenom">
+          <p><%= ci.item_type %></p>
+        </span>
+        <% if ci.item_type == "Biere" %>
+        <span class="bierenom">
+          <p><%= ci.item.nom %></p>
+        </span>
+        <span class="bierequantite">
+            <p<%= ci.quantite %></p> </span> <span class="biereprix">
+              <p><%= ci.price_cents %></p>
+          </span>
+          <% else %>
         <% end %>
-        Amount: <%= humanized_money_with_symbol(@commande.amount) %>
+       
+      </li>`
+      <%end%>
+    </ul>
   </div>
 
 
-  <div class="container-droit-panier">
-    <%= render 'shared/layout_panier' %>
-  </div>
+
 
 </div>
 <%= render 'shared/footer' %>
