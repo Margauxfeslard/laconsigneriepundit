@@ -1,13 +1,16 @@
 <div class="banner">
+  <div class="banniere-txt">
     <% if current_user %>
-      <h1>Welcome back <%= current_user.prenom %> !</h1>
-      <p>La bière du mois, un coup de coeur de saison :</p>
-        <%= image_tag 'bieredumois.png', class: "imagedumois" %>
-      <%= link_to "Voir les bières", bieres_path, class: "btn-yellow"%>
+      <h3>Welcome back <%= current_user.prenom %></h3>
+      <h2>Les bières de juin</h2>
+      <p>Découvrez nos dernières trouvailles pour vos growlers : trois nouvelles bières à déguster pour le retour de l'été !</p>
+      <%= link_to "Remplir mes growlers", bieres_path, class: "btn-yellow"%>
     <% else %>
-      <h1>Welcome</h1>
-      <p>La bière du mois, un coup de coeur de saison :</p>
-        <%= image_tag 'bieredumois.png', class: "imagedumois" %>
-      <%= link_to "Voir les bières", bieres_path, class: "btn-yellow"%>
+      <h2>Les bières de juin</h2>
+      <p>Nos dernières trouvailles : découvrez trois nouvelles bières dans vos growlers pour le retour de l'été !</p>
+      <%= link_to "Commencer l'expérience", bieres_path, class: "btn-yellow"%>
     <% end %>
+  </div>
 </div>
+
+
