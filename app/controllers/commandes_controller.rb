@@ -4,7 +4,7 @@ class CommandesController < ApplicationController
   end
 
   def show          # GET /commandes/:id
-    @commande = current_user.commandes.payed.find(params[:id])
+    @commande = current_user.commandes.pending.find(params[:id])
   end
 
   # def new
@@ -18,15 +18,7 @@ class CommandesController < ApplicationController
     
     if @commande.save
       # créer les commande items
-      bieres = Biere.all
-      bieres.each do |biere|
-        quantite = params[:items][biere.id.to_s].to_i
-        if quantite > 0
-          prix = quantite * biere.price_cents
-          ci = Commandeitem.create(quantite: quantite, item: biere, commande: @commande, price: prix)
-        end
-      end
-      redirect_to growlers_path()
+      create_bieres_items()
     else
       render :new
     end
@@ -47,6 +39,30 @@ class CommandesController < ApplicationController
     redirect_to commande_path(@commande)
   end
 
+  def add_growlers
+    @commande = Commande.find(params[:id])
+    create_growlers_items(@commande)
+    redirect_to user_commande_path(current_user, @commande)
+    
+    @commande.commandeitems.each do |ci|
+      @commande.amount_cents += ci.price_cents
+    end
+    @commande.save
+  end
+
+  def growlers_show         # GET /restaurants
+    # @growlers = Growler.all
+    @commande = Commande.find(params[:id])
+    @growlersall = current_user.commandes
+                            .select { |commande| commande.etat == 'payed' }
+                            .map { |c| c.commandeitems }
+                            .flatten.select { |ci| ci.item_type == "Growler"}
+    array = @growlersall.partition { |growler| growler.item.capacite == 1 }
+    @small_growlers = array[0].count
+    @big_growlers = array[1].count
+    @growlers = Growler.all
+  end
+
   def destroy
     @commande = Commande.find(params[:id])
     @commande.destroy
@@ -59,4 +75,28 @@ class CommandesController < ApplicationController
     params.require(:commande).permit(:etat, :date_souhaitee)
   end
 
+  def create_bieres_items
+    bieres = Biere.all
+    bieres.each do |biere|
+      quantite = params[:items][biere.id.to_s].to_i
+      if quantite > 0
+        prix = quantite * biere.price_cents
+        ci = Commandeitem.create(quantite: quantite, item: biere, commande: @commande, price: prix)
+      end
+    end
+  
+    # /users/:user_id/commandes/:id/growlers
+    redirect_to growlers_user_commande_path(current_user, @commande)
+  end
+
+  def create_growlers_items(commande)
+    growlers = Growler.all
+    growlers.each do |growler|
+      quantite = params[:items][growler.id.to_s].to_i
+      if quantite > 0
+        prix = quantite * growler.price_cents
+        ci = Commandeitem.create(quantite: quantite, item: growler, commande: commande, price: prix)
+      end
+    end
+  end
 end
