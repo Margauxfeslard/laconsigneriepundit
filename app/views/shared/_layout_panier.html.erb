@@ -15,8 +15,10 @@
 
         <ul class="list-group paniergrowler">
         </ul>
-        <input type="submit" class="btn-yellow <%= current_page?(bieres_path) ? "hidden" : "visible" %>"" value=" Valider
-          mon panier">
+        <% if current_page?(user_commande_path(current_user, @commande))%>
+          <input type="submit" hidden value=" Valider mon panier">
+        <% else %>
+          <input type="submit" class="btn-yellow collecte" value=" Valider mon panier">
+        <% end %>
       </form>
-
 </div>
