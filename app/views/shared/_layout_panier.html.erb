@@ -12,13 +12,8 @@
         <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
         <ul class="list-group panierligne">
         </ul>
-
         <ul class="list-group paniergrowler">
         </ul>
-        <% if current_page?(user_commande_path(current_user, @commande))%>
-          <input type="submit" hidden value=" Valider mon panier">
-        <% else %>
-          <input type="submit" class="btn-yellow collecte" value=" Valider mon panier">
-        <% end %>
+        <input type="submit" class="btn-yellow collecte" value=" Valider mon panier "<%#= current_page?(user_commandes_path(current_user) ? hidden : '' %>>
       </form>
 </div>
