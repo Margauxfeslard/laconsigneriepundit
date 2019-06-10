@@ -1,19 +1,57 @@
 <%= render 'shared/stepper', active: 2 %>
 <div class="container-consignerie">
-  <div class="container-gauche">
-    <h1>Commande</h1>
-        <% @commande.commandeitems.each do |ci|%>
-      <%= ci.item_type  %>
-      <%= ci.quantite  %>
-      <%= ci.price_cents  %>
-        <% end %>
-        Amount: <%= humanized_money_with_symbol(@commande.amount) %>
+  <div class="container-gauche recap">
+    <div class="item-recap">
+      <h2>Bières</h2>
+        <div class="colonnes-recap">
+          <ul>
+            <li><h3>Articles</h3></li>
+            <li><h3>Prix</h3></li>
+            <li><h3>Quantité</h3></li>
+            <li><h3>Total</h3></li>
+          </ul>
+        </div>
+        <div class="content-recap">
+          <% @commande.commandeitems.each do |ci|%>
+            <% if ci.item_type == "Biere" %>
+              <ul>
+
+                <li><%= cl_image_tag ci.item.logo_img, class:"logo-picture-index-recap"%></li>
+                <li><p><%= ci.item.price %> € </p></li>
+                <li><p><%= ci.quantite %> L </p></li>
+                <li><p><%= ci.quantite * ci.item.price  %> €</p></li>
+              </ul>
+            <% end %>
+          <% end %>
+              <%#= humanized_money_with_symbol(@commande.amount) %>
+        </div>
+    </div>
+      <div class="item-recap">
+        <h2>Growlers</h2>
+          <div class="colonnes-recap">
+            <ul>
+              <li><h3>Articles</h3></li>
+              <li><h3>Prix</h3></li>
+              <li><h3>Quantité</h3></li>
+              <li><h3>Total</h3></li>
+            </ul>
+          </div>
+            <div class="content-recap">
+              <% @commande.commandeitems.each do |ci|%>
+                <% if ci.item_type == "Growler" %>
+                  <ul>
+                    <li><p>Growler <%= ci.item.capacite %> L </p></li>
+                    <li><p><%= ci.item.price %> € </p></li>
+                    <li><p><%= ci.quantite %></p></li>
+                    <li><p><%= ci.quantite %></p></li>
+                  </ul>
+                <% end %>
+              <% end %>
+            </div>
+      </div>
   </div>
-
-
-  <div class="container-droit-panier">
-    <%= render 'shared/layout_panier' %>
-  </div>
-
+    <div class="container-droit-panier">
+      <%= render 'shared/layout_panier' %>
+    </div>
 </div>
 <%= render 'shared/footer' %>

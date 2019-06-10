@@ -1,0 +1,43 @@
+.container-gauche.recap{
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-right: 16px;
+  width: 75%;
+  padding: 20px;
+
+}
+
+.colonnes-recap ul{
+  display: flex;
+  justify-content: space-between;
+  li{
+    list-style-type: none;
+  }
+}
+
+.content-recap ul{
+  display: flex;
+  justify-content: space-between;
+  margin:0;
+  padding-top: 5px;
+  border-top: solid 1px;
+  align-items: center;
+  li{
+    list-style-type: none;
+
+  }
+}
+
+.item-recap {
+  padding: 20px;
+  h2{
+    color: #265E5A;
+  }
+}
+
+.logo-picture-index-recap {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
