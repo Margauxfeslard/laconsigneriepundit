@@ -55,6 +55,7 @@ const displayGrowlers = (growlers) => {
         lignegrowler.querySelector(".growlerprix").innerHTML = `<p>${prix} €</p>`;
 
       } else {
+        console.log(growlers);
         paniergrowler.insertAdjacentHTML("beforeend",
           `<li id=${growler.capacite} class="list-group-item"><span class="growlercapacite"><p>${growler.capacite}</p></span><span class="growlerquantite"><p>${growler.quantite}</p></span><span class="growlerprix"><p>${prix} €</p></span>
           <input class="input" type="hidden" name="itemsgrowler[${growler.growlerid}]" value="${growler.quantite}">
