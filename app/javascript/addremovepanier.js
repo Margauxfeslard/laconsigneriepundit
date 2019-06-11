@@ -1,3 +1,5 @@
+if (document.querySelector(".panierligne")) {
+
 const bieres = document.querySelectorAll(".card-biere");
 const user_id = parseInt(document.getElementById("layout").dataset.user);
 const panierligne = document.querySelector(".panierligne");
@@ -112,4 +114,4 @@ if (removefrombasket) {
     })
   })
 }
-
+}
