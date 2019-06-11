@@ -6,10 +6,10 @@
       <h2>Bières</h2>
         <div class="colonnes-recap">
           <ul>
-            <li><h3>Articles</h3></li>
-            <li><h3>Prix</h3></li>
-            <li><h3>Quantité</h3></li>
-            <li><h3>Total</h3></li>
+            <li><p><strong>Articles</strong></p></li>
+            <li><p><strong>Prix</strong></p></li>
+            <li><p><strong>Quantité</strong></p></li>
+            <li><p><strong>Total</strong></p></li>
           </ul>
         </div>
         <div class="content-recap">
@@ -30,19 +30,27 @@
         <h2>Growlers</h2>
           <div class="colonnes-recap">
             <ul>
-              <li><h3>Articles</h3></li>
-              <li><h3>Prix</h3></li>
-              <li><h3>Quantité</h3></li>
-              <li><h3>Total</h3></li>
+              <li><p><strong>Articles</strong></p></li>
+              <li><p><strong>Prix</strong></p></li>
+              <li><p><strong>Quantité <br>(ajout)</strong></p></li>
+              <li><p><strong>Quantité <br>(échange)</strong></p></li>
+              <li><p><strong>Total</strong></p></li>
             </ul>
           </div>
             <div class="content-recap">
               <% @commande.commandeitems.each do |ci|%>
-                <% if ci.item_type == "Growler" %>
+                <% if ci.item_type == "Growler"  %>
                   <ul>
-                    <li><p>Growler <%= ci.item.capacite %> L </p></li>
+                    <li><p>Growler : <%= ci.item.capacite %> L </p></li>
                     <li><p><%= ci.item.price %> € </p></li>
                     <li><p><%= ci.quantite %></p></li>
+                      <% if ci.item.capacite == 1 && ci.echange1L != 0%>
+                        <li><p> <%= ci.echange1L %></p></li>
+                      <% elsif ci.item.capacite == 2 && ci.echange2L != 0  %>
+                        <li><p>x <%= ci.echange2L %></p></li>
+                      <% else %>
+                        <li></li>
+                      <% end %>
                     <li><p><%= ci.price/100 %> €</p></li>
                   </ul>
                 <% end %>
