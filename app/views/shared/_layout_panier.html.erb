@@ -12,8 +12,6 @@
     <% else %>
     <form action='/users/<%= current_user.id%>/commandes/<%= @commande.id%>/growlers/' method="post">
       <% end %>
-
-
         <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
         <ul class="list-group panierligne">
         </ul>

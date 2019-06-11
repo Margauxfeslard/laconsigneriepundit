@@ -18,7 +18,7 @@ class CommandesController < ApplicationController
 
     if @commande.save
       # créer les commande items
-      create_bieres_items()
+      create_bieres_items
     else
       render :new
     end
@@ -43,20 +43,23 @@ class CommandesController < ApplicationController
     @commande = Commande.find(params[:id])
     create_growlers_items(@commande)
     redirect_to user_commande_path(current_user, @commande)
+    calcul_amount(@commande)
+  end
 
+  def calcul_amount
     @commande.commandeitems.each do |ci|
       @commande.amount_cents += ci.price_cents
     end
     @commande.save
   end
 
-  def growlers_show         # GET /restaurants
+  def growlers_show # GET /restaurants
     # @growlers = Growler.all
     @commande = Commande.find(params[:id])
     @growlersall = current_user.commandes
-                            .select { |commande| commande.etat == 'payed' }
-                            .map { |c| c.commandeitems }
-                            .flatten.select { |ci| ci.item_type == "Growler"}
+                               .select { |commande| commande.etat == 'payed' }
+                               .map(&:commandeitems)
+                               .flatten.select { |ci| ci.item_type == "Growler" }
     array = @growlersall.partition { |growler| growler.item.capacite == 1 }
     @small_growlers = array[0].count
     @big_growlers = array[1].count
@@ -92,11 +95,19 @@ class CommandesController < ApplicationController
   def create_growlers_items(commande)
     growlers = Growler.all
     growlers.each do |growler|
-      quantite = params[:items][growler.id.to_s].to_i
-      if quantite > 0
+      if growler.capacite == 2
+        quantite = params[:add2L].to_i
         prix = quantite * growler.price_cents
-        ci = Commandeitem.create(quantite: quantite, item: growler, commande: commande, price: prix)
+        if quantite > 0
+          ci = Commandeitem.create(quantite: quantite, item: growler, commande: commande, price: prix)
+        end
+      elsif growler.capacite == 1
+        quantite = params[:add1L].to_i
+        prix = quantite * growler.price_cents
+        if quantite > 0
+          ci = Commandeitem.create(quantite: quantite, item: growler, commande: commande, price: prix)
+          end
       end
     end
-  end
+    end
 end
