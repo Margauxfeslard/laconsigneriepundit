@@ -1,5 +1,7 @@
-<h1>Purchase of teddy <%= @commande.item_sku %></h1>
-<%= form_tag commande_payments_path(@commande) do %>
+<%= render 'shared/stepper', active: 4 %>
+
+<h3>Paiement</h3>
+<%= form_tag user_commande_payments_path(current_user,@commande) do %>
   <article>
     <label class="amount">
       <span>Amount: <%= humanized_money_with_symbol(@commande.amount) %></span>

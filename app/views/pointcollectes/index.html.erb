@@ -3,6 +3,7 @@
 <div class="container-consignerie-pointcollect">
   <div>
     <h1>Point de collectes</h1>
+    <%= link_to "Paiement",  new_user_commande_payment_path(current_user, params[:commande_id]), class:"btn-yellow" %>
   </div>
   <div class="d-flex">
     <form>
