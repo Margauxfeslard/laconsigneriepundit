@@ -18,11 +18,16 @@
       <% end %>
       <h3>Brasserie <%= biere.brasserie.nom %></h3>
 
-
+      <% unless biere.reviews.average(:note).nil? %>
         <div class="etoiles-notes">
-            <div id="stars-review ml-0"><%= render 'shared/stars-for-average-reviews', reviews: biere.reviews %></div><p class="note-sur-cinq">(<%= biere.reviews.average(:note).round(1) %> / 5) - <%= biere.reviews.count %> avis</p>
+            <div id="stars-review ml-0">
+              <%= render 'shared/stars-for-average-reviews', reviews: biere.reviews %>
+            </div>
+            <p class="note-sur-cinq">
+              "(<%= biere.reviews.average(:note).round(1) %> / 5) - <%= biere.reviews.count %> avis"
+            </p>
         </div>
-
+      <% end %>
       <% end %>
         <div class="bas-card">
           <div class="super"><p><%= humanized_money_with_symbol(biere.price) %> / litre</p></div>
