@@ -1,5 +1,4 @@
 <%= render 'shared/stepper', active: 4 %>
-<script src="https://js.stripe.com/v3/"></script>
 <div class="wrapper">
     <form action="/charge" method="post" id="payment-form">
       <div class="form-row">
@@ -17,6 +16,7 @@
       <button>Submit Payment</button>
     </form>
 </div>
+<script src="https://js.stripe.com/v3/"></script>
 <!-- <div class="container-consignerie paiement">
   <div class="paiement">
     <h3>Paiement</h3>
