@@ -61,13 +61,11 @@
                 <div><h2>Commentaires</h2></div>
                 <div class="btn-yellow"><%= link_to " Ajouter un commentaire", new_biere_review_path(@biere) %></div>
               </div>
-
-              <div class="etoile-et-nom mb-3 mt-0">
-                <div id="stars-review ml-0"><%= render 'shared/stars-for-average-reviews', reviews: @reviews %></div>
-                <p class="note-sur-cinq">(<%= @reviews.average(:note).round(1) %> / 5)
-                - <%= @reviews.count %> commentaires</p>
-              </div>
-
+                <div class="etoile-et-nom mb-3 mt-0">
+                  <div id="stars-review ml-0"><%= render 'shared/stars-for-average-reviews', reviews: @reviews %></div>
+                  <p class="note-sur-cinq">(<%= @reviews.average(:note).round(1) %> / 5)
+                  - <%= @reviews.count %> commentaires</p>
+                </div>
             </div>
 
           <div>
