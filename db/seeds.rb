@@ -253,6 +253,7 @@ user1 = User.create!(
   nom: "Noppe",
   prenom: "Charles"
 )
+
 user2 = User.create!(
   email: "margaux@gmail.com",
   password: "password",
@@ -263,19 +264,262 @@ user2 = User.create!(
 user3 = User.create!(
   email: "marie@gmail.com",
   password: "password",
-  nom: "Cauliez",
+  nom: "Caulliez",
   prenom: "Marie"
 )
 
+user4 = User.create!(
+  email: "jonathan@gmail.com",
+  password: "password",
+  nom: "Dupont",
+  prenom: "Jonathan"
+)
+
+user5 = User.create!(
+  email: "benjamin@gmail.com",
+  password: "password",
+  nom: "Desforges",
+  prenom: "Benjamin"
+)
+
+user6 = User.create!(
+  email: "victoire@gmail.com",
+  password: "password",
+  nom: "Paris",
+  prenom: "Victoire"
+)
+
+user7 = User.create!(
+  email: "maxime@gmail.com",
+  password: "password",
+  nom: "Chaumont",
+  prenom: "Hubert"
+)
+
+user8 = User.create!(
+  email: "aurelien@gmail.com",
+  password: "password",
+  nom: "Lemarcant",
+  prenom: "Aurélien"
+)
+
+user9 = User.create!(
+  email: "julien@gmail.com",
+  password: "password",
+  nom: "Poissonnier",
+  prenom: "Julien"
+)
+
+user10 = User.create!(
+  email: "jerome@gmail.com",
+  password: "password",
+  nom: "Jamet",
+  prenom: "Jérome"
+)
+
+user11 = User.create!(
+  email: "paul@gmail.com",
+  password: "password",
+  nom: "Belon",
+  prenom: "Paul"
+)
+
+user12 = User.create!(
+  email: "jules@gmail.com",
+  password: "password",
+  nom: "Baron",
+  prenom: "Jules"
+)
+
+user13 = User.create!(
+  email: "caroline@gmail.com",
+  password: "password",
+  nom: "Didier",
+  prenom: "Caroline"
+)
+
+user14 = User.create!(
+  email: "laura@gmail.com",
+  password: "password",
+  nom: "Saurat",
+  prenom: "Laura"
+)
+
+user15 = User.create!(
+  email: "camille@gmail.com",
+  password: "password",
+  nom: "Dubus",
+  prenom: "Camille"
+)
+
 puts "creating reviews"
-10.times do |n|
-  Review.create!(
-  user: User.all.sample,
-  biere: Biere.all.sample,
-  contenu: "Bien" * n,
-  note: [1..5].sample
-  )
-end
+review1 = Review.create!(
+  user: user1,
+  biere: hopshot,
+  contenu: "Excellente ! Servie un soir à l'apéro avec des copains. Super désaltérante et arômes vraiment intéressants : pamplemousse, citron, litchi...",
+  note: 5,
+)
+
+review2 = Review.create!(
+  user: user9,
+  biere: hopshot,
+  contenu: "Superbe bière ! Parfaite pour l'été autour d'un bon barbecue !",
+  note: 4,
+)
+
+review3 = Review.create!(
+  user: user10,
+  biere: hopshot,
+  contenu: "J'aime beaucoup les bières de cette brasserie ! Top de pouvoir en profiter dans des growlers grâce à la Consignerie.",
+  note: 4,
+)
+
+review4 = Review.create!(
+  user: user12,
+  biere: hopshot,
+  contenu: "Je recommande ! Un corps désaltérant et une douce amertume...",
+  note: 5,
+)
+
+review5 = Review.create!(
+  user: user8,
+  biere: poulemouillee,
+  contenu: "Franchement top ! Un équilibre parfait entre amertume et aromatique !",
+  note: 5,
+)
+
+review6 = Review.create!(
+  user: user2,
+  biere: poulemouillee,
+  contenu: "Je n'avais jamais goûté une bière aussi bonne ! Gardez-la dans votre sélection !!",
+  note: 5,
+)
+
+review7 = Review.create!(
+  user: user11,
+  biere: poulemouillee,
+  contenu: "Elue meilleure bière lors d'une dégustation à l'aveugle entre potes !",
+  note: 5,
+)
+
+review8 = Review.create!(
+  user: user14,
+  biere: poulemouillee,
+  contenu: "Pas mal mais j'ai déjà vu mieux...",
+  note: 3,
+)
+
+review9 = Review.create!(
+  user: user15,
+  biere: hoppyyuzu,
+  contenu: "Très bonne et franchement pas chère ! J'aime !",
+  note: 5,
+)
+
+review10 = Review.create!(
+  user: user7,
+  biere: hoppyyuzu,
+  contenu: "Originale mais pas forécement à mon goût... Pas trop fan de la note de yuzu...",
+  note: 2,
+)
+
+review11 = Review.create!(
+  user: user9,
+  biere: hoppyyuzu,
+  contenu: "Servie avec un plateau de fruits de mer un soir d'été... Franchement un kiff ! Merci la Consignerie pour votre vaste choix de bières. Toujours de superbes découvertes !",
+  note: 5,
+)
+
+review12 = Review.create!(
+  user: user4,
+  biere: hildegarde,
+  contenu: "Du mal à comprendre pourquoi tout le monde s'emballe pour cette bière...",
+  note: 2,
+)
+
+review13 = Review.create!(
+  user: user3,
+  biere: hildegarde,
+  contenu: "Superbe !! Je comprends pourquoi elle a gagné autant de médailles",
+  note: 5,
+)
+
+review14 = Review.create!(
+  user: user6,
+  biere: hildegarde,
+  contenu: "Trop fraîche ! Et juste trop bien de pouvoir la trouver en growlers consignés ! Bien joué La Consignerie !",
+  note: 4,
+)
+
+review15 = Review.create!(
+  user: user5,
+  biere: brutos,
+  contenu: "Une brute de bière ;) Mes potes et moi avons adoré !",
+  note: 5,
+)
+
+review16 = Review.create!(
+  user: user9,
+  biere: brutos,
+  contenu: "Au top ! Rien à redire",
+  note: 4,
+)
+
+review17 = Review.create!(
+  user: user11,
+  biere: koukestout,
+  contenu: "Trop originale pour moi...",
+  note: 4,
+)
+
+review18 = Review.create!(
+  user: user8,
+  biere: koukestout,
+  contenu: "Tchin tchin posey !",
+  note: 5,
+)
+
+review19 = Review.create!(
+  user: user6,
+  biere: koukestout,
+  contenu: "Tchin tchin posey !",
+  note: 5,
+)
+
+review20 = Review.create!(
+  user: user9,
+  biere: labise,
+  contenu: "Fraîche et douce, franchement idéale pour l'été !",
+  note: 5,
+)
+
+review21 = Review.create!(
+  user: user13,
+  biere: labise,
+  contenu: "Soirée entre filles elle a fait l'unanimité !",
+  note: 4,
+)
+
+review22 = Review.create!(
+  user: user6,
+  biere: esquelbecq,
+  contenu: "Pas mal, manque d'originalité mais c'est bon.",
+  note: 3,
+)
+
+review23 = Review.create!(
+  user: user3,
+  biere: transition,
+  contenu: "Super découverte !",
+  note: 5,
+)
+
+review24 = Review.create!(
+  user: user12,
+  biere: traditionbiere,
+  contenu: "Vraiment intéressante ! Je recommande vivement.",
+  note: 4,
+)
 
 puts "creating collectpoint"
 10.times do |n|

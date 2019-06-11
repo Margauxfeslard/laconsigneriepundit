@@ -62,21 +62,17 @@ background-color: white;
 }
 
 .etoiles-notes {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 5px;
   display: flex;
   justify-content: space-around;
   margin-bottom: 15px;
-  .inline {
-    padding: 0px;
-  li {
-    display: inline;
-    color: $yellow;
-    font-size: 10px;
+  p {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 10px;
   }
-  #txt {
-    color: black;
-    font-size: 12px;
-  }
-}
 }
 
 .bas-card {

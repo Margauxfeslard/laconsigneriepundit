@@ -59,7 +59,6 @@
   width: 25%;
   top: 0;
   position: sticky;
-  background-color: white;
 }
 
 #panier-show {
@@ -115,7 +114,6 @@
 
 .carte-middle{
   margin-top: 10px;
-  margin-right: 10px;
   grid-column-start: 1;
   grid-column-end: 6;
   padding: 16px 16px 0 16px;
@@ -124,11 +122,26 @@
     font-size: 40px;
     line-height: 45px;
     color: $green;
+    margin-bottom: 5px;
   }
 }
 
 .haut-carte-middle {
+  border-bottom: 1px solid $dark-gray;
+  margin-bottom: 10px;
+}
+
+.btn-et-titre {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.note-sur-cinq {
+    font-size: 16px;
+    margin-bottom: 0;
+    margin-left: 10px;
+    color: $dark-gray;
 }
 
 /*Smallest device*/

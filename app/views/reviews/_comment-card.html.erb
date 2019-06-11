@@ -1,14 +1,13 @@
   <div class="reviews">
-    <div class="creation-info">
-      <h5> <%= review.user.prenom.capitalize %></h5>
-      <div class="stars">
-      </div>
-      <h6 class="card-subtitle mb-2 text-muted"><%= review.created_at %></h6>
-    </div>
-  </div>
 
-  <div class="description">
+    <div class="etoile-et-nom">
+      <div><h5> <%= review.user.prenom.capitalize + " " + review.user.nom.first.capitalize%></h5></div>
+      <div id="stars-review"><%= render 'shared/stars-for-reviews', review: review%></div>
+      <div class="ml-2 mt-0.5"><h6> (<%= review.note.round %> / 5)</h6></div>
+    </div>
+
+      <h6>Le <%= review.created_at.strftime("%d.%m.%Y") %></h6>
+
       <p><%= review.contenu %></p>
-  </div>
 
 </div>
