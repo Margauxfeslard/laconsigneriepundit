@@ -6,18 +6,19 @@ class PointcollectesController < ApplicationController
     @markers = @pointcollectes.map do |pointcollecte|
       {
         lat: pointcollecte.latitude,
-        lng: pointcollecte.longitude
+        lng: pointcollecte.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { pointcollecte: pointcollecte })
       }
     end
-
-  end
+end
 
   def show
   end
-end
 
-private
-
-def commande_params
-  params.require(:commande).permit(:etat, :date_souhaitee)
+  def finalize_commande
+    @commande = Commande.find(params[:commande_id])
+    @commande.pointcollecte = Pointcollecte.find(params[:id])
+    @commande.save
+    redirect_to user_commande_pointcollectes_path(current_user, @commande)
+  end
 end

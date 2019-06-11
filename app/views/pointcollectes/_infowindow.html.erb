@@ -1,0 +1,10 @@
+<div class="infowindow-card-pointcollecte" data-collID='<%= pointcollecte.id  %>'>
+  <div class="infowindow-card-pointcollecte-infos">
+    <div>
+      <h3><%= pointcollecte.nom %></h3>
+      <p><%=pointcollecte.full_address%></p>
+      <p><%=pointcollecte.horaire%></p>
+    </div>
+  </div>
+<%= link_to "Selectionner",  user_commande_pointcollecte_path(current_user, params[:commande_id], pointcollecte), method: :post,  class:"btn-yellow" %>
+</div>
