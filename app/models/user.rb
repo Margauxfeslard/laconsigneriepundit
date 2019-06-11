@@ -6,4 +6,15 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  after_validation do
+    full_address
+  end
+
+  def full_address
+    self.full_address = "#{adresse}, #{zipcode} #{ville}"
+  end
+
+  geocoded_by :full_address
+  after_validation :geocode, if: :will_save_change_to_full_address?
 end

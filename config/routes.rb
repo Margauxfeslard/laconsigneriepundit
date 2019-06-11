@@ -12,8 +12,10 @@ Rails.application.routes.draw do
         get '/confirmation', to: 'payments#confirmation_commande', as: "confirmation"
         member do
           post '/growlers', to: 'commandes#add_growlers'
-          get '/growlers', to: 'commandes#growlers_show'
+          get '/growlers', to: 'commandes#growlers_show'          
         end
+
+        post '/pointcollectes/:id', to: 'pointcollectes#finalize_commande'
         resources :pointcollectes
       end
     end

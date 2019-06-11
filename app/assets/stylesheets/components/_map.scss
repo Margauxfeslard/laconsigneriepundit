@@ -1,28 +1,13 @@
-.index-map{
-  height: 100vh;
-  position:absole;
-  position: sticky;
-  top: 0;
-  width: 52%;
-  border-radius: 5px;
-  transition: 0.5;
-}
-
-.index-pool{
-  margin-top: 10px;
-}
-
-.container-pool{
-  position:relative;
-  margin-left: 10px;
-}
-
-
-.before-cards{
-  text-align: center;
-}
-
 .search-bar{
-  width: 50%;
+  width: 100%;
   margin-left: 25%;
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
 }
