@@ -3,5 +3,6 @@ import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the styleshe
 import { initMapbox } from '../plugins/init_mapbox';
 import "../addremovepanier";
 import "../addremovegrowler";
+import "custom_stripe";
 
 initMapbox();
