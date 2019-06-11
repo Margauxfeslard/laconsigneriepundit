@@ -15,18 +15,30 @@
     margin: 0;
     font-size: 14px;
   }
-  .btn-yellow.collecte{
-
-  }
-
 }
+
 .list-group-item{
   display: flex;
   justify-content: space-between;
-}
-
-.list-group .panierligne{
+  border: none;
   border-top: 1px solid rgba(0, 0, 0, 0.125);
   margin: 1px;
 }
 
+.growlers-panier{
+  margin : 10px;
+}
+
+.btn-yellow.collecte{
+  background: $yellow;
+  text-align: center;
+  padding: 10px 12px;
+  text-decoration: none;
+  box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
+  color: $black;
+  text-transform: uppercase;
+  font-family: 'Karla', sans-serif;
+  font-weight: bold;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}

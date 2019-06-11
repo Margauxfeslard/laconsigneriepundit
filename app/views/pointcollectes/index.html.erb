@@ -1,6 +1,14 @@
 <%= render 'shared/stepper', active: 3 %>
+<div class="container-consignerie">
 
-<h1>Point de collectes</h1>
+  <div class="container-gauche">
+    <h1>Point de collectes</h1>
+  </div>
+
+  <div class="container-droit-panier">
+    <%= link_to "Paiement",  user_commande_payments_path(current_user, @commande), class:"btn-yellow" %>
+  </div>
+</div>
 
 
 
