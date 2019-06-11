@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_10_084410) do
+ActiveRecord::Schema.define(version: 2019_06_11_112730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,12 +76,15 @@ ActiveRecord::Schema.define(version: 2019_06_10_084410) do
 
   create_table "pointcollectes", force: :cascade do |t|
     t.string "nom"
-    t.string "ville"
-    t.integer "code_postal"
-    t.string "adresse"
     t.text "horaire"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
+    t.string "ville"
+    t.integer "zipcode"
+    t.string "adresse"
+    t.string "full_address"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -105,6 +108,9 @@ ActiveRecord::Schema.define(version: 2019_06_10_084410) do
     t.datetime "updated_at", null: false
     t.string "nom"
     t.string "prenom"
+    t.string "adresse"
+    t.integer "zipcode"
+    t.string "ville"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

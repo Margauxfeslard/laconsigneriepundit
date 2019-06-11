@@ -1,14 +1,33 @@
 <%= render 'shared/stepper', active: 3 %>
-<div class="container-consignerie">
 
-  <div class="container-gauche">
+<div class="container-consignerie-pointcollect">
+  <div>
     <h1>Point de collectes</h1>
   </div>
-
-  <div class="container-droit-panier">
-    <%= link_to "Paiement",  user_commande_payments_path(current_user, @commande), class:"btn-yellow" %>
+  <div class="d-flex">
+    <form>
+      <div class="form-row">
+        <div class="col-md-6">
+          <h4 for="inputAddress">Adresse</h4>
+          <input type="text" class="form-control" placeholder="Adresse">
+        </div>
+        <div class="col-md-4">
+          <h4 for="inputAddress">Ville</h4>
+          <input type="text" class="form-control" placeholder="Ville">
+        </div>
+        <div class="col-md-2">
+          <h4 for="inputAddress">CP</h4>
+          <input type="text" class="form-control" placeholder="Code postal">
+        </div>
+        <div class="col-md-2">
+          <h4 for="inputAddress">Date souhaitée</h4>
+          <input type="date" class="form-control"">
+        </div>
+    </div>
+    <button type=" submit" class="btn-yellow">Confirmer</button>
+    </form>
+    <div class="index-map">
+      <%= render 'shared/map'%>
+    </div>
   </div>
 </div>
-
-
-

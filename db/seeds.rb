@@ -251,7 +251,10 @@ user1 = User.create!(
   email: "charles@gmail.com",
   password: "password",
   nom: "Noppe",
-  prenom: "Charles"
+  prenom: "Charles",
+  adresse: "124 avenue Becquart",
+  zipcode: 59130,
+  ville: "Lambersart"
 )
 user2 = User.create!(
   email: "margaux@gmail.com",
@@ -278,12 +281,25 @@ puts "creating reviews"
 end
 
 puts "creating collectpoint"
-10.times do |n|
+
   Pointcollecte.create!(
-  nom: "pointcol" + n.to_s,
-  adresse: "Somewhere"
+  ville: "Lambersart",
+  zipcode: 59130,
+  nom: "Carrefour city",
+  adresse: "114 avenue Becquart",
+  horaire: "9h-12h tous les jours"
   )
-end
+
+  10.times do |n|
+    Pointcollecte.create!(
+    ville: "Lille",
+    zipcode: 59000,
+    nom: "pointcol" + n.to_s,
+    adresse: "114 Rue de paris",
+    horaire: "9h-12h tous les jours"
+    )
+  end
+
 
 puts "creating commande"
 10.times do |n|

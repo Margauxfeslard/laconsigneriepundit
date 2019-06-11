@@ -96,7 +96,6 @@ class CommandesController < ApplicationController
     growlers = Growler.all
     growlers.each do |growler|
       if growler.capacite == 2
-        binding.pry
         quantite = params[:add2L].to_i
         prix = quantite * growler.price_cents
         if quantite > 0
