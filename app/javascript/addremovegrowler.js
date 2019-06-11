@@ -17,7 +17,7 @@ const smallGrowler = {
 
 const bigGrowler = {
   growlerid: document.getElementById("dataset").dataset.growlers_big,
-  quantite: growlerEchange2.value,
+  quantiteechange: growlerEchange2.value,
   quantitetotal: 0,
   capacite: `2L`,
   prix: document.getElementById("dataset").dataset.growlers_big_price,
@@ -25,7 +25,6 @@ const bigGrowler = {
 
 growlers.push(smallGrowler)
 growlers.push(bigGrowler)
-
 
 
 if (sessionStorage.getItem("growlers")) {
@@ -79,11 +78,13 @@ const calculnombreGrowler = (growlers) => {
 
   growlers.find((item) => {
     return item.capacite == "1L"
-  }).quantittotal = add1L + volstock1L
+  }).quantitetotal = add1L + volstock1L
 
   growlers.find((item) => {
     return item.capacite == "2L"
-  }).quantittotal = add2L + volstock2L
+  }).quantitetotal = add2L + volstock2L
+
+  console.log(growlers);
   sessionStorage.setItem("growlers", "")
   sessionStorage.setItem("growlers", JSON.stringify(growlers))
 }
