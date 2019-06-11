@@ -91,11 +91,11 @@ ActiveRecord::Schema.define(version: 2019_06_11_115547) do
 
   create_table "reviews", force: :cascade do |t|
     t.text "contenu"
-    t.integer "note"
     t.bigint "user_id"
     t.bigint "biere_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "note"
     t.index ["biere_id"], name: "index_reviews_on_biere_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end

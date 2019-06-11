@@ -1,55 +1,91 @@
 <%= render 'shared/navbar' %>
 
 <div class="container-consignerie card-show" data-biereID='<%= @biere.id  %>' data-biereNom='<%= @biere.nom  %>' data-bierePrix='<%= @biere.price  %>'>
+
   <div class="container-gauche">
 
     <div class="show-biere">
-
       <div class="logo-place">
         <%= cl_image_tag @biere.logo_img, class:"logo-picture" %>
       </div>
 
+
       <div class="container-interne">
+
         <div class="carte-gauche" id="nom">
           <h2><%= @biere.nom %></h2>
           <h3><%= @biere.style %></h3>
-          <p>Les reviews des internautes</p>
+              <div class="etoile-et-nom mb-3 mt-0">
+                <div id="stars-review ml-0"><%= render 'shared/stars-for-average-reviews', reviews: @reviews %></div>
+                <p class="note-sur-cinq">(<%= @reviews.average(:note).round(1) %> / 5)
+                - <%= @reviews.count %> commentaires</p>
+              </div>
         </div>
-        <div class="carte-droite" id="panier-show">
 
+        <div class="carte-droite" id="panier-show">
           <h3><%=humanized_money_with_symbol(@biere.price) %> / litre</h3>
           <div id="mise-panier">
             <i class="fas fa-cart-arrow-down" style="color: rgb(121,121,121); margin-right: 20px; margin-top: 5px; font-size: 30px"></i>
             <%= render 'shared/add_remove_panier', biere: @biere %>
           </div>
-
         </div>
+
 
         <div class="carte-gauche">
           <h2>La bière</h2>
           <p><%= @biere.description %></p>
         </div>
+
         <div class="carte-droite">
           <h2>Caractéristiques</h2>
             <%= render 'shared/caracteristiques_biere', biere: @biere %>
         </div>
 
+
         <div class="carte-gauche" id="brs-g">
           <h2>La brasserie</h2>
           <p><%= @biere.brasserie.description %></p>
         </div>
+
         <div class="carte-droite" id="brs-d">
           <%= cl_image_tag @biere.brasserie.photo, class:"brasserie-picture" %>
         </div>
 
-      </div>
 
-    </div>
-  </div>
+        <div class="carte-middle">
+            <div class="haut-carte-middle">
+
+              <div class="btn-et-titre">
+                <div><h2>Commentaires</h2></div>
+                <div class="btn-yellow"><%= link_to " Ajouter un commentaire", new_biere_review_path(@biere) %></div>
+              </div>
+
+              <div class="etoile-et-nom mb-3 mt-0">
+                <div id="stars-review ml-0"><%= render 'shared/stars-for-average-reviews', reviews: @reviews %></div>
+                <p class="note-sur-cinq">(<%= @reviews.average(:note).round(1) %> / 5)
+                - <%= @reviews.count %> commentaires</p>
+              </div>
+
+            </div>
+
+          <div>
+            <% @reviews.each do |review| %>
+            <%= render 'reviews/comment-card', review: review%>
+            <% end %>
+          </div>
+
+        </div> <!-- ferme carte-middle -->
+
+      </div> <!-- ferme container-interne -->
+
+    </div> <!-- ferme container show-biere -->
+
+  </div> <!-- ferme container gauche -->
 
   <div class="container-droit-panier">
     <%= render 'shared/layout_panier' %>
-  </div>
+  </div> <!-- ferme container-droit-panier -->
 
-</div>
+</div> <!-- ferme container consignerie -->
+
 <%= render 'shared/footer' %>

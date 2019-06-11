@@ -1,0 +1,35 @@
+.reviews {
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: white;
+  padding: 15px;
+p {
+    margin-top: 15px;
+    line-height: 20px;
+    margin-bottom: 0;
+    font-size: 16px;
+  }
+
+h5 {
+  font-size: 18px;
+  color: $green;
+}
+h6 {
+  font-size: 12px;
+  line-height: 5px;
+}
+}
+
+.stars {
+    font-size: 11px;
+}
+
+#stars-review {
+    margin-left: 15px;
+    margin-bottom: 7px;
+}
+
+.etoile-et-nom {
+  display: flex;
+  align-items: center;
+}
