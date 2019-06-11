@@ -49,7 +49,7 @@ class CommandesController < ApplicationController
 
   def calcul_amount(commande)
     @commande.commandeitems.each do |ci|
-      @commande.amount_cents += ci.price_cents
+      @commande.amount += ci.price
     end
     @commande.save
   end

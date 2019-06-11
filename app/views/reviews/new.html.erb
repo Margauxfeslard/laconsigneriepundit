@@ -1,0 +1,26 @@
+<%= render 'shared/navbar' %>
+
+<div class="container-consignerie">
+
+  <div class="container-form">
+
+    <div>
+        <h1>Ajouter un commentaire</h1>
+    </div>
+
+    <div class="form-inputs">
+    <%= simple_form_for [@biere, @review] do |f| %>
+      <%= f.input :contenu, label: "Votre commentaire", class:"form-control", placeholder: "Dites aux autres utilisateurs ce que vous avez pensé de cette bière."%>
+      <%= f.input :note, label: "Votre note", class:"form-control", collection: (0..5) %>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Ajouter un commentaire", class: "btn-yellow" %>
+      </div>
+
+    <% end %>
+
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>

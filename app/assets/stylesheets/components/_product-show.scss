@@ -9,6 +9,28 @@
   justify-content: space-around;
 }
 
+.btn-gray-show{
+  position: absolute;
+  top: -50px;
+  right: 0px;
+  background: $dark-gray;
+  text-align: center;
+  padding: 3px 9px;
+  text-decoration: none;
+  font-family: 'Karla', sans-serif;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  text-decoration: none;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.3);
+  a{
+    color: $very-light-gray;
+  }
+  a:hover {
+    color: black;
+    text-decoration: none;
+  }
+}
+
 .logo-place {
   width: 200px;
   height: 100px;
@@ -59,7 +81,6 @@
   width: 25%;
   top: 0;
   position: sticky;
-  background-color: white;
 }
 
 #panier-show {
@@ -112,6 +133,39 @@
   margin-top: 25px;
   height: 180px;
 }
+
+.carte-middle{
+  margin-top: 10px;
+  grid-column-start: 1;
+  grid-column-end: 6;
+  padding: 16px 16px 0 16px;
+  background-color: $very-light-gray;
+   h2 {
+    font-size: 40px;
+    line-height: 45px;
+    color: $green;
+    margin-bottom: 5px;
+  }
+}
+
+.haut-carte-middle {
+  border-bottom: 1px solid $dark-gray;
+  margin-bottom: 10px;
+}
+
+.btn-et-titre {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.note-sur-cinq {
+    font-size: 16px;
+    margin-bottom: 0;
+    margin-left: 10px;
+    color: $dark-gray;
+}
+
 /*Smallest device*/
 @media (min-width: 100px) and (max-width: 575px) {
   .container-gauche-show {
