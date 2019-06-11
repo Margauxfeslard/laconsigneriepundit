@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :users do
       resources :commandes do
         resources :payments, only: [:new, :create]
+        get '/confirmation', to: 'payments#confirmation_commande', as: "confirmation"
         member do
           post '/growlers', to: 'commandes#add_growlers'
           get '/growlers', to: 'commandes#growlers_show'

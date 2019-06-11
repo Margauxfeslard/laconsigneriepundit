@@ -3,10 +3,11 @@
 
   <div class="container-gauche">
     <h1>Point de collectes</h1>
+    <%= link_to "Paiement",  new_user_commande_payment_path(current_user, params[:commande_id]), class:"btn-yellow" %>
   </div>
 
   <div class="container-droit-panier">
-    <%= link_to "Paiement",  user_commande_payments_path(current_user, @commande), class:"btn-yellow" %>
+
   </div>
 </div>
 
