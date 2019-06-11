@@ -1,0 +1,27 @@
+.infowindow-card-pointcollecte{
+  img{
+    height:auto;
+    width: 100%;
+    object-fit: cover;
+  } 
+  h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+  }
+  p {
+    font-size: 12px;
+    opacity: .7;
+    margin: 0;
+  } 
+
+  .btn-yellow{
+font-size: 8px;
+  }
+
+}
+
+.infowindow-card-pointcollecte-infos {
+  padding: 8px;
+  position: relative;
+}
