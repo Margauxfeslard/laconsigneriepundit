@@ -1,2 +1,14 @@
 <%= render 'shared/stepper', active: 5 %>
-<i class="fas fa-wine-bottle" ></i>
+<div class="container-consignerie">
+  <div class="content-confirmation">
+    <div class="remerciement">
+      <h3>Merci <%= current_user.prenom %>, ta commande a bien été passée <i class="fas fa-check"></i></h3>
+        <div class="echange-growler-confirmation">
+          <i class="fas fa-sync"> </i><p> N'oublie pas de nous ramener tes growlers</p><i class="fas fa-wine-bottle" ></i>
+        </div>
+    </div>
+    <div class="confirmation">
+      <p>Un email de confirmation vient d'être envoyé sur l'adresse <%= current_user.email %></p>
+    </div>
+  </div>
+</div>
