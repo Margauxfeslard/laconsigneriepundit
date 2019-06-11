@@ -1,19 +1,65 @@
 <%= render 'shared/stepper', active: 2 %>
 <div class="container-consignerie">
-  <div class="container-gauche">
-    <h1>Commande</h1>
-        <% @commande.commandeitems.each do |ci|%>
-      <%= ci.item_type  %>
-      <%= ci.quantite  %>
-      <%= ci.price_cents  %>
-        <% end %>
-        Amount: <%= humanized_money_with_symbol(@commande.amount) %>
+
+  <div class="container-gauche recap">
+    <div class="item-recap">
+      <h2>Bières</h2>
+        <div class="colonnes-recap">
+          <ul>
+            <li><p><strong>Articles</strong></p></li>
+            <li><p><strong>Prix</strong></p></li>
+            <li><p><strong>Quantité</strong></p></li>
+            <li><p><strong>Total</strong></p></li>
+          </ul>
+        </div>
+        <div class="content-recap">
+          <% @commande.commandeitems.each do |ci|%>
+            <% if ci.item_type == "Biere" %>
+              <ul>
+                <li><%= cl_image_tag ci.item.logo_img, class:"logo-picture-index-recap"%></li>
+                <li><p><%= ci.item.price %> € </p></li>
+                <li><p><%= ci.quantite %> L </p></li>
+                <li><p><%= ci.quantite * ci.item.price  %> €</p></li>
+              </ul>
+            <% end %>
+          <% end %>
+              <%#= humanized_money_with_symbol(@commande.amount) %>
+        </div>
+    </div>
+      <div class="item-recap">
+        <h2>Growlers</h2>
+          <div class="colonnes-recap">
+            <ul>
+              <li><p><strong>Articles</strong></p></li>
+              <li><p><strong>Prix</strong></p></li>
+              <li><p><strong>Quantité <br>(ajout)</strong></p></li>
+              <li><p><strong>Quantité <br>(échange)</strong></p></li>
+              <li><p><strong>Total</strong></p></li>
+            </ul>
+          </div>
+            <div class="content-recap">
+              <% @commande.commandeitems.each do |ci|%>
+                <% if ci.item_type == "Growler"  %>
+                  <ul>
+                    <li><p>Growler : <%= ci.item.capacite %> L </p></li>
+                    <li><p><%= ci.item.price %> € </p></li>
+                    <li><p><%= ci.quantite %></p></li>
+                      <% if ci.item.capacite == 1 && ci.echange1L != 0%>
+                        <li><p> <%= ci.echange1L %></p></li>
+                      <% elsif ci.item.capacite == 2 && ci.echange2L != 0  %>
+                        <li><p>x <%= ci.echange2L %></p></li>
+                      <% else %>
+                        <li></li>
+                      <% end %>
+                    <li><p><%= ci.price/100 %> €</p></li>
+                  </ul>
+                <% end %>
+              <% end %>
+            </div>
+      </div>
   </div>
-
-
-  <div class="container-droit-panier">
-    <%= render 'shared/layout_panier' %>
-  </div>
-
+    <div class="container-droit-panier">
+      <%= render 'shared/layout_panier' %>
+    </div>
 </div>
 <%= render 'shared/footer' %>

@@ -1,5 +1,10 @@
 class PaymentsController < ApplicationController
-  before_action :set_order
+  before_action :set_order, only: [:new, :create]
+
+  def confirmation_commande
+    @commande = current_user.commandes.payed.find(params[:commande_id])
+    @user = User.find(params[:user_id])
+  end
 
   def new
   end
@@ -18,7 +23,7 @@ class PaymentsController < ApplicationController
   )
 
   @commande.update(payment: charge.to_json, etat: 'payed')
-  redirect_to commande_path(@commande)
+  redirect_to user_commande_confirmation_path(current_user,@commande)
 
 rescue Stripe::CardError => e
   flash[:alert] = e.message
@@ -28,6 +33,6 @@ rescue Stripe::CardError => e
   private
 
   def set_order
-    @commande = current_user.commandes.where(etat: 'pending').find(params[:commande_id])
+    @commande = current_user.commandes.pending.find(params[:commande_id])
   end
 end

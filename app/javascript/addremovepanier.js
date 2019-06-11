@@ -1,3 +1,5 @@
+if (document.querySelector(".panierligne")) {
+
 const bieres = document.querySelectorAll(".card-biere");
 const user_id = parseInt(document.getElementById("layout").dataset.user);
 const panierligne = document.querySelector(".panierligne");
@@ -16,6 +18,7 @@ bieres.forEach((biere) => {
   panier.push(ligne)
 });
 
+
 if (sessionStorage.getItem("panier")) {
   panier = JSON.parse(sessionStorage.getItem("panier"))
 } else {
@@ -27,7 +30,6 @@ const displayPanier = (panier) => {
     const lignebiere = document.getElementById(`${ligne.biereid}`);
     if (ligne.quantite > 0) {
       const prix = ligne.quantite * ligne.biereprix;
-
       if (lignebiere) {
         lignebiere.querySelector(".bierequantite").innerHTML = `<p>${ligne.quantite} L</p>`;
         lignebiere.querySelector(".biereprix").innerHTML = `<p>${prix} €</p>`;
@@ -49,6 +51,7 @@ const displayPanier = (panier) => {
 }
 
 displayPanier(JSON.parse(sessionStorage.getItem("panier")))
+
 
 const addOne = (biereid, event) => {
   panier.find((item) => {
@@ -111,4 +114,4 @@ if (removefrombasket) {
     })
   })
 }
-
+}

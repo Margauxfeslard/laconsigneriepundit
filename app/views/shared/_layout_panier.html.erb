@@ -1,23 +1,40 @@
 <div class="panier-titre">
+  <% if user_signed_in? %>
   <h2 id="layout" data-user=<%= current_user.id%>> Mon panier</h2>
+  <% else %>
+  <h2 id="layout"> Mon panier</h2>
+  <% end %>
 </div>
 <div class="panier-content">
 
-    <% if current_page?(bieres_path) %>
-      <form action='users/<%= current_user.id%>/commandes/' method="post">
+  <% if current_page?(bieres_path) %>
+  <form action='users/<%= current_user.id%>/commandes/' method="post">
     <% else %>
-    <!--  <form action='/users/<%= current_user.id%>/commandes/<%= @commande.id%>/growlers/' method="post">
- -->
- <% end %>
+    <form action='/users/<%= current_user.id%>/commandes/<%= @commande.id%>/growlers/' method="post">
+      <% end %>
 
         <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
         <ul class="list-group panierligne">
         </ul>
-
-        <ul class="list-group paniergrowler">
-        </ul>
-        <input type="submit" class="btn-yellow <%= current_page?(bieres_path) ? "hidden" : "visible" %>"" value=" Valider
-          mon panier">
+        <% if current_page?(bieres_path) %>
+        <% else %>
+          <div class="growlers-panier">
+            <p><strong>Growlers à échanger <i class="fas fa-sync" style= "color: #265E5A"></i></strong></p>
+            <ul class="list-group paniergrowler">
+            </ul>
+            <p><strong>Growlers à ajouter <i class="fas fa-plus" style= "color: #265E5A";></i></strong></p>
+            <ul class="list-group paniergrowler_add">
+            </ul>
+          </div>
+        <% end %>
+        <div class="button-panier">
+          <% if current_page?(user_commande_path(current_user, @commande || 0)) %>
+          <%= link_to 'Choisir mon point de collecte', user_commande_pointcollectes_path(current_user, @commande), class: "btn-yellow collecte" %>
+          <% else %>
+            <input type="submit" class="btn-yellow" value=" Valider mon panier ">
+          <% end %>
+        </div>
       </form>
+</div>
 
 </div>
