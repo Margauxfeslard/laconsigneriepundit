@@ -40,13 +40,13 @@ class CommandesController < ApplicationController
   end
 
   def add_growlers
-    @commande = Commande.find(params[:id])
+    @commande = Commande.find(params[:id])   
     create_growlers_items(@commande)
     redirect_to user_commande_path(current_user, @commande)
     calcul_amount(@commande)
   end
 
-  def calcul_amount
+  def calcul_amount(commande)
     @commande.commandeitems.each do |ci|
       @commande.amount_cents += ci.price_cents
     end
@@ -96,6 +96,7 @@ class CommandesController < ApplicationController
     growlers = Growler.all
     growlers.each do |growler|
       if growler.capacite == 2
+        binding.pry
         quantite = params[:add2L].to_i
         prix = quantite * growler.price_cents
         if quantite > 0
