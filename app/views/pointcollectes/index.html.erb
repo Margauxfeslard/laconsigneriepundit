@@ -1,25 +1,58 @@
 <%= render 'shared/stepper', active: 3 %>
 
-
-
-<div class="container">
-    <h1>Point de collectes</h1>
-    <div class="row">
-      <div class="col-6">
-          <div class="class=" date_souhaitee">
-              <form>
-                <h4 for="inputAddress">Date souhaitée</h4>
-                <input type="date" class="form-control">
-                <input class="input" type="hidden" name="add2L" value="test">
-              </form>
-            </div>
-          <%= render 'shared/map'%>
-      </div>
+<div class="container-consignerie">
+  <div class="container-gauche-collecte">
+    <div class="titre-collecte">
+      <h2>Point de collectes</h2>
     </div>
-  
-      <div class="col-6">
-          <%= link_to "Paiement",  new_user_commande_payment_path(current_user, params[:commande_id]), method: :get,  class:"btn-yellow" %>
-        </div>
-  
+      <div class="date_souhaitee">
+        <form>
+          <div class="d-flex">
+            <h4 for="inputAddress">Date souhaitée</h4>
+            <input type="date" class="form-control">
+            <input class="input" type="hidden" name="add2L" value="test">
+          </div>
+        </form>
+      </div> <!-- ferme date souhaitée -->
+      <div class="map">
+        <%= render 'shared/map'%>
+      </div><!-- ferme map -->
     </div>
   </div>
+  <div class="container-droit-paiement">
+    <div class="titre-collecte">
+      <h2>Paiement</h2>
+    </div>
+    <div class="content-paiement">
+      <div class="paiement">
+        <%= form_tag user_commande_payments_path(current_user,@commande) do %>
+          <article>
+            <label class="amount">
+              <p><strong>Point de collecte :</strong> <%= @commande.pointcollecte.nom %></p>
+            </label>
+            <label class="amount">
+              <p><strong>Adresse :</strong> <%= @commande.pointcollecte.full_address %></p>
+            </label>
+            <label class="amount">
+              <p><strong>Date souhaitée :</strong> <%= @commande.date_souhaitee %></p>
+            </label>
+            <label class="amount">
+              <p><strong>Montant total de la commande :</strong> <%= humanized_money_with_symbol(@commande.amount*10) %></p>
+            </label>
+      </div>
+      <div class="bouton-paiement">
+          </article>
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-label="Paiement par carte"
+            data-name="My Item"
+            data-email="<%= current_user.email %>"
+            data-description="Item <%= @commande.item_sku %>"
+            data-amount="<%= @commande.amount_cents %>"
+            data-currency="<%= @commande.amount.currency %>">
+          </script>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

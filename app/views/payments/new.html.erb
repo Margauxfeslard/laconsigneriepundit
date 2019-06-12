@@ -6,7 +6,7 @@
     <%= form_tag user_commande_payments_path(current_user,@commande) do %>
       <article>
         <label class="amount">
-          <p>Montant total de la commande : <%= humanized_money_with_symbol(@commande.amount*10) %></p>
+          <p>Montant total de la commande : <%= humanized_money_with_symbol(@commande.amount) %></p>
         </label>
       </article>
 
