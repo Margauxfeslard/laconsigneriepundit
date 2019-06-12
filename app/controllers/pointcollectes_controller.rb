@@ -16,6 +16,7 @@ class PointcollectesController < ApplicationController
   end
 
   def finalize_commande
+    raise
     @commande = Commande.find(params[:commande_id])
     @commande.pointcollecte = Pointcollecte.find(params[:id])
     @commande.save

@@ -1,10 +1,9 @@
 <%= render 'shared/stepper', active: 3 %>
-
 <div class="container-consignerie">
   <div class="container-gauche-collecte">
     <div class="titre-collecte">
-      <h2>Point de collectes</h2>
-    </div>
+      <h2 class="dataset"  data-address='<%= current_user.full_address  %>'' data-lat='<%= current_user.latitude  %>'' data-long='<%= current_user.longitude  %>'>Point de collectes</h2>
+    </div >
       <div class="date_souhaitee">
           <div class="titre-form">
             <p for="inputAddress">Date souhaitée</p>

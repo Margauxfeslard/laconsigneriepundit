@@ -22,10 +22,10 @@ const initMapbox = () => {
 
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
-      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
+      const popup = new mapboxgl.Popup({ className: 'popup-class' }).setHTML(marker.infoWindow);
       new mapboxgl.Marker()
         .setLngLat([marker.lng, marker.lat])
-        .setPopup(popup) // add this
+        .setPopup(popup)
         .addTo(map);
     });
 
@@ -33,16 +33,28 @@ const initMapbox = () => {
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken }));
     map.addControl(new mapboxgl.FullscreenControl());
 
+    //récupérer les données de l'input adresse//
+
+    const initAdress = (user_address) => {
+      const input_address = document.querySelector(".mapboxgl-ctrl-geocoder--input");
+      input_address.value += user_address;
+    }
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const user_address = document.querySelector(".dataset").dataset.address;
+      initAdress(user_address);
+    });
+
+
+    const input_address = document.querySelector(".mapboxgl-ctrl-geocoder--input");
+    input_address.addEventListener("input", (event) => {
+    })
+
+    $('#map').on('click', '.trigger', function() {
+      alert('Hello from Toronto!');
+  });
 
   }
-
-
-  const input_address = document.querySelector(".mapboxgl-ctrl-geocoder--input");
-  input_address.addEventListener("change", (event) => {
-    console.log(input_address.value);
-  }
-  )
-
 };
 
 export { initMapbox };
