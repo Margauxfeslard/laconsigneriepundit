@@ -6,13 +6,13 @@
       <h2>Point de collectes</h2>
     </div>
       <div class="date_souhaitee">
-        <form>
-          <div class="d-flex">
-            <h4 for="inputAddress">Date souhaitée</h4>
-            <input type="date" class="form-control">
-            <input class="input" type="hidden" name="add2L" value="test">
+          <div class="titre-form">
+            <p for="inputAddress">Date souhaitée</p>
           </div>
-        </form>
+          <div class="input-form">
+              <form><input type="date" class="form-control">
+              <input class="input" type="hidden" name="add2L" value="test"></form>
+          </div>
       </div> <!-- ferme date souhaitée -->
       <div class="map">
         <%= render 'shared/map'%>
@@ -28,10 +28,10 @@
         <%= form_tag user_commande_payments_path(current_user,@commande) do %>
           <article>
             <label class="amount">
-              <p><strong>Point de collecte :</strong> <%= @commande.pointcollecte.nom %></p>
+              <p><strong>Point de collecte :</strong> <%= @commande.pointcollecte.nil? ? 'A définir' : @commande.pointcollecte.nom %></p>
             </label>
             <label class="amount">
-              <p><strong>Adresse :</strong> <%= @commande.pointcollecte.full_address %></p>
+              <p><strong>Adresse :</strong> <%= @commande.pointcollecte.nil? ? 'A définir' : @commande.pointcollecte.full_address %></p>
             </label>
             <label class="amount">
               <p><strong>Date souhaitée :</strong> <%= @commande.date_souhaitee %></p>
@@ -40,9 +40,9 @@
               <p><strong>Montant total de la commande :</strong> <%= humanized_money_with_symbol(@commande.amount*10) %></p>
             </label>
       </div>
-      <div class="bouton-paiement">
+      <div class="button-paiement">
           </article>
-          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" <% @commande.pointcollecte == 'A définir' ? 'disabled: true' : ''  %>
             data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
             data-label="Paiement par carte"
             data-name="My Item"
