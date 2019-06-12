@@ -3,6 +3,7 @@
 const dateElement = document.querySelector('.date_input');
 
 if (dateElement) {
+  console.log("test");
   document.addEventListener('change', (event) => {
     const dateSaisie = document.querySelector('.date_input').value;
     dateElement.insertAdjacentHTML('beforeend', `<input class="input" type="hidden" name="dateinput" value=${dateSaisie}>`);

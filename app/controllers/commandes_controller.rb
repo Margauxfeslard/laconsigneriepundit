@@ -8,7 +8,6 @@ class CommandesController < ApplicationController
 
   end
 
-
   # def new
   #   @commande = Commande.new
   # end
@@ -48,23 +47,27 @@ class CommandesController < ApplicationController
     calcul_amount(@commande)
   end
 
-  def calcul_amount(commande)
+  def calcul_amount(_commande)
     @commande.commandeitems.each do |ci|
       @commande.amount += ci.price
     end
     @commande.save
   end
 
-  def growlers_show # GET /restaurants
-    # @growlers = Growler.all
+  def growlers_show
     @commande = Commande.find(params[:id])
-    @growlersall = current_user.commandes
-                               .select { |commande| commande.etat == 'payed' }
-                               .map(&:commandeitems)
-                               .flatten.select { |ci| ci.item_type == "Growler" }
-    array = @growlersall.partition { |growler| growler.item.capacite == 1 }
-    @small_growlers = array[0].count
-    @big_growlers = array[1].count
+    stockgrowler = {Growler.first.id => 0, Growler.second.id => 0}
+    current_user.commandeitems.where(item_type:"Growler").each do |ci|
+      if ci.commande.etat = "payed" 
+        if ci.item_id == Growler.first.id 
+        stockgrowler[Growler.first.id] += ci.quantite
+        else
+          stockgrowler[Growler.second.id] += ci.quantite
+        end
+      end
+    end
+    @small_growlers = stockgrowler[Growler.second.id ]
+    @big_growlers = stockgrowler[Growler.first.id ]
     @growlers = Growler.all
   end
 
@@ -89,7 +92,6 @@ class CommandesController < ApplicationController
         ci = Commandeitem.create(quantite: quantite, item: biere, commande: @commande, price: prix)
       end
     end
-
     # /users/:user_id/commandes/:id/growlers
     redirect_to growlers_user_commande_path(current_user, @commande)
   end
