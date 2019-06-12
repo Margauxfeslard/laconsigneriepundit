@@ -23,7 +23,7 @@ gem 'webpacker'
 
 gem 'geocoder'
 gem 'letter_opener', group: :development
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'postmark-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
