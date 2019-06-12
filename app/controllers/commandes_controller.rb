@@ -5,6 +5,7 @@ class CommandesController < ApplicationController
 
   def show          # GET /commandes/:id
     @commande = current_user.commandes.pending.find(params[:id])
+
   end
 
 
