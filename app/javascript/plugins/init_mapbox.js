@@ -30,10 +30,12 @@ const initMapbox = () => {
     });
 
     fitMapToMarkers(map, markers);
-  map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken }));
+    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken }));
+    map.addControl(new mapboxgl.FullscreenControl());
+
 
   }
-  
+
 
   const input_address = document.querySelector(".mapboxgl-ctrl-geocoder--input");
   input_address.addEventListener("change", (event) => {

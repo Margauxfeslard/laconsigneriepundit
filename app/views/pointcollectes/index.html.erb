@@ -1,15 +1,25 @@
 <%= render 'shared/stepper', active: 3 %>
 
-<div class="container-consignerie-pointcollect">
-  <div>
+
+
+<div class="container">
     <h1>Point de collectes</h1>
+    <div class="row">
+      <div class="col-6">
+          <div class="class=" date_souhaitee">
+              <form>
+                <h4 for="inputAddress">Date souhaitée</h4>
+                <input type="date" class="form-control">
+                <input class="input" type="hidden" name="add2L" value="test">
+              </form>
+            </div>
+          <%= render 'shared/map'%>
+      </div>
+    </div>
+  
+      <div class="col-6">
+          <%= link_to "Paiement",  new_user_commande_payment_path(current_user, params[:commande_id]), method: :get,  class:"btn-yellow" %>
+        </div>
+  
+    </div>
   </div>
-  <div class="class=" date_souhaitee">
-    <form>
-      <h4 for="inputAddress">Date souhaitée</h4>
-      <input type="date" class="form-control">
-      <input class="input" type="hidden" name="add2L" value="test">
-    </form>
-  </div>
-  <%= render 'shared/map'%>
-</div>

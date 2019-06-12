@@ -1,4 +1,4 @@
-.search-bar{
+.search-bar {
   width: 100%;
   margin-left: 25%;
 }
@@ -9,5 +9,12 @@
 
 .mapboxgl-popup-content {
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
+}
+
+#map {
+  margin: 10px 0px 10px 0px;
+  top: 0;
+  bottom: 0;
+  width: 100%;
 }
