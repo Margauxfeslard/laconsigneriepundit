@@ -1,7 +1,7 @@
 <%= render 'shared/stepper', active: 1 %>
 <div class="container-consignerie">
   <div class="stock-growler">
-    <h1 id="dataset" data-growlers_small=<%= @growlers.first.id%> data-growlers_small_price=<%= @growlers.first.price%>  data-growlers_big=<%= @growlers.second.id%> data-growlers_big_price=<%= @growlers.second.price%>>Tes growlers</h1>
+    <h1 id="dataset" data-growlers_small=<%= @growlers.second.id%> data-growlers_small_price=<%= @growlers.second.price%>  data-growlers_big=<%= @growlers.first.id%> data-growlers_big_price=<%= @growlers.first.price%>>Tes growlers</h1>
       <div class="stock-growler-1">
         <div class="logo-consignerie">
           <%= image_tag 'logo1.png' %>
@@ -43,3 +43,4 @@
     </div>
   </div>
    <%= render 'shared/footer' %>
+
