@@ -23,6 +23,8 @@ class PaymentsController < ApplicationController
   )
 
   @commande.update(payment: charge.to_json, etat: 'payed')
+  mail = CommandeMailer.with(commande: @commande).create_confirmation
+  mail.deliver_now
   redirect_to user_commande_confirmation_path(current_user,@commande)
 
 rescue Stripe::CardError => e

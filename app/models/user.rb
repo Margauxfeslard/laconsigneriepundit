@@ -7,6 +7,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  after_create :send_welcome_email
+
   after_validation do
     full_address
   end
@@ -17,4 +19,10 @@ class User < ApplicationRecord
 
   geocoded_by :full_address
   after_validation :geocode, if: :will_save_change_to_full_address?
+
+  private
+
+  def send_welcome_email
+    UserMailer.with(user: self).welcome.deliver_now
+  end
 end
