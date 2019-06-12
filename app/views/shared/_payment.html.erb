@@ -1,0 +1,36 @@
+<div class="container-droit-paiement">
+    <div class="titre-collecte">
+      <h2>Paiement</h2>
+    </div>
+    <div class="content-paiement">
+      <div class="paiement">
+        <%= form_tag user_commande_payments_path(current_user,commande) do %>
+          <article>
+            <label class="amount">
+              <p><strong>Point de collecte :</strong> <%= commande.pointcollecte.nil? ? 'A définir' : commande.pointcollecte.nom %></p>
+            </label>
+            <label class="amount">
+              <p><strong>Adresse :</strong> <%= commande.pointcollecte.nil? ? 'A définir' : commande.pointcollecte.full_address %></p>
+            </label>
+            <label class="amount">
+              <p><strong>Date souhaitée :</strong> <%= commande.date_souhaitee %></p>
+            </label>
+            <label class="amount">
+              <p><strong>Montant total de la commande :</strong> <%= humanized_money_with_symbol(commande.amount) %></p>
+            </label>
+          </article>
+            <div class="button-paiement">
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-label="Paiement par carte"
+              data-name="My Item"
+              data-email="<%= current_user.email %>"
+              data-description="Item <%= commande.item_sku %>"
+              data-amount="<%= commande.amount_cents %>"
+              data-currency="<%= commande.amount.currency %>">
+            </script>
+            </div>
+        <% end %>
+      </div>
+    </div>
+</div>

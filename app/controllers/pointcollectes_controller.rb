@@ -10,7 +10,7 @@ class PointcollectesController < ApplicationController
         infoWindow: render_to_string(partial: "infowindow", locals: { pointcollecte: pointcollecte })
       }
     end
-end
+  end
 
   def show
   end

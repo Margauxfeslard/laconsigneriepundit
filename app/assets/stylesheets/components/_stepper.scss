@@ -13,9 +13,12 @@ html {
   display:table;
   width:100%;
   margin:0 auto;
-  background-color:transparent;
+  background-color:#E8E8E8;
   margin-bottom: 10px;
   margin-top: 20px;
+  position: sticky;
+  top:0;
+  z-index: 100;
 }
 .md-stepper-horizontal .md-step {
   display:table-cell;

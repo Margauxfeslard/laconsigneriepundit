@@ -534,15 +534,167 @@ puts "creating collectpoint"
   horaire: "9h-12h tous les jours"
   )
 
-  10.times do |n|
-    Pointcollecte.create!(
-    ville: "Lille",
-    zipcode: 59000,
-    nom: "pointcol" + n.to_s,
-    adresse: "114 Rue de paris",
-    horaire: "9h-12h tous les jours"
-    )
-  end
+  Pointcollecte.create!(
+  ville: "Lille",
+  zipcode: 59000,
+  nom: "Allo Fleurs",
+  adresse: "9 rue d'isly",
+  horaire: "9h-20h tous les jours"
+  )
+
+  Pointcollecte.create!(
+  ville: "Lille",
+  zipcode: 59000,
+  nom: "Au pain d'épi",
+  adresse: "12 rue van oost",
+  horaire: "9h-19h tous les jours"
+  )
+
+  Pointcollecte.create!(
+  ville: "Lille",
+  zipcode: 59000,
+  nom: "Boulangerie Hubinon Lamont",
+  adresse: "67 rue d'isly",
+  horaire: "9h-18h tous les jours"
+  )
+
+  Pointcollecte.create!(
+  ville: "Lille",
+  zipcode: 59000,
+  nom: "Aux délices",
+  adresse: "26 rue d'inkermann",
+  horaire: "9h-12h tous les jours"
+  )
+
+  Pointcollecte.create!(
+  ville: "Lille",
+  zipcode: 5900,
+  nom: "O'marche des biscottes",
+  adresse: "33 rue de marquillies",
+  horaire: "9h-15h tous les jours"
+  )
+
+  Pointcollecte.create!(
+  ville: "Lille",
+  zipcode: 59000,
+  nom: "My auchan Wazemmes",
+  adresse: "14 place nouvelle aventure",
+  horaire: "9h-20h tous les jours"
+  )
+
+  Pointcollecte.create!(
+  ville: "Lille",
+  zipcode: 59000,
+  nom: "Optique Coilliot",
+  adresse: "14 rue de fleurus",
+  horaire: "9h-15h tous les jours"
+  )
+
+  Pointcollecte.create!(
+  ville: "Lille",
+  zipcode: 59000,
+  nom: "Imediaphone",
+  adresse: "94 rue racine",
+  horaire: "9h-17h tous les jours"
+  )
+
+  Pointcollecte.create!(
+  ville: "Lille",
+  zipcode: 59000,
+  nom: "Epicerie 400",
+  adresse: "364 rue du faubourg d'arras",
+  horaire: "9h-18h tous les jours"
+  )
+
+  Pointcollecte.create!(
+  ville: "Lille",
+  zipcode: 59000,
+  nom: "Cordonnerie Gambetta",
+  adresse: "64 rue littre",
+  horaire: "9h-17h tous les jours"
+  )
+
+  Pointcollecte.create!(
+  ville: "Lille",
+  zipcode: 59000,
+  nom: "La lilloise mercerie",
+  adresse: "30 rue du court debout",
+  horaire: "9h-18h tous les jours"
+  )
+
+  Pointcollecte.create!(
+  ville: "Lille",
+  zipcode: 59000,
+  nom: "Atelier tatillon",
+  adresse: "3 rue du nord",
+  horaire: "9h-20h tous les jours"
+  )
+
+  Pointcollecte.create!(
+  ville: "Lille",
+  zipcode: 59800,
+  nom: "Carrefour BIO",
+  adresse: "rue jeanne maillotte",
+  horaire: "9h-20h tous les jours"
+  )
+
+  Pointcollecte.create!(
+  ville: "Lille",
+  zipcode: 59000,
+  nom: "Les aubaines",
+  adresse: "298 rue léon gambetta",
+  horaire: "9h-20h tous les jours"
+  )
+
+  Pointcollecte.create!(
+  ville: "Lille",
+  zipcode: 59000,
+  nom: "Total access",
+  adresse: "2 rue de turenne",
+  horaire: "9h-20h tous les jours"
+  )
+
+  Pointcollecte.create!(
+  ville: "Lille",
+  zipcode: 59000,
+  nom: "Carrefour Market",
+  adresse: "41 boulevard de la moselle",
+  horaire: "9h-20h tous les jours"
+  )
+
+  Pointcollecte.create!(
+  ville: "Lille",
+  zipcode: 59000,
+  nom: "Au Bon Coin du monde",
+  adresse: "16 rue des Augustins",
+  horaire: "9h-20h tous les jours"
+  )
+
+  Pointcollecte.create!(
+  ville: "Lille",
+  zipcode: 59000,
+  nom: "Batterystock",
+  adresse: "5 rue des ponts de Comines",
+  horaire: "9h-20h tous les jours"
+  )
+
+  Pointcollecte.create!(
+  ville: "Lille",
+  zipcode: 59000,
+  nom: "Racine carrée",
+  adresse: "12 place Philippe Lebon",
+  horaire: "9h-20h tous les jours"
+  )
+
+  Pointcollecte.create!(
+  ville: "Lille",
+  zipcode: 59000,
+  nom: "Les halles de Moulin",
+  adresse: "42 rue Jean Jaurès",
+  horaire: "9h-20h tous les jours"
+  )
+
+
 
 
 puts "creating commande"

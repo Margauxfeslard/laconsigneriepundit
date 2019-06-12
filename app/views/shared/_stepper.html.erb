@@ -27,39 +27,20 @@
     <div class= "md-step">
   <% end %>
       <div class="md-step-circle"><span>3</span></div>
-      <div class="md-step-title"><h2 class="new-h2">Point de collecte</h2></div>
+      <div class="md-step-title"><h2 class="new-h2">Point de collecte <br> & paiement</h2></div>
       <div class="md-step-bar-left"></div>
       <div class="md-step-bar-right"></div>
     </div>
 
-  <% if active == 4  %>
-    <div class= "md-step active editable">
-  <%else %>
-    <div class= "md-step">
-  <% end %>
-      <div class="md-step-circle"><span>4</span></div>
-      <div class="md-step-title"><h2 class="new-h2">Paiement</h2></div>
-      <div class="md-step-bar-left"></div>
-      <div class="md-step-bar-right"></div>
-    </div>
-
-    <% if active == 5  %>
+    <% if active == 4  %>
     <div class= "md-step active editable">
       <%else %>
     <div class= "md-step">
   <% end %>
-      <div class="md-step-circle"><span>5</span></div>
+      <div class="md-step-circle"><span>4</span></div>
       <div class="md-step-title"><h2 class="new-h2">Confirmation commande</h2></div>
       <div class="md-step-bar-left"></div>
       <div class="md-step-bar-right"></div>
     </div>
 </div>
 
-
-
-
-<!-- ajouter active editable ou done suivant tache en cours -->
-<!-- <ul class="list-inline tabs-underlined">
-  <li>
-    <%#= class: "md-step #{active == 1 ? "active" : ""}" %>
-  </li> -->
