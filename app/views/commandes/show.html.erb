@@ -55,12 +55,11 @@
                   </ul>
                 <% end %>
               <% end %>
-              <%= link_to 'Choisir mon point de collecte', user_commande_pointcollectes_path(current_user, @commande), class: "btn-yellow collecte" %>
             </div>
       </div>
   </div>
-   <!--  <div class="container-droit-panier">
-      <%#= render 'shared/layout_panier' %>
-    </div> -->
+    <div class="button-choix">
+      <%= link_to 'Choisir mon point de collecte', user_commande_pointcollectes_path(current_user, @commande), class: "btn-yellow collecte" %>
+    </div>
 </div>
 <%= render 'shared/footer' %>
