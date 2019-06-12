@@ -4,7 +4,7 @@ class CommandeMailer < ApplicationMailer
 
     mail(
       to:       @commande.user.email,
-      subject:  "Confirmation de votre commande !"
+      subject:  "Confirmation de ta commande !"
     )
   end
 end
