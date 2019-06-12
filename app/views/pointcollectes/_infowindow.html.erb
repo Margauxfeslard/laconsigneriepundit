@@ -1,4 +1,5 @@
-<div class="infowindow-card-pointcollecte" data-collID='<%= pointcollecte.id  %>'>
+
+<div class="infowindow-card-pointcollecte" data-collID='<%= pointcollecte.id  %>' onload="console.log('i'm here')" >
   <div class="infowindow-card-pointcollecte-infos">
     <div>
       <h3><%= pointcollecte.nom %></h3>
@@ -6,5 +7,11 @@
       <p><%=pointcollecte.horaire%></p>
     </div>
   </div>
-<%= link_to "Selectionner",  user_commande_pointcollecte_path(current_user, params[:commande_id], pointcollecte), method: :post,  class:"btn-yellow" %>
+
+  <div id = "boutoncmd" class="hidden">
+      <%= link_to "Selectionner",  user_commande_pointcollecte_path(current_user, params[:commande_id], pointcollecte), method: :post, data: { :foo => 'bar', :this => 'that' }, class:"btn-yellow" %>
+  </div>
+  <div id = "textadvise" class="show">
+      <p><strong>Choisissez d'abord la date</strong></p>
+  </div>
 </div>

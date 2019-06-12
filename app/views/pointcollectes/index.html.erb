@@ -3,14 +3,13 @@
 
 
 <div class="container">
-    <h1>Point de collectes</h1>
+    <h1 class="dataset"  data-address='<%= current_user.full_address  %>'' data-lat='<%= current_user.latitude  %>'' data-long='<%= current_user.longitude  %>'>Point de collectes</h1>
     <div class="row">
       <div class="col-6">
           <div class="class=" date_souhaitee">
-              <form>
-                <h4 for="inputAddress">Date souhaitée</h4>
-                <input type="date" class="form-control">
-                <input class="input" type="hidden" name="add2L" value="test">
+              <form name = "formDate">
+                <h4 id="inputAddress">Date souhaitée</h4>
+                <input name="date_input" type="date" class="form-control date_input">
               </form>
             </div>
           <%= render 'shared/map'%>
