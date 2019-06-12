@@ -3,7 +3,6 @@ class PaymentsController < ApplicationController
 
   def confirmation_commande
     @commande = current_user.commandes.payed.find(params[:commande_id])
-    @user = User.find(params[:user_id])
   end
 
   def new
@@ -11,23 +10,23 @@ class PaymentsController < ApplicationController
 
   def create
     customer = Stripe::Customer.create(
-    source: params[:stripeToken],
-    email:  params[:stripeEmail]
-  )
+      source: params[:stripeToken],
+      email:  params[:stripeEmail]
+    )
 
-  charge = Stripe::Charge.create(
-    customer:     customer.id,   # You should store this customer id and re-use it.
-    amount:       @commande.amount_cents,
-    description:  "Payment for item #{@commande.item_sku} for order #{@commande.id}",
-    currency:     @commande.amount.currency
-  )
+    charge = Stripe::Charge.create(
+      customer:     customer.id,   # You should store this customer id and re-use it.
+      amount:       @commande.amount_cents,
+      description:  "Payment for item #{@commande.item_sku} for order #{@commande.id}",
+      currency:     @commande.amount.currency
+    )
 
-  @commande.update(payment: charge.to_json, etat: 'payed')
-  redirect_to user_commande_confirmation_path(current_user,@commande)
+    @commande.update(payment: charge.to_json, etat: 'payed')
+    redirect_to user_commande_confirmation_path(current_user, @commande)
 
-rescue Stripe::CardError => e
-  flash[:alert] = e.message
-  redirect_to new_commande_payment_path(@commande)
+  rescue Stripe::CardError => e
+    flash[:alert] = e.message
+    redirect_to new_commande_payment_path(@commande)
   end
 
   private

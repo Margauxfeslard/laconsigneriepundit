@@ -12,7 +12,7 @@
   <% else %>
     <form action='/users/<%= current_user.id%>/commandes/<%= @commande.id%>/growlers/' method="post">
   <% end %>
-      
+
         <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
         <ul class="list-group panierligne">
         </ul>
@@ -28,11 +28,11 @@
           </div>
         <% end %>
         <div class="button-panier">
-          <% if current_page?(user_commande_path(current_user, @commande || 0)) %>
-          <%= link_to 'Choisir mon point de collecte', user_commande_pointcollectes_path(current_user, @commande), class: "btn-yellow collecte" %>
-          <% else %>
+         <!--  <%# if current_page?(user_commande_path(current_user, @commande || 0)) %>
+          <%#= link_to 'Choisir mon point de collecte', user_commande_pointcollectes_path(current_user, @commande), class: "btn-yellow collecte" %>
+          <%# else %> -->
             <input type="submit" class="btn-yellow" value=" Valider mon panier ">
-          <% end %>
+          <%# end %>
         </div>
       </form>
 </div>
