@@ -9,12 +9,13 @@
   }
 }
 .titre-growler-panier{
-  border-top: 1px solid rgba(0, 0, 0, 0.125);
- vertical-align: center;
- background-color: white;
- margin : 10px;
- height: 40px;
- align-items: center;
+  width: 100%;
+  background-color: white;
+  height: 40px;
+  align-items: center;
+  align-content: center;
+  margin: 10px 0 0 0;
+  background-color: $light-gray;
  p{
   margin: 0;
  }
@@ -87,4 +88,5 @@
 .fa-plus.panier{
   font-size: 20px;
   padding-left: 5px;
+  padding: 10px;
 }
