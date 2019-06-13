@@ -1,14 +1,14 @@
-.panier-titre{
+.panier-titre {
   padding: 10px;
   margin: 1px;
   text-align: center;
   background-color: white;
   h2 {
-    color:#265E5A;
+    color: #265e5a;
     margin: 0;
   }
 }
-.titre-growler-panier{
+.titre-growler-panier {
   width: 100%;
   background-color: white;
   height: 40px;
@@ -16,57 +16,41 @@
   align-content: center;
   margin: 10px 0 0 0;
   background-color: $light-gray;
- p{
-  margin: 0;
- }
-
+  p {
+    margin: 0;
+  }
 }
 .panier-content form {
-  text-align:center;
+  text-align: center;
 }
 
-.panier-content{
+.panier-content {
   margin: 1px;
   font-size: 11px;
+  .bierequantite {
+    font-weight: bold;
+  }
+
+  .growlers-panier {
+    .growlerquantite {
+      font-weight: bold;
+    }
+  }
 }
 
-.list-group-item{
+.list-group-item {
   display: flex;
   justify-content: space-between;
   border: none;
   border-top: 1px solid rgba(0, 0, 0, 0.125);
   margin: 1px;
-  p{
-    margin-bottom:0;
+  p {
+    margin-bottom: 0;
   }
 }
-// .list-group .paniergrowler{
-//   display: flex;
-//   justify-content: space-between;
-//   border: none;
-//   border-top: 1px solid rgba(0, 0, 0, 0.125);
-//   margin: 1px;
-
-// }
-
-// .list-group .paniergrowler_add{
-//   display: flex;
-//   justify-content: space-between;
-//   border: none;
-//   border-top: 1px solid rgba(0, 0, 0, 0.125);
-//   margin: 1px;
-
-// }
 
 
-// .growlers-panier{
-//   padding: 10px;
-//   margin: 1px;
-//   text-align: center;
-//   // background-color: white;
-// }
-
-.btn-yellow.collecte{
+.btn-yellow.collecte {
   background: $yellow;
   text-align: center;
   padding: 10px 12px;
@@ -74,18 +58,18 @@
   box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
   color: $black;
   text-transform: uppercase;
-  font-family: 'Karla', sans-serif;
+  font-family: "Karla", sans-serif;
   font-weight: bold;
   margin-top: 8px;
   margin-bottom: 8px;
 }
 
-.fa-sync.panier{
+.fa-sync.panier {
   font-size: 20px;
   padding-left: 5px;
 }
 
-.fa-plus.panier{
+.fa-plus.panier {
   font-size: 20px;
   padding-left: 5px;
   padding: 10px;

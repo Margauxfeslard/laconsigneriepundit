@@ -125,7 +125,7 @@ hopshot.remote_logo_img_url = "https://res.cloudinary.com/dbvuwwxkt/image/upload
 hopshot.save
 
 koukestout = Biere.create!(
-  nom: "KOUKESTOUT",
+  nom: "Koukestou",
   brasserie:bellenaert,
   description:"Brassin éphémère n°14" ,
   style:"American Stout",

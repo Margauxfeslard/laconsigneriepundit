@@ -87,13 +87,15 @@ if (document.querySelector(".stock-growler")) {
       sessionStorage.setItem("growlers", JSON.stringify(growlers))
       growlers = JSON.parse(sessionStorage.getItem("growlers"))
 
-      paniergrowlertopay.innerHTML = (`<li id="add2L" class="list-group-item"><span class="growlercapacite"><p>2L</p></span><span class="growlerquantite"><p>${add2L}</p></span><span class="growlerprix"><p>${prixtotal2L} €</p></span>
+      //set le maximum dans les inputs//
+      //ecris la ligne dans le panier//
+      paniergrowlertopay.innerHTML = (` </li><li id="add1L" class="list-group-item"><span class="growlercapacite"><p>1L</p></span><span class="growlerquantite"><p>${add1L}</p></span><span class="growlerprix"><p>${prixtotal1L} €</p></span>
+      <input class="input" type="hidden" name="add1L" value="${add1L}">
+      <input class="input" type="hidden" name="ech1L" value="${volstock1L}">
+      </li><li id="add2L" class="list-group-item"><span class="growlercapacite"><p>2L</p></span><span class="growlerquantite"><p>${add2L}</p></span><span class="growlerprix"><p>${prixtotal2L} €</p></span>
   <input class="input" type="hidden" name="add2L" value="${add2L}">
   <input class="input" type="hidden" name="ech2L" value="${volstock2L}">
-  </li><li id="add1L" class="list-group-item"><span class="growlercapacite"><p>1L</p></span><span class="growlerquantite"><p>${add1L}</p></span><span class="growlerprix"><p>${prixtotal1L} €</p></span>
-  <input class="input" type="hidden" name="add1L" value="${add1L}">
-  <input class="input" type="hidden" name="ech1L" value="${volstock1L}">
-  </li>`);
+ `);
 
 
     }

@@ -6,6 +6,7 @@ const panierligne = document.querySelector(".panierligne");
 const addtobasket = document.querySelectorAll(".addtobasket");
 const removefrombasket = document.querySelectorAll(".removefrombasket");
 
+
 let panier = []
 bieres.forEach((biere) => {
   const ligne = {
