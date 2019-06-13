@@ -2,24 +2,37 @@
   font-size: 30px;
   color: #F3B844;
   padding: 10px;
+  margin-bottom: 20px;
 }
 .fa-sync{
  color: #265E5A;
  font-size: 30px;
  padding: 10px;
+ margin-bottom: 20px;
 }
 .fa-check{
   color: #265E5A;
 }
 .content-confirmation{
+  width: 85%;
+  background-color: white;
+  padding: 30px;
   text-align: center;
 }
 
 .echange-growler-confirmation{
-display: flex;
-padding: 20px;
-align-items: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
   p{
     margin: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.remerciement{
+  h3 {
+  padding-top: 10px;
+  padding-bottom: 20px;
   }
 }
