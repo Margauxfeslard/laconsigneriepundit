@@ -8,17 +8,25 @@
     margin: 0;
   }
 }
+.titre-growler-panier{
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+ vertical-align: center;
+ background-color: white;
+ margin : 10px;
+ height: 40px;
+ align-items: center;
+ p{
+  margin: 0;
+ }
 
+}
 .panier-content form {
   text-align:center;
 }
 
 .panier-content{
-
-    margin: 1px;
-    font-size: 11px;
-    background-color: white;
-
+  margin: 1px;
+  font-size: 11px;
 }
 
 .list-group-item{
@@ -27,6 +35,9 @@
   border: none;
   border-top: 1px solid rgba(0, 0, 0, 0.125);
   margin: 1px;
+  p{
+    margin-bottom:0;
+  }
 }
 // .list-group .paniergrowler{
 //   display: flex;
