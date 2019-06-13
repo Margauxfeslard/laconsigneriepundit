@@ -265,7 +265,7 @@ user2 = User.create!(
 )
 
 user3 = User.create!(
-  email: "marie@gmail.com",
+  email: "mariecaulliez@gmail.com",
   password: "password",
   nom: "Caulliez",
   prenom: "Marie"
