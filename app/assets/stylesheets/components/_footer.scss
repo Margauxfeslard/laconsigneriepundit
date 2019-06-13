@@ -6,7 +6,9 @@
   height: 70px;
   padding: 0px 50px;
   color: black;
-  margin-top: 50px;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
 
 }
 
@@ -25,4 +27,7 @@
   opacity: 1;
 }
 
-html{ height:100%; }
+.ctabanner {
+  position: relative;
+  z-index: 4;
+}
