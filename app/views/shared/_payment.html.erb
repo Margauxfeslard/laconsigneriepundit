@@ -13,7 +13,7 @@
               <p><strong>Adresse :</strong> <%= commande.pointcollecte.nil? ? 'A définir' : commande.pointcollecte.full_address %></p>
             </label>
             <label class="amount">
-              <p><strong>Date souhaitée :</strong> <%= commande.date_souhaitee %></p>
+              <p><strong>Date souhaitée :</strong> <%= commande.date_souhaitee.strftime("%d.%m.%Y") %></p>
             </label>
             <label class="amount">
               <p><strong>Montant total de la commande :</strong> <%= humanized_money_with_symbol(commande.amount) %></p>

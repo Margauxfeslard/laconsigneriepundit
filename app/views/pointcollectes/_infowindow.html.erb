@@ -1,5 +1,4 @@
-
-<div class="infowindow-card-pointcollecte" data-collID='<%= pointcollecte.id  %>' >
+<div class="infowindow-card-pointcollecte" data-collID='<%= pointcollecte.id  %>'>
   <div class="infowindow-card-pointcollecte-infos">
     <div>
       <h3><%= pointcollecte.nom %></h3>
@@ -9,9 +8,15 @@
   </div>
 
   <div class="boutoncmd">
-      <%= link_to "Selectionner",  user_commande_pointcollecte_path(current_user, params[:commande_id], pointcollecte), method: :post, class:"btn-yellow" %>
+    <%= form_tag user_commande_pointcollecte_path(current_user, params[:commande_id], pointcollecte), method: :post do %>
+    <p><%= submit_tag 'Selectionner', class:"btn-yellow" %></p>
+    <input id = "hiddendatevalue" name="datevalue" type="hidden" value=""/>
+    <% end %>
   </div>
+
+
+
   <div class="textadvise">
-      <p><strong>Choisissez d'abord la date</strong></p>
+    <p><strong>Choisissez d'abord la date</strong></p>
   </div>
 </div>
