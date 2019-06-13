@@ -4,11 +4,11 @@
       <h3>Welcome back <%= current_user.prenom %></h3>
       <h2>Les bières de juin</h2>
       <p>Découvrez nos dernières trouvailles pour vos growlers : trois nouvelles bières à déguster pour le retour de l'été !</p>
-      <%= link_to "Remplir mes growlers", bieres_path, class: "btn-yellow"%>
+      <%= link_to "Remplir mes growlers", bieres_path, class: "btn-yellow ctabanner"%>
     <% else %>
       <h2>Les bières de juin</h2>
       <p>Nos dernières trouvailles : découvrez trois nouvelles bières dans vos growlers pour le retour de l'été !</p>
-      <%= link_to "Commencer l'expérience", bieres_path, class: "btn-yellow"%>
+      <%= link_to "Commencer l'expérience", bieres_path, class: "btn-yellow ctabanner"%>
     <% end %>
   </div>
 </div>
