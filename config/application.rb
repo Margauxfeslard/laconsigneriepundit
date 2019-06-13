@@ -8,6 +8,9 @@ Bundler.require(*Rails.groups)
 
 module Consignerie
   class Application < Rails::Application
+    config.action_mailer.delivery_method = :postmark
+    config.action_mailer.postmark_settings = { :api_token => ENV['POSTMARK_API_TOKEN'] }
+
     config.generators do |generate|
           generate.assets false
           generate.helper false
@@ -15,6 +18,7 @@ module Consignerie
         end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
+
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
