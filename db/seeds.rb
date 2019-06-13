@@ -105,7 +105,7 @@ labise = Biere.create!(
   taux_alcool: 5.4,
   amertume: 4,
   apparence:"Claire",
-  price_cents: 1000,
+  price_cents: 900,
   )
 labise.remote_logo_img_url = "https://res.cloudinary.com/dg5ekyjef/image/upload/v1560155519/La_bise_logo_dscve0.png"
 labise.save
@@ -119,7 +119,7 @@ hopshot = Biere.create!(
   taux_alcool: 5.1,
   amertume: 3,
   apparence: "Trouble",
-  price_cents: 1200,
+  price_cents: 1000,
   )
 hopshot.remote_logo_img_url = "https://res.cloudinary.com/dbvuwwxkt/image/upload/v1560088826/Hopshot_img_s8zeo8.png"
 hopshot.save
@@ -133,7 +133,7 @@ koukestout = Biere.create!(
   taux_alcool: 5.5,
   amertume: 2,
   apparence: "Trouble",
-  price_cents: 1400,
+  price_cents: 800,
   )
 koukestout.remote_logo_img_url = "https://res.cloudinary.com/dg5ekyjef/image/upload/v1560155110/kouke_gqkn1w.jpg"
 koukestout.save
@@ -147,7 +147,7 @@ poulemouillee = Biere.create!(
   taux_alcool: 6.5,
   amertume: 3,
   apparence:"Claire",
-  price_cents: 1500,
+  price_cents: 800,
   )
 poulemouillee.remote_logo_img_url = "https://res.cloudinary.com/dbvuwwxkt/image/upload/v1560088825/poulemouillee_eqxp4n.png"
 poulemouillee.save
@@ -161,7 +161,7 @@ transition = Biere.create!(
   taux_alcool: 6,
   amertume: 3,
   apparence: "Très claire",
-  price_cents: 1200,
+  price_cents: 900,
   )
 transition.remote_logo_img_url = "https://res.cloudinary.com/dbvuwwxkt/image/upload/v1560088825/transitionhub_v86vbr.png"
 transition.save
@@ -231,7 +231,7 @@ traditionbiere = Biere.create!(
   taux_alcool: 5.7,
   amertume:3,
   apparence: "Très claire",
-  price_cents: 1000,
+  price_cents: 700,
   )
 traditionbiere.remote_logo_img_url = "https://res.cloudinary.com/dg5ekyjef/image/upload/v1560154882/lil_vwa1v8.jpg"
 traditionbiere.save
