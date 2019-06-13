@@ -33,19 +33,20 @@
   }
 }
 .amount-total-commande{
-  text-align:center;
+  height: 480px;
+  top: 150px;
   position: sticky;
-  top : 150px;
 }
 
 
 .montant-total{
   p{color: #265E5A;
     padding : 10px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     background-color: white;
+    position: sticky;
+    text-align: center;
   }
-
 }
 
 .item-recap {
