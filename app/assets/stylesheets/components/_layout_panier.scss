@@ -1,20 +1,32 @@
 .panier-titre{
-  padding-top: 40px;
+  padding: 10px;
+  margin: 1px;
   text-align: center;
+  background-color: white;
   h2 {
     color:#265E5A;
+    margin: 0;
   }
 }
+.titre-growler-panier{
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+ vertical-align: center;
+ background-color: white;
+ margin : 10px;
+ height: 40px;
+ align-items: center;
+ p{
+  margin: 0;
+ }
 
+}
 .panier-content form {
   text-align:center;
 }
 
 .panier-content{
-  p{
-    margin: 0;
-    font-size: 14px;
-  }
+  margin: 1px;
+  font-size: 11px;
 }
 
 .list-group-item{
@@ -23,11 +35,35 @@
   border: none;
   border-top: 1px solid rgba(0, 0, 0, 0.125);
   margin: 1px;
+  p{
+    margin-bottom:0;
+  }
 }
+// .list-group .paniergrowler{
+//   display: flex;
+//   justify-content: space-between;
+//   border: none;
+//   border-top: 1px solid rgba(0, 0, 0, 0.125);
+//   margin: 1px;
 
-.growlers-panier{
-  margin : 10px;
-}
+// }
+
+// .list-group .paniergrowler_add{
+//   display: flex;
+//   justify-content: space-between;
+//   border: none;
+//   border-top: 1px solid rgba(0, 0, 0, 0.125);
+//   margin: 1px;
+
+// }
+
+
+// .growlers-panier{
+//   padding: 10px;
+//   margin: 1px;
+//   text-align: center;
+//   // background-color: white;
+// }
 
 .btn-yellow.collecte{
   background: $yellow;
@@ -43,6 +79,12 @@
   margin-bottom: 8px;
 }
 
-.fas .fa-sync .fa-plus{
-  color: #265E5A;
+.fa-sync.panier{
+  font-size: 20px;
+  padding-left: 5px;
+}
+
+.fa-plus.panier{
+  font-size: 20px;
+  padding-left: 5px;
 }

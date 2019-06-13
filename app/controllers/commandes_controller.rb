@@ -51,11 +51,13 @@ class CommandesController < ApplicationController
 
   def growlers_show
     @commande = Commande.find(params[:id])
+
     stockgrowler = { Growler.first.id => 0, Growler.second.id => 0 }
     current_user.commandeitems.where(item_type: "Growler").each do |ci|
       if ci.commande.etat = "payed"
         if ci.item_id == Growler.first.id
           stockgrowler[Growler.first.id] += ci.quantite
+
         else
           stockgrowler[Growler.second.id] += ci.quantite
         end
@@ -96,7 +98,9 @@ class CommandesController < ApplicationController
       if growler.capacite == 2
         echange2L = params[:ech2L].to_i
         quantite = params[:add2L].to_i
+
         prix = quantite * growler.price
+
         if quantite >= 0
           ci = Commandeitem.create(quantite: quantite, item: growler, commande: commande, price: prix, echange2L: echange2L)
         end
