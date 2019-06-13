@@ -36,6 +36,6 @@ class PaymentsController < ApplicationController
   private
 
   def set_order
-    @commande = current_user.commandes.find(params[:commande_id])
+    @commande = current_user.commandes.pending.find(params[:commande_id])
   end
 end
