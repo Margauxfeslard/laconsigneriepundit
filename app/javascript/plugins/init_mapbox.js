@@ -54,7 +54,6 @@ const initMapbox = () => {
             el.querySelector('.textadvise').removeAttribute("hidden", false);
             const hidden = el.querySelector('#hiddendatevalue');
             hidden.value = dateSaisie
-            console.log(hidden);
           })
 
         } else {
@@ -64,7 +63,6 @@ const initMapbox = () => {
             el.querySelector('.textadvise').setAttribute("hidden", true);
             const hidden = el.querySelector('#hiddendatevalue');
             hidden.value = dateSaisie
-            console.log(hidden);
           })
         }
       }
