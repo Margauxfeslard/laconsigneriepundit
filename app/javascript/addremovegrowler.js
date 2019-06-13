@@ -66,10 +66,11 @@ if (document.querySelector(".stock-growler")) {
       if (add1L < 0) {
         add1L = 0
       }
+
+      let add2L = volumebiere2L - volstock2L;
       if (add2L < 0) {
         add2L = 0
       }
-      let add2L = volumebiere2L - volstock2L;
 
       const prixtotal1L = add1L * growlers[0].prix
       const prixtotal2L = add2L * growlers[1].prix
