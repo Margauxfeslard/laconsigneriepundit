@@ -3,7 +3,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 const inputDate = document.querySelector('.date_input');
-  // verifie qu'un input Date est bien présent poru éviter des'activer sur toutes les pages//
+// verifie qu'un input Date est bien présent poru éviter des'activer sur toutes les pages//
 if (inputDate) {
   sessionStorage.panier = ""
   sessionStorage.growlers = ""
@@ -15,7 +15,7 @@ if (inputDate) {
     })
   }
 
-// Appelle la création de l'hidden input si on modifie la valeur de la date//
+  // Appelle la création de l'hidden input si on modifie la valeur de la date//
   inputDate.addEventListener("change", (event) => {
     const dateSaisie = document.querySelector('.date_input').value;
     fixDateValue(dateSaisie);
@@ -99,6 +99,12 @@ const initMapbox = () => {
       // Lance initAdresse au chargement du DOM (de la page)//
       const user_address = document.querySelector(".dataset").dataset.address;
       initAdress(user_address);
+      const pcollexist = document.querySelector(".datasetpcoll")
+      if (pcollexist === null) {
+        document.querySelector(".stripe-button-el").setAttribute("hidden", true)
+      } else {
+        document.querySelector(".stripe-button-el").removeAttribute("hidden")
+      }
     });
   }
 };
