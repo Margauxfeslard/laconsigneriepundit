@@ -3,4 +3,4 @@
 meta_product_name: "La Consignerie"
 meta_title: "La Consignerie - Bar à growlers"
 meta_description: "La Consignerie propose des bières d’artisans responsables dans des bouteilles réutilisables et consignées appeler Growler"
-meta_image: "bannière.jpg" # should exist in `app/assets/images/`
+meta_image: "app/assets/images/bannière.jpg" # should exist in `app/assets/images/`
