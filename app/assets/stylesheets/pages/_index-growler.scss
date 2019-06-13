@@ -2,47 +2,113 @@
   background-color: white;
   padding: 20px;
   text-align: center;
+  width: 70%;
+  height: 500px;
+}
+
+.growler-title{
+  display: flex;
+  width: 52%;
+  justify-content: center;
+  align-content: center;
+  margin: 15px auto 0 auto;
+  h1{
+  color: black;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+  font-size: 43px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  margin-top: 3px;
+  padding-left: 20px;
+  }
 }
 
 .logo-consignerie img{
-  width: 200px;
-  position:relative;
+  width: 50px;
 }
 
-.stock-growler-1{
+.grid-growler{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  padding: 16px;
+  margin: 0 auto;
+  width: 98%;
+}
+
+.grid-growler-gauche{
+  margin-top: 10px;
+  border: solid 2px $light-gray;
+  background-color: $very-light-gray;
+  width: 100%;
+  p{
+    font-size: 20px;
+    line-height: 21px;
+    padding: 14px;
+  }
+}
+
+.grid-growler-droit{
+  margin-top: 10px;
+  border: solid 2px $yellow;
+  width: 100%;
+  p{
+    font-size: 20px;
+    line-height: 21px;
+    padding: 14px;
+  }
+}
+
+.champs-grid-growler{
   display: flex;
-  margin : 20px;
-  position: relative;
+  align-items: center;
   justify-content: center;
+  width: 95%;
+  margin: 0 auto 30px auto;
 }
 
-.stock h3{
-  background-color: #C2C2C2;
-  padding: 5px;
-  margin:0;
-}
-
-.litre p{
-  background-color : #F3B844;
-  color: white;
-  margin:0;
-  position:absolute;
-  top : 1px;
-  left: 180px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+.litre{
+  padding-right: 30px;
+  p {
+  font-size: 20px;
+  color: $green;
   text-align: center;
+  margin-bottom: 0;
+  padding: 0;
+  }
+  h4 {
+  font-size: 21px;
   font-weight: bold;
-  padding-top: 5px;
-}
-.stock-growler{
-  padding: 60px;
-  margin-right: 16px;
-  width: 75%;
-
+  color: $green;
+  text-align: center;
+  margin-bottom: 0;
+  }
 }
 
+.stock{
+  background-color: $light-gray;
+  padding: 3px 12px;
+  width: 60%;
+  p{
+    color: black;
+    margin-bottom: 0;
+    padding: 0;
+    font-size: 18px;
+  }
+}
+
+.recap-echange{
+  display: flex;
+  justify-content: center;
+  width: 98%;
+  padding: 16px;
+  margin: 0 auto;
+  h4 {
+    font-size: 25px;
+    font-weight: bold;
+  }
+}
 
 .container-droit-panier{
   height: auto;
@@ -51,8 +117,4 @@
   position: sticky;
   // background-color: white;
   margin: 0;
-}
-
-.demande-echange{
-    font-size: 20px;
 }

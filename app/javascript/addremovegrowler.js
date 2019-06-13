@@ -48,7 +48,7 @@ if (document.querySelector(".stock-growler")) {
       }).quantiteechange;
 
       if (growlerEchange1) {
-        calculGrowler.innerText = `Tu souhaites échanger ${onelitervalue} bouteille de 1L et  ${twolitersvalue} bouteilles de 2L`
+        calculGrowler.innerText = `Tu souhaites échanger ${onelitervalue} bouteilles de 1L et  ${twolitersvalue} bouteilles de 2L`
       }
     }
 
