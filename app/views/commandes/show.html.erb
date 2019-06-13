@@ -35,36 +35,34 @@
               <li><p><strong>Total</strong></p></li>
             </ul>
           </div>
-            <div class="content-recap">
-              <% @commande.commandeitems.each do |ci|%>
-                <% if ci.item_type == "Growler"  %>
-                  <ul>
-                    <li><p>Growler : <%= ci.item.capacite %> L </p></li>
-                    <li><p><%= ci.item.price %> € </p></li>
-                    <li><p><%= ci.quantite %></p></li>
-                      <% if ci.item.capacite == 1 && ci.echange1L != 0%>
-                        <li><p> <%= ci.echange1L %></p></li>
-                      <% elsif ci.item.capacite == 2 && ci.echange2L != 0  %>
-                        <li><p> <%= ci.echange2L %></p></li>
-                      <% else %>
-                        <li></li>
-                      <% end %>
-                    <li><p><%= ci.price %> €</p></li>
-                  </ul>
-                <% end %>
+          <div class="content-recap">
+            <% @commande.commandeitems.each do |ci|%>
+              <% if ci.item_type == "Growler"  %>
+                <ul>
+                  <li><p>Growler : <%= ci.item.capacite %> L </p></li>
+                  <li><p><%= ci.item.price %> € </p></li>
+                  <li><p><%= ci.quantite %></p></li>
+                    <% if ci.item.capacite == 1 && ci.echange1L != 0%>
+                      <li><p> <%= ci.echange1L %></p></li>
+                    <% elsif ci.item.capacite == 2 && ci.echange2L != 0  %>
+                      <li><p> <%= ci.echange2L %></p></li>
+                    <% else %>
+                      <li></li>
+                    <% end %>
+                  <li><p><%= ci.price %> €</p></li>
+                </ul>
               <% end %>
-            </div>
+            <% end %>
+          </div>
       </div>
   </div>
     <div class="amount-total-commande">
       <div class="montant-total">
-        <p><strong>Montant total : <strong><%= @commande.amount %> €</p>
+        <p><strong>Montant total : </strong><%= @commande.amount %> €</p>
       </div>
       <div class="button-total">
         <%= link_to 'Choisir mon point de collecte', user_commande_pointcollectes_path(current_user, @commande), class: "btn-yellow collecte" %>
       </div>
     </div>
 </div>
-  <div class="footer-consignerie">
     <%= render 'shared/footer' %>
-  </div>
