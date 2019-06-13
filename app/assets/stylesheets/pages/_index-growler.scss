@@ -4,19 +4,9 @@
   text-align: center;
 }
 
-.stock-growler-title{
-  margin: 0 auto;
-  width: 43%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  h1{
-    margin-bottom: 0;
-  }
-}
-
 .logo-consignerie img{
-  width: 70px;
+  width: 200px;
+  position:relative;
 }
 
 .stock-growler-1{
@@ -66,4 +56,3 @@
 .demande-echange{
     font-size: 20px;
 }
-
