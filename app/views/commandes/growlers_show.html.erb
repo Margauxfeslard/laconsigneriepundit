@@ -20,11 +20,7 @@
               <h4>1 LITRE</h4>
             </div>
             <div class="stock">
-              <% if @small_growlers <= 1 %>
-              <p>Tu as <%= @small_growlers %> growler en stock</p>
-              <% elsif @small_growlers > 1 %>
-              <p>Tu as <%= @small_growlers %> growlers en stock</p>
-              <% end %>
+              <p><%= @small_growlers %></p>
             </div>
           </div><!-- champs-grid-growler -->
           <div class="champs-grid-growler">
@@ -33,18 +29,14 @@
               <h4>2 LITRES</h4>
             </div>
             <div class="stock">
-              <% if @big_growlers <= 1 %>
-              <p>Tu as <%= @big_growlers %> growler en stock</p>
-              <% elsif @small_growlers > 1 %>
-              <p>Tu as <%= @big_growlers %> growlers en stock</p>
-              <% end %>
+              <p><%= @big_growlers %></p>
             </div>
           </div><!-- champs-grid-growler -->
 
       </div><!-- grid-growler-gauche -->
 
       <div class="grid-growler-droit">
-        <i class="fas fa-sync"></i>
+        <i class="fas fa-sync", style="margin: 0"></i>
         <p>Les growlers que tu as vidé et que tu <strong> souhaites échanger </strong> !</p>
           <div class="champs-grid-growler">
             <div class="litre">
