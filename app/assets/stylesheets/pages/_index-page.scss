@@ -5,13 +5,14 @@ background-color: $dark-gray;
   margin: 20px 0 30px 0;
   text-align: center;
   h1 {
-    color: $yellow;
+    color: white;
     text-align: center;
-    font-size: 35px;
+    font-size: 48px;
     text-transform: none;
 
   }
   p {
+    font-size: 19px;
     color: white;
   }
 }
@@ -22,7 +23,7 @@ margin: 0 auto;
 }
 
 .trait {
-  border-bottom: 1px solid $yellow;
+  border-bottom: 1px solid $green;
   width: 15%;
   margin-left: auto;
   margin-right: auto;

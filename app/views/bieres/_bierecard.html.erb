@@ -24,7 +24,7 @@
               <%= render 'shared/stars-for-average-reviews', reviews: biere.reviews %>
             </div>
             <p class="note-sur-cinq">
-              "(<%= biere.reviews.average(:note).round(1) %> / 5) - <%= biere.reviews.count %> avis"
+              (<%= biere.reviews.average(:note).round(1) %> / 5) - <%= biere.reviews.count %> avis
             </p>
         </div>
       <% end %>
