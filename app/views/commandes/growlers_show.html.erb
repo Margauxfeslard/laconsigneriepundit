@@ -4,47 +4,80 @@
 
   <div class="stock-growler">
 
-    <h1 id="dataset" data-growlers_small=<%= @growlers.second.id%> data-growlers_small_price=<%= @growlers.second.price%>  data-growlers_big=<%= @growlers.first.id%> data-growlers_big_price=<%= @growlers.first.price%>>Tes growlers</h1>
-      <div class="stock-growler-1">
+    <div class="growler-title">
+      <div class="logo-consignerie"> <%= cl_image_tag 'https://res.cloudinary.com/dg5ekyjef/image/upload/v1560423923/logo-carre_iigrcz.png' %></div>
+      <h1 id="dataset" data-growlers_small=<%= @growlers.second.id%> data-growlers_small_price=<%= @growlers.second.price%>  data-growlers_big=<%= @growlers.first.id%> data-growlers_big_price=<%= @growlers.first.price%>>Tes growlers</h1>
+    </div><!-- stock-growler-title -->
 
-        <div class="logo-consignerie">
-          <%= image_tag 'logo-carre.png' %>
-        </div>
+    <div class="grid-growler">
 
-        <div class="litre">
-          <p>1L</p>
-        </div>
-          <div class="stock-with-input">
-            <div class="stock">
-              <h3>Ton stock : <%= @small_growlers %>
-              </h3>
+      <div class="grid-growler-gauche">
+        <i class="fas fa-home", style="color: rgb(38,94,90); font-size: 30px; padding: 10px;"></i>
+        <p>Les growlers en <strong>ta possession </strong> suite à ta dernière commande :</p>
+          <div class="champs-grid-growler">
+            <div class="litre">
+              <p>Bouteilles</p>
+              <h4>1 LITRE</h4>
             </div>
-            <h3 class="demande-echange">Combien souhaites-tu en échanger ?</h3>
-            <input class="form-control form-control-sm echange1" type="number" placeholder="maximum <%= @big_growlers %>" max='<%= @small_growlers %>' min=0 value=0>
-          </div>
-        </div>
-      <div class="stock-growler-1">
-        <div class="logo-consignerie">
-          <%= image_tag 'logo1.png' %>
-        </div>
-        <div class="litre">
-          <p>2L</p>
-        </div>
-          <div class="stock-with-input">
             <div class="stock">
-              <h3>Ton stock : <%= @big_growlers  %>
-              </h3>
+              <% if @small_growlers <= 1 %>
+              <p>Tu as <%= @small_growlers %> growler en stock</p>
+              <% elsif @small_growlers > 1 %>
+              <p>Tu as <%= @small_growlers %> growlers en stock</p>
+              <% end %>
             </div>
-              <h3 class="demande-echange">Combien souhaites-tu en échanger ?</h3>
+          </div><!-- champs-grid-growler -->
+          <div class="champs-grid-growler">
+            <div class="litre">
+              <p>Bouteilles</p>
+              <h4>2 LITRES</h4>
+            </div>
+            <div class="stock">
+              <% if @big_growlers <= 1 %>
+              <p>Tu as <%= @big_growlers %> growler en stock</p>
+              <% elsif @small_growlers > 1 %>
+              <p>Tu as <%= @big_growlers %> growlers en stock</p>
+              <% end %>
+            </div>
+          </div><!-- champs-grid-growler -->
+
+      </div><!-- grid-growler-gauche -->
+
+      <div class="grid-growler-droit">
+        <i class="fas fa-sync"></i>
+        <p>Les growlers que tu as vidé et que tu <strong> souhaites échanger </strong> !</p>
+          <div class="champs-grid-growler">
+            <div class="litre">
+              <p>Bouteilles</p>
+              <h4>1 LITRE</h4>
+            </div>
+            <div>
+              <input class="form-control form-control-sm echange1" type="number" placeholder="maximum <%= @big_growlers %>" max='<%= @small_growlers %>' min=0 value=0>
+            </div>
+          </div><!-- champs-grid-growler -->
+          <div class="champs-grid-growler">
+            <div class="litre">
+              <p>Bouteilles</p>
+              <h4>2 LITRES</h4>
+            </div>
+            <div>
               <input class="form-control form-control-sm echange2" type="number" placeholder="maximum <%= @big_growlers %>" max='<%= @big_growlers %>'min=0 value=0>
-          </div>
-        </div>
+            </div>
+          </div><!-- champs-grid-growler -->
+
+      </div><!-- grid-growler-droit -->
+
+    </div> <!-- grid-growler -->
+
         <div class="recap-echange">
-          <h4></h4>
+          <i class="fas fa-check", style="padding-right: 8px; font-size: 23px"></i><h4></h4>
         </div>
-    </div>
-    <div class="container-droit-panier">
+  </div> <!-- stock-growler -->
+
+  <div class="container-droit-panier">
       <%= render 'shared/layout_panier' %>
-    </div>
-  </div>
-   <%= render 'shared/footer' %>
+    </div> <!-- container-droit-panier -->
+
+</div> <!-- container-consignerie -->
+
+ <%= render 'shared/footer' %>
