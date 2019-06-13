@@ -103,7 +103,8 @@ const initMapbox = () => {
       if (pcollexist === null) {
         document.querySelector(".stripe-button-el").setAttribute("hidden", true)
       } else {
-        document.querySelector(".stripe-button-el").removeAttribute("hidden")
+        document.querySelector(".stripe-button-el").removeAttribute("hidden");
+        document.querySelector(".stripe-button-el").className = "btn-yellow";
       }
     });
   }
