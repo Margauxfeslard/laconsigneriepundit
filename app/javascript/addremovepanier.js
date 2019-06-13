@@ -24,7 +24,6 @@ if (sessionStorage.getItem("panier")) {
 } else {
   sessionStorage.setItem("panier", JSON.stringify(panier))
 }
-console.log(JSON.parse(sessionStorage.getItem("panier")));
 
 const displayPanier = (panier) => {
   panier.forEach((ligne) => {
