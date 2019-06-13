@@ -18,6 +18,7 @@ class PointcollectesController < ApplicationController
   def finalize_commande
     @commande = Commande.find(params[:commande_id])
     @commande.pointcollecte = Pointcollecte.find(params[:id])
+    @commande.date_souhaitee = Date.parse(params[:datevalue])
     @commande.save
     redirect_to user_commande_pointcollectes_path(current_user, @commande)
   end

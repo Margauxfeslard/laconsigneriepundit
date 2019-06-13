@@ -52,6 +52,9 @@ const initMapbox = () => {
           element.forEach((el) => {
             el.querySelector('.boutoncmd').setAttribute("hidden", true);
             el.querySelector('.textadvise').removeAttribute("hidden", false);
+            const hidden = el.querySelector('#hiddendatevalue');
+            hidden.value = dateSaisie
+            console.log(hidden);
           })
 
         } else {
@@ -59,6 +62,9 @@ const initMapbox = () => {
           element.forEach((el) => {
             el.querySelector('.boutoncmd').removeAttribute("hidden");
             el.querySelector('.textadvise').setAttribute("hidden", true);
+            const hidden = el.querySelector('#hiddendatevalue');
+            hidden.value = dateSaisie
+            console.log(hidden);
           })
         }
       }
@@ -98,5 +104,4 @@ const initMapbox = () => {
     });
   }
 };
-
 export { initMapbox };
