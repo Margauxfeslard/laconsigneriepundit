@@ -442,7 +442,7 @@ review8 = Review.create!(
 )
 
 review9 = Review.create!(
-  user: user15,
+  user: user13,
   biere: hoppyyuzu,
   contenu: "Très bonne et franchement pas chère ! J'aime !",
   note: 5,
