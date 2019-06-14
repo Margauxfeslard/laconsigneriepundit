@@ -71,7 +71,7 @@ page24.remote_photo_url = "https://res.cloudinary.com/dg5ekyjef/image/upload/v15
 page24.save
 
 aupif = Brasserie.create!(
-  nom: "AU PIF" ,
+  nom: "Au Pif" ,
   adresse:"189 Route de Poperinghe, 59114 Steenvoorde" ,
   description: "La brasserie Au pif a été créée par Pierre FRANCKE suite au Festival Internation de la Bière Artisanal qui lui a donnée envi de se lancer.",
   )
@@ -125,8 +125,8 @@ hopshot.remote_logo_img_url = "https://res.cloudinary.com/dbvuwwxkt/image/upload
 hopshot.save
 
 koukestout = Biere.create!(
-  nom: "Koukestou",
-  brasserie:bellenaert,
+  nom: "Koukestout",
+  brasserie: bellenaert,
   description:"Brassin éphémère n°14" ,
   style:"American Stout",
   couleur: "noire" ,
@@ -155,8 +155,8 @@ poulemouillee.save
 transition = Biere.create!(
   nom: "Transition",
   brasserie: hub,
-  description: "A définir",
-  style: "A définir",
+  description: "Dry hoppée au houblon Centennial et sublimée par une touche de jus de bouleau, vous rafraîchira les papilles pour les beaux jours qui arrivent.",
+  style: "Pale Ale",
   couleur: "blonde",
   taux_alcool: 6,
   amertume: 3,
@@ -168,7 +168,7 @@ transition.save
 
 esquelbecq = Biere.create!(
   nom: "La blonde d'Esquelbecq",
-  brasserie:thiriez,
+  brasserie: thiriez,
   description: "La Blonde d'Esquelbecq est une bière blonde à la mousse crémeuse, accompagné d'une notes de levure et d'un soupçon de zeste d'orange, à l'amertume développée." ,
   style: "Blonde - Ale",
   couleur: "rousse",
@@ -225,9 +225,9 @@ hoppyyuzu.save
 traditionbiere = Biere.create!(
   nom:"Tradition",
   brasserie: lil,
-  description:"blonde" ,
-  style:"A définir",
-  couleur:"A définir" ,
+  description:"Belles saveurs classiques, grâce à un choix de houblons traditionnels, dans la grande lignée des bières du Nord" ,
+  style:"Traditionnelle",
+  couleur:"Blonde" ,
   taux_alcool: 5.7,
   amertume:3,
   apparence: "Très claire",
@@ -258,14 +258,14 @@ user1 = User.create!(
 )
 
 user2 = User.create!(
-  email: "margaux@gmail.com",
+  email: "margaux.feslard@gmail.com",
   password: "password",
   nom: "Feslard",
   prenom: "Margaux"
 )
 
 user3 = User.create!(
-  email: "mariecaulliez@gmail.com",
+  email: "marie@gmail.com",
   password: "password",
   nom: "Caulliez",
   prenom: "Marie"
@@ -279,13 +279,13 @@ user4 = User.create!(
 )
 
 user5 = User.create!(
-  email: "benjamin@gmail.com",
+  email: "joseph@gmail.com",
   password: "password",
   nom: "Desforges",
-  prenom: "Benjamin"
+  prenom: "Joseph"
 )
 
-user6 = User.create!(
+user10 = User.create!(
   email: "victoire@gmail.com",
   password: "password",
   nom: "Paris",
@@ -313,11 +313,11 @@ user9 = User.create!(
   prenom: "Julien"
 )
 
-user10 = User.create!(
-  email: "jerome@gmail.com",
+user6 = User.create!(
+  email: "francois@gmail.com",
   password: "password",
   nom: "Jamet",
-  prenom: "Jérome"
+  prenom: "François"
 )
 
 user11 = User.create!(
@@ -356,25 +356,33 @@ user15 = User.create!(
 )
 
 puts "creating reviews"
+
 review1 = Review.create!(
   user: user1,
   biere: hopshot,
-  contenu: "Excellente ! Servie un soir à l'apéro avec des copains. Super désaltérante et arômes vraiment intéressants : pamplemousse, citron, litchi...",
+  contenu: "Petite soirée entre potes qui a fini en grosse timbale pour tout le monde",
   note: 5,
 )
 
-review2 = Review.create!(
-  user: user9,
+review3 = Review.create!(
+  user: user6,
   biere: hopshot,
-  contenu: "Superbe bière ! Parfaite pour l'été autour d'un bon barbecue !",
+  contenu: "Soirée bière avec mon mec, j'ai dû quitter la pièce !",
   note: 4,
 )
 
-review3 = Review.create!(
-  user: user10,
+review2 = Review.create!(
+  user: user5,
   biere: hopshot,
-  contenu: "J'aime beaucoup les bières de cette brasserie ! Top de pouvoir en profiter dans des growlers grâce à la Consignerie.",
+  contenu: "Aussi bonne qu'une comete !",
   note: 4,
+)
+
+review1 = Review.create!(
+  user: user3,
+  biere: hopshot,
+  contenu: "Excellente ! Servie un soir à l'apéro avec des copains. Super désaltérante et arômes vraiment intéressants : pamplemousse, citron, litchi...",
+  note: 5,
 )
 
 review4 = Review.create!(
@@ -382,6 +390,27 @@ review4 = Review.create!(
   biere: hopshot,
   contenu: "Je recommande ! Un corps désaltérant et une douce amertume...",
   note: 5,
+)
+
+review1 = Review.create!(
+  user: user3,
+  biere: poulemouillee,
+  contenu: "Excellente ! même pour les femmes enceintes. Mon bébé en était tout remuant !",
+  note: 5,
+)
+
+review1 = Review.create!(
+  user: user1,
+  biere: poulemouillee,
+  contenu: "Pas faite pour les poules-mouillées... ;)",
+  note: 5,
+)
+
+review1 = Review.create!(
+  user: user4,
+  biere: poulemouillee,
+  contenu: "Elle été tro bone pour être vré. Juste 1 peu mal au crane après",
+  note: 4,
 )
 
 review5 = Review.create!(
@@ -394,7 +423,7 @@ review5 = Review.create!(
 review6 = Review.create!(
   user: user2,
   biere: poulemouillee,
-  contenu: "Je n'avais jamais goûté une bière aussi bonne ! Gardez-la dans votre sélection !!",
+  contenu: "Je n'avais jamais goûté une bière aussi bonne ! Je n'en revenais pas ! Gardez-la dans votre sélection !!",
   note: 5,
 )
 
@@ -482,13 +511,6 @@ review18 = Review.create!(
   note: 5,
 )
 
-review19 = Review.create!(
-  user: user6,
-  biere: koukestout,
-  contenu: "Tchin tchin posey !",
-  note: 5,
-)
-
 review20 = Review.create!(
   user: user9,
   biere: labise,
@@ -525,14 +547,6 @@ review24 = Review.create!(
 )
 
 puts "creating collectpoint"
-
-  Pointcollecte.create!(
-  ville: "Lambersart",
-  zipcode: 59130,
-  nom: "Carrefour city",
-  adresse: "114 avenue Becquart",
-  horaire: "9h-12h tous les jours"
-  )
 
   Pointcollecte.create!(
   ville: "Lille",
@@ -698,38 +712,52 @@ puts "creating collectpoint"
 
 
 puts "creating commande"
-10.times do |n|
-  Commande.create!(
-  user: User.all.sample,
-  pointcollecte: Pointcollecte.all.sample,
-  etat: 1
-  )
-end
 
-commandegrowler = Commande.create!(
-user: User.all.sample,
+cmd1 = Commande.create!(
+user: user2,
+date_souhaitee: "08/01/2019",
+pointcollecte: Pointcollecte.all.sample,
+etat: 1
+)
+
+cmd2 = Commande.create!(
+user: user2,
+date_souhaitee: "22/01/2019",
 pointcollecte: Pointcollecte.all.sample,
 etat: 1
 )
 
 
-puts "creating commandeitem bigrowlereres"
+puts "creating commandeitem cmd1"
 lignegrowler = Commandeitem.create!(
-commande: Commande.all.sample,
-item: Growler.all.sample,
+commande: cmd1,
+item: Growler.first,
 quantite: 1
 )
 
-puts "creating commandeitem bigrowlereres"
-lignegrowler = Commandeitem.create!(
-commande: commandegrowler,
-item: Growler.all.sample,
+lignebiere = Commandeitem.create!(
+commande: cmd1,
+item: Biere.all.sample,
 quantite: 2
 )
 
-puts "creating commandeitem bieres"
-lignebiere = Commandeitem.create!(
-commande: Commande.all.sample,
-item: Biere.all.sample,
+puts "creating commandeitem cmd2"
+
+lignegrowler = Commandeitem.create!(
+commande: cmd2,
+item: Growler.second,
 quantite: 2
+)
+
+
+lignebiere = Commandeitem.create!(
+commande: cmd2,
+item: Biere.all.sample,
+quantite: 1
+)
+
+lignebiere = Commandeitem.create!(
+commande: cmd2,
+item: Biere.all.sample,
+quantite: 1
 )
