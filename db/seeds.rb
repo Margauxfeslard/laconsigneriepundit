@@ -239,7 +239,7 @@ traditionbiere.save
 puts "creating growler"
 Growler.create!(
   capacite: 2,
-  price_cents: 700
+  price_cents: 800
 )
 Growler.create!(
   capacite: 1,
