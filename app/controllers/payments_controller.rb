@@ -26,16 +26,14 @@ class PaymentsController < ApplicationController
     mail.deliver_now
     redirect_to user_commande_confirmation_path(current_user, @commande)
 
-
   rescue Stripe::CardError => e
     flash[:alert] = e.message
     redirect_to new_commande_payment_path(@commande)
-
   end
 
   private
 
   def set_order
-    @commande = current_user.commandes.pending.find(params[:commande_id])
+    @commande = current_user.commandes.find(params[:commande_id])
   end
 end
